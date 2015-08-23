@@ -65,44 +65,28 @@ body {
 	top: 20px; right: 0; bottom: 50px; left: 0;
 }
 
-#slides li.paper {
-	background-image: url(slide-paper.jpg);
+#slides li.habitats {
+	background-image: url(habitats.jpeg);
 }
 
-#slides li.origami {
-	background-image: url(slide-origami.jpg);
-}
-
-#slides li.origami p.iphone {
+/*#slides li.origami p.iphone {
 	display: none;
+}*/
+
+#slides li.today {
+	background-image: url(today.jpeg);
 }
 
-#slides li.chatHeads {
-	background-image: url(slide-chatheads.jpg);
+#slides li.maroon {
+	background-image: url(maroon.jpeg);
 }
 
-#slides li.logo {
-	background-image: url(slide-logo.png);
-}
-
-#slides li.logo p.iphone {
+/*#slides li.logo p.iphone {
 	display: none;
-}
+}*/
 
-#slides li.swipe {
-	background-image: url(slide-swipe.jpg);
-}
-
-#slides li.drawer {
-	background-image: url(slide-drawer.jpg);
-}
-
-#slides li.capo {
-	background-image: url(slide-capo.jpg);
-}
-
-#slides li.billings {
-	background-image: url(slide-billings.jpg);
+#slides li.homeboard {
+	background-image: url(homeboard.jpeg);
 }
 
 #slides p {
@@ -201,38 +185,6 @@ body {
 
 	.caption {
 		padding-left: 8px;
-	}
-
-	#slides li.origami p.other {
-		display: none;
-	}
-
-	#slides li.origami p.iphone {
-		display: block;
-	}
-
-	#slides li.logo p.other {
-		display: none;
-	}
-
-	#slides li.logo p.iphone {
-		display: block;
-	}
-
-	#slides li.capo {
-		background-image: url(slide-capo-iphone.jpg);
-	}
-
-	#slides li.billings {
-		background-image: url(slide-billings-iphone.jpg);
-	}
-
-	#slides li.logo {
-		background-image: url(slide-logo-iphone.png);
-	}
-
-	#slides li.origami {
-		background-image: url(slide-origami-iphone.jpg);
 	}
 }
 
