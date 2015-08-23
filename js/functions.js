@@ -226,12 +226,12 @@ endDragging = function() {
 
 layoutCaptions = function() {
 	// Distance between the center of the image and its optical right edge in the coordinate system of the native image resolution
-	var rightEdges = [374,812,268,652,374,374,812,812];
+	var rightEdges = [434,374,308,652,374,374,812,812];
 
-	var bottomEdges = [580,545,390,642,580,580,545,545];
+	var bottomEdges = [630,580,430,862,580,580,545,545];
 
 	// Padding added to the bottom in the coordinate system of the slide divs
-	var applyBottomPadding = [false,true,false,false,false,false,true,true];
+	var applyBottomPadding = [false,false,false,false,false,false,true,true];
 
 	var slideItems = $("#slides li");
 	viewportWidth = slideItems.innerWidth();
