@@ -10,7 +10,7 @@
 }
 
 a {
-	cursor: default;
+    display: block;
 }
 
 body {
@@ -98,7 +98,7 @@ body {
 	font-family: 'HelveticaNeue-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	position: absolute;
 	bottom: 0;
-	pointer-events: none;
+	pointer-events: auto;
 	padding-left: 13px;
 	visibility: hidden; /*Made visible in JS once layout has been calculated*/
 }
@@ -112,7 +112,7 @@ body {
 	bottom: 0px;
 	height: 58px;
 	width: 150px;
-	pointer-events:none;
+	pointer-events:auto;
 }
 
 #rightFade {
