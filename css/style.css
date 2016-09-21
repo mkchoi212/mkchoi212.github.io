@@ -78,7 +78,7 @@ body {
 }
 
 #slides li.maroon {
-	background-image: url(maroon.jpeg);
+	background-image: url(maroon.gif);
 }
 
 /*#slides li.logo p.iphone {
@@ -117,16 +117,16 @@ body {
 
 #rightFade {
 	right: 0;
-	background-image: -moz-linear-gradient( 180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
-	background-image: -webkit-linear-gradient( 180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
-	background-image: -ms-linear-gradient( 180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+	background-image: -moz-linear-gradient( 180deg, rgba(240,238,239,0.9) 0%, rgba(240,238,239,0) 100%);
+	background-image: -webkit-linear-gradient( 180deg, rgba(240,238,239,0.9) 0%, rgba(240,238,239,0) 100%);
+	background-image: -ms-linear-gradient( 180deg, rgba(240,238,239,0.9) 0%, rgba(240,238,239,0) 100%);
 }
 
 #leftFade {
 	left: 0;
-	background-image: -moz-linear-gradient( 0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
-	background-image: -webkit-linear-gradient( 0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
-	background-image: -ms-linear-gradient( 0deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%);
+	background-image: -moz-linear-gradient( 0deg, rgba(240,238,239,0.9) 0%, rgba(240,238,239,0) 100%);
+	background-image: -webkit-linear-gradient( 0deg, rgba(240,238,239,0.9) 0%, rgba(240,238,239,0) 100%);
+	background-image: -ms-linear-gradient( 0deg, rgba(240,238,239,0.9) 0%, rgba(240,238,239,0) 100%);
 }
 
 #nav {
