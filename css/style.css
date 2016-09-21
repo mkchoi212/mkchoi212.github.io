@@ -172,6 +172,15 @@ body {
 		top: 60px; right: 0; bottom: 40px; left: 0;
 	}
 
+   	 #slides li.today {
+        	top: 85px; right: 0; bottom: 70px; left: 0;
+    	}
+
+    	#slides li.maroon {
+        	top: 85px; right: 0; bottom: 70px; left: 0;
+    	}
+
+
 	#social {
 		position: absolute;
 		top: 6px; right: 18px;
