@@ -1,16 +1,11 @@
 # About
-Blog built with Jekyll with this [cool theme](https://github.com/fffabs/estivo) thanks to [@fffabs](https://github.com/fffabs).
-
-The blog runs on Jekyll v.2.5.3 (and above) and supports SASS. The code is still messy and is in progress. 
+Blog built with Jekyll.
+The blog runs on Jekyll v.2.5.3 (and above) and supports SASS.
 
 # Usage
 ```
-bundle install
-bundle exec jekyll serve
+git clone https://github.com/mkchoi212/mkchoi212.github.io.git
+jekyll serve
 ```
-
-# Support
-There is none
-
 # Licnese
 MIT License

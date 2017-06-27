@@ -45,7 +45,7 @@ So the following calls,
 
 ```scheme
 (amb 1 (amb))
-(amb (amb) 1))
+(amb (amb) 1)
 ```
 
 would also fail miserably.

@@ -1,27 +1,17 @@
 # Site settings
-title: "Mike JS. Choi"
+title: 0xDEADBEEF
+description: > 
+    Hi, I'm Mike. Here, I mainly write about Swift and software on Apple platforms but I dabble.
+author: Mike JS. Choi
 email: mkchoi212@icloud.com
-description: > # this means to ignore newlines until "baseurl:"
-  0xBEEFCAFE
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.sickaf.xyz" # the base hostname & protocol for your site
 twitter_username: bananamlkshake2
-github_username: mkchoi212 
+github_username:  mkchoi212
 
 # Build settings
+include: [_pages]
 markdown: kramdown
-permalink: ":title/"
-highlighter: rouge 
-
-# Pagination
-paginate: 10
-paginate_path: "blog/page/:num/"
-
-# Minification
+permalink: /:year/:month/:title
 sass:
-  style: compressed
-
-gems:
-  - jekyll-paginate
-
-
+    style: compressed
