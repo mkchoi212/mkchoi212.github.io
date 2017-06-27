@@ -1,6 +1,16 @@
 # About
-The webiste contains my portfolio. The site for now just displays all the apps that I've worked on but I'll build onto it as time goes on.
-I used Facebook's rebound.js in order to create the bouncy animation. Other than that, everything is pretty standard.
+Blog built with Jekyll with this [cool theme](https://github.com/fffabs/estivo) thanks to [@fffabs](https://github.com/fffabs).
+
+The blog runs on Jekyll v.2.5.3 (and above) and supports SASS. The code is still messy and is in progress. 
+
+# Usage
+```
+bundle install
+bundle exec jekyll serve
+```
+
+# Support
+There is none
 
 # Licnese
 MIT License
