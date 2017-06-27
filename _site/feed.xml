@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mike JS. Choi</title>
+    <description>0xBEEFCAFE
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 27 Jun 2017 12:12:34 +0900</pubDate>
+    <lastBuildDate>Tue, 27 Jun 2017 12:12:34 +0900</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Globalizing Software (Cont.)</title>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; You want to customize your UI to fit your target country’s cultural preferences. To find out what those might be, start my looking at the most famous websites in that country.&lt;/p&gt;
+
+&lt;h2 id=&quot;recap&quot;&gt;Recap&lt;/h2&gt;
+&lt;p&gt;In the last post, I talked about two main methods an application can apply in order to become a global application. The first method was to simply localized the app. The second method was to provide basic cultural support within the app for things such as string formatting and input method.&lt;/p&gt;
+
+&lt;h2 id=&quot;ui-globalization&quot;&gt;UI Globalization&lt;/h2&gt;
+&lt;p&gt;The most important step towards globalizing an application is the globalization of the UI to fit the target country’s culture. In order to explain what I mean by this, here’s a picture of Naver, the larget search engine company in Korea, compared to Google, the larget search engine company in America.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Naver (Korea)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Google (US)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/naver.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/google.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You can clearly see that while Naver’s home page is full of media content while Google’s home page has 3 main interactive elements.&lt;/p&gt;
+
+&lt;p&gt;Here’s another example,&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;11st (Korea)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Amazon (US)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/11.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/amazon.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;11st is one of the most popular shopping website in Korea. You can see here again that the amount of information being shown on the home page is significantly different.&lt;/p&gt;
+
+&lt;p&gt;I could go for days on all these comparison examples but I hope you got the point by now.&lt;/p&gt;
+
+&lt;p&gt;Now, you may start thinking “Well, maybe the UI/UX team at that company just didn’t do a good job” Well, 99% of Koreans would think otherwise.&lt;/p&gt;
+
+&lt;h3 id=&quot;reason-1&quot;&gt;Reason #1&lt;/h3&gt;
+&lt;p&gt;In Korea, wealth of information is something people favor over the popular minimalism ideals supported by most American software companies. The reasoning behind this is that by being able to see more contents on the home page, Koreans are able to catch up to the last news, fashion trends, and more. In a fast paced, image conscious culture such as Korea, being up to date on all those things matter on a personal and social level.&lt;/p&gt;
+
+&lt;h3 id=&quot;reasion-2&quot;&gt;Reasion #2&lt;/h3&gt;
+&lt;p&gt;Or here’s another way of thinking about it if you are still not convinced.
+Everyday, countless people go to work using the extensive subway system in Korea. If you get on one, you will see that 90% of people are staring into their phone, 8% are sleeping, and 2% are reading a book/newspaper. The 90% of people needed something to do and as time went on, Naver became the goto website for people, henceforth making Naver part of the culture. As people used Naver more and more, users became more comfortable with the website’s UI. In order to stay competitive, other websited began to take hints from Naver. And there you go… a specific UI preference just became part of the country’s culture.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;And culture tops personal preference most of the time.&lt;/strong&gt; Now this is quite a statement to make and is almost the same as saying “Hipsters don’t exist” but still, hipsters still need a good search engine, right?&lt;/p&gt;
+
+&lt;h2 id=&quot;so-im-not-a-culture-expert-on-all-195-different-countries-in-the-world&quot;&gt;So, I’m not a culture expert on all 195 different countries in the world&lt;/h2&gt;
+
+&lt;p&gt;Well, I understand that. If you were a big corporation like Google, you could just set up a local company in all 195 countries but you aren’t so.. here’s my suggestion.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Refer to the most famous websites in that country for design queues.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But it’s weird to even think about Google becoming like that one Korean search engine full of media content.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The point here is to incrementally adapt cultural UI queues.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So instead of going from 0 to 100 real quick, one should increment by 10 every quarter while observing users’ reaction to the change.&lt;/p&gt;
+
+&lt;h2 id=&quot;0-to-10-not-100&quot;&gt;0 to 10, not 100&lt;/h2&gt;
+&lt;p&gt;One of the most used feature in Naver (Korea) is the &lt;strong&gt;Top 10 real-time searched keyword list.&lt;/strong&gt; So, allow me to propose the first incremental change Google could make to adopt to Korean culture.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note that Google Korea’s current UI is identical to Google America’s UI.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/google_korea.jpeg&quot; alt=&quot;The continent would be the Korean peninsula but I'm working with limited graphic resources&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The above approach would be a good initial approach to UI globalization. The UI below indicating the currently trending searches were taken straight from Google Trends.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap up&lt;/h2&gt;
+&lt;p&gt;So… instead of just releasing couple of language packs and saying “Ok, we just went global”, give some consideration about the UI and the culture of people who are going to be interacting with it by&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Look at the most visited website in the country&lt;/li&gt;
+  &lt;li&gt;Take notes on its UI&lt;/li&gt;
+  &lt;li&gt;Divide into 10 (x) unique characteristics/elements&lt;/li&gt;
+  &lt;li&gt;Make necessary changes over 10 (x) quarters&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Tue, 13 Jun 2017 15:49:23 +0900</pubDate>
+        <link>http://localhost:4000/globalizing-software-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/globalizing-software-2/</guid>
+        
+        
+        <category>ui</category>
+        
+      </item>
+    
+      <item>
+        <title>Globalizing Software</title>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; UI should not be the same for all countries for cultural reasons.&lt;/p&gt;
+
+&lt;p&gt;Here’s a question you might want to ask yourself about your product.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;How is your product going to feel native to a user in a different country with an entirely different culture?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Before we start answering the question above, let’s look at some of the existing methods most companies and software use to target the global audience&lt;/p&gt;
+
+&lt;h2 id=&quot;localization&quot;&gt;Localization&lt;/h2&gt;
+&lt;p&gt;To most developers, going global means adding a localization feature on their app so that a button with the text “Search” becomes “검색” in South Korea or “Chercher” in France.&lt;/p&gt;
+
+&lt;p&gt;Localization is a feature most commonly implemented as it is the easiest to do so. The only difference between applications is the level of localization.&lt;/p&gt;
+
+&lt;p&gt;For example, while both application A and B have all text information within the app localized, application B could have the name of the application, the native settings, and the documentation localized - it’s small, but the small things matter.&lt;/p&gt;
+
+&lt;p&gt;Check out Instagram’s localized settings page.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Instagram (US)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Instagram (Korea)&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/instagram_english.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;http://localhost:4000/assets/instagram_korean.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;basic-cultural-support&quot;&gt;Basic Cultural Support&lt;/h2&gt;
+&lt;p&gt;Now this is an approach that has been given slightly more thought than the basic localization and is something people should definitely start picking up as a must-have feature for their global apps.&lt;/p&gt;
+
+&lt;p&gt;These basic cultural support features take in consideration of various cultural conventions. Those conventions may include&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Writing system&lt;/li&gt;
+  &lt;li&gt;Directionality&lt;/li&gt;
+  &lt;li&gt;Native Font&lt;/li&gt;
+  &lt;li&gt;String Formats&lt;/li&gt;
+  &lt;li&gt;Date&lt;/li&gt;
+  &lt;li&gt;Time&lt;/li&gt;
+  &lt;li&gt;Temeperature&lt;/li&gt;
+  &lt;li&gt;Currency&lt;/li&gt;
+  &lt;li&gt;Keyboard layouts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and so on…&lt;/p&gt;
+
+&lt;p&gt;These features allow the user to feel comfortable about the application’s content and hence forth allow better interaction with it.&lt;/p&gt;
+
+&lt;h2 id=&quot;but-something-is-missing&quot;&gt;But something is missing…&lt;/h2&gt;
+&lt;p&gt;The two features mentioned above allows the app usable in various countries but there’s something missing.&lt;/p&gt;
+
+&lt;p&gt;It’s almost as if an American car company exports a car to England after only having localized all the buttons in the car. No one is going to buy it in England because you know… they drive on the left side of the road and not on the right!&lt;/p&gt;
+
+&lt;p&gt;What I’m trying to say is, the UI also has to adapt to the target culture.&lt;/p&gt;
+
+&lt;p&gt;Check out the &lt;strong&gt;&lt;a href=&quot;/globalizing-software-2/&quot;&gt;next blog post&lt;/a&gt;&lt;/strong&gt; to find out how to do this.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 13 Jun 2017 15:49:23 +0900</pubDate>
+        <link>http://localhost:4000/globalizing-software-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/globalizing-software-1/</guid>
+        
+        
+        <category>ui</category>
+        
+      </item>
+    
+      <item>
+        <title>Different ways to use Swift Extensions</title>
+        <description>&lt;p&gt;Having used them for awhile, I’m not sure how I feel about them. In the beginning, I loved them and the new workflow they enabled. But as time went on, extensions became a go to garbage pile for code.&lt;/p&gt;
+
+&lt;p&gt;So, I decided to try to organize my views on extensions by coming up with some ways one could use them for and trying to pick out which ones are good and which ones are bad.&lt;/p&gt;
+
+&lt;h2 id=&quot;private-helpers&quot;&gt;Private Helpers&lt;/h2&gt;
+
+&lt;p&gt;In Objective-C, we had .h and .m files and despite the fact that we had two files where we could just have one .swift file, there were some advantages to it. The biggest one was that we could just look at the .h file and look at all the externals. But at the same time, internal things were hidden away in the .m file — including private properties/functions. So, how do we do the same thing in Swift?&lt;/p&gt;
+
+&lt;p&gt;We can first start off with a giant struct/class with all the internals in it — whether they are public or private.&lt;/p&gt;
+
+&lt;p&gt;But, we could refactor by having the main struct declared with all the public values and having a private extension to that struct.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Pokemon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;…&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Pokemon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;applyDamage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;hitPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, no one can hurt our Pokemon with an evil intent!&lt;/p&gt;
+
+&lt;h2 id=&quot;grouping&quot;&gt;Grouping&lt;/h2&gt;
+
+&lt;p&gt;I came up with this awhile ago but the idea is that you can use extensions to just group various code blocks for your visual pleasure.&lt;/p&gt;
+
+&lt;p&gt;One could say “Hey, just use a pragma mark or // Mark” or “If you need to do this, you should probably start by refactoring your code anyways.”&lt;/p&gt;
+
+&lt;p&gt;I would agree to both of those opinions but hey, I’m just throwing stuff out there and maybe this could someday come to use!&lt;/p&gt;
+
+&lt;p&gt;The idea is simple. Let’s say you have a view controller and things are starting to look like it’s leaning more towards the region of massive view controllers. So in order to tidy things up, you decide to break your code into chunks before you start with the real refactoring. You know you can use // Mark but you don’t like how they look so lets say you decided to go with extensions.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyMassivePokemonViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addMorePokemons&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I agree this one is iffy. This is not what extensions were designed for but still, I think they are useful when starting to refactor large code bases.&lt;/p&gt;
+
+&lt;h2 id=&quot;grouping-for-protocol-conformance&quot;&gt;Grouping for Protocol Conformance&lt;/h2&gt;
+
+&lt;p&gt;This one is good. Tired of having code for UITableViewDelegate and UITableViewDataSource in the same place? Well, this is for you.&lt;/p&gt;
+
+&lt;p&gt;The idea is simple. We are doing the same code grouping as we have done previously but only with code that conform to certain protocols. So you would have one extension for your TableViewController that contains code that conform to the TableViewDelegate and another for the TableViewDataSource.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyTableViewControler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewDelegate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;MyTableViewControler&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UITableViewDataSource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This separates the code definitely when compared to using pragma marks and is one of the most effective ways of using protocols — I think. Am I starting to sound like Scott Myers?&lt;/p&gt;
+
+&lt;p&gt;Oh and thanks to NatashaTheRobot for most of these ideas!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Sep 2016 20:21:23 +0900</pubDate>
+        <link>http://localhost:4000/swift-extensions/</link>
+        <guid isPermaLink="true">http://localhost:4000/swift-extensions/</guid>
+        
+        
+        <category>swift</category>
+        
+        <category>extensions</category>
+        
+      </item>
+    
+      <item>
+        <title>The Ambiguous Function</title>
+        <description>&lt;p&gt;John McCarthy is known for being the pioneer of Artificial Intelligence. His work in Stanford and his creation of Lisp during the 50’s is something that was far ahead of the time. Here’s a fun fact. Lisp, the ‘language’ John McCarthy created, was not supposed to be a programming language but something he created for himself to describe algorithms and functions in a ‘mechanical’, and a ‘logical’ way. Only after his death did graduate students at MIT create it into a computer programming language.&lt;/p&gt;
+
+&lt;p&gt;So, with a language so deeply rooted in Artificial Intelligence, here’s another mind blowing fact. Have you ever heard of a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;(amb)&lt;/code&gt;?&lt;/p&gt;
+
+&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+&lt;p&gt;According to the “SchemeWiki”, &lt;strong&gt;amb&lt;/strong&gt; is the ‘ambiguous’ special form for non-deterministic computationl; syntax is &lt;code class=&quot;highlighter-rouge&quot;&gt;(amb expression…)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It evaluates and returns the value of any expression operand. As code continues, the set of values that it may have returned is typically narrowed with a (REQUIRE condition) procedure that ensures that condition holds true. That was rought. Let’s try that in plain English.&lt;/p&gt;
+
+&lt;h2 id=&quot;less-wikipedia-ish-definition&quot;&gt;Less wikipedia-ish definition&lt;/h2&gt;
+&lt;p&gt;Amb is non-deterministic, which means the result of the function call has not been determined yet before the function call. So even with the same input, the output of the function depends on the situation and the state of the program.&lt;/p&gt;
+
+&lt;p&gt;But what influences the function’s decision to either return one result or another? Now, this is where things get interesting.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Amb’s purpose is not just to return something ‘random’ but to return a value that would lead the entire function to succeed.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hence, its nickname as the ‘angelic operator’. 
+That’s pretty rad. Let’s look at some examples.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+&lt;p&gt;To start off with, here’s a basic every-day implementation of amb.&lt;/p&gt;
+
+&lt;div class=&quot;language-scheme highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;#t&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;#f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, this line may return either true or false, as once again, amb is a non-deterministic function. But in this case, the expression would return true. The function is provided with a &lt;code class=&quot;highlighter-rouge&quot;&gt;#t&lt;/code&gt; true and a &lt;code class=&quot;highlighter-rouge&quot;&gt;#f&lt;/code&gt; false.  as the first value it sees is true and by returning it, the overall program would be allowed to exit successfully.&lt;/p&gt;
+
+&lt;p&gt;Now, one must know that the call&lt;/p&gt;
+
+&lt;div class=&quot;language-scheme highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;with no expressions has no value to return, and is considered to fail.&lt;/p&gt;
+
+&lt;p&gt;So the following calls,&lt;/p&gt;
+
+&lt;div class=&quot;language-scheme highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;would also fail miserably.&lt;/p&gt;
+
+&lt;p&gt;Now, check this out. Remember the thing about amb being an angelic operator and how one of its purposes was to make the program as a whole succeed?&lt;/p&gt;
+
+&lt;div class=&quot;language-scheme highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;#t&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;#f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;;executes if true&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;;the else block (executes if false)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We already talked about the function inside the if-statement &lt;code class=&quot;highlighter-rouge&quot;&gt;(amb #t #f)&lt;/code&gt; and how it could return either true or false. However, if amb returns a false in this case, (amb) would execute, leading the entire program to FAIL.&lt;/p&gt;
+
+&lt;p&gt;So, in this case, amb has to always return a true in order for the value 1 to be returned, allowing the entire program to succeed. Awesome, right?&lt;/p&gt;
+
+&lt;p&gt;Now you may be wondering, that sounds cool and all but what can I do with this?&lt;/p&gt;
+
+&lt;h2 id=&quot;applications&quot;&gt;Applications&lt;/h2&gt;
+
+&lt;p&gt;First of all, lets start off with something easy and familiar. You guys may have heard of the function “assert”, commonly used in C or C++ for checking if something is NULL or not.&lt;/p&gt;
+
+&lt;p&gt;In Scheme, you can use a macro function in order to come up with our own version of the assert function.&lt;/p&gt;
+
+&lt;div class=&quot;language-scheme highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;define&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;our-assert&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;statement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;statement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;amb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Essentially, this function is saying that &lt;code class=&quot;highlighter-rouge&quot;&gt;(our-assert statement)&lt;/code&gt; has to be true and if not, it will cause the program to fail by calling the function (amb) with no arguments.&lt;/p&gt;
+
+&lt;p&gt;Ok, cool. That was exciting but what else can we do with this? I talked a little about A.I’s in the beginning and so does that have anything to do with it? Ummm, kinda. Have you guys heard of the Kalotan Puzzle or the concept of map coloring? You can check them out here but basically, it allows us to write code that is almost impossible (or very hard) to write in C-based languages.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 28 Jan 2016 11:49:23 +0900</pubDate>
+        <link>http://localhost:4000/ambiguous-function/</link>
+        <guid isPermaLink="true">http://localhost:4000/ambiguous-function/</guid>
+        
+        
+        <category>AI</category>
+        
+        <category>lisp</category>
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>Different ways to use Swift Extensions</title>
+  <meta name="description" content="Having used them for awhile, I’m not sure how I feel about them. In the beginning, I loved them and the new workflow they enabled. But as time went on, exten...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/swift-extensions/">
+  <link rel="alternate" type="application/atom+xml" title="Mike JS. Choi" href="http://localhost:4000/feed.xml" />
+</head>
+
+  <body>
+    
+
+<div class="header-container" id="header-container">
+
+<!-- Site navigation -->
+  <nav class="site-nav">
+    <div class="trigger">
+      
+        
+        <a class="page-link" href="/about/">About</a>
+        
+      
+        
+      
+        
+      
+        
+      
+      <a class="page-link" href="/feed.xml">RSS</a>
+      <a class="twitter page-link" href="https://twitter.com/bananamlkshake2"><span class="icon-twitter"></span></a>
+      <a class="facebook page-link" href="https://www.facebook.com/mikejchoijr"><span class="icon-facebook"></span></a>
+    </div>
+  </nav>
+
+  <!-- The title of the site -->
+  <header class="site-header">
+    <a href="/">
+      <div class="avatar">
+        <img src="/assets/avatar.png" />
+      </div>
+    </a>
+    <!-- <a class="site-title" href="/">Mike JS. Choi</a> -->
+  </header>
+
+</div>
+
+      <div class="wrapper">
+        <div class="page-content">
+          <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Different ways to use Swift Extensions</h1>
+    <p class="post-meta">September 1, 2016</p>
+  </header>
+
+  <!-- Beginning Twitter sharing Large button -->
+  <a class="twitter-share-button" href="https://twitter.com/share"
+  data-related="twitterdev"
+  data-size="large"
+  data-count="horizontal">
+  Tweet
+  </a>
+  <!-- End of Twitter sharing button -->
+
+  <article class="post-content">
+    <p>Having used them for awhile, I’m not sure how I feel about them. In the beginning, I loved them and the new workflow they enabled. But as time went on, extensions became a go to garbage pile for code.</p>
+
+<p>So, I decided to try to organize my views on extensions by coming up with some ways one could use them for and trying to pick out which ones are good and which ones are bad.</p>
+
+<h2 id="private-helpers">Private Helpers</h2>
+
+<p>In Objective-C, we had .h and .m files and despite the fact that we had two files where we could just have one .swift file, there were some advantages to it. The biggest one was that we could just look at the .h file and look at all the externals. But at the same time, internal things were hidden away in the .m file — including private properties/functions. So, how do we do the same thing in Swift?</p>
+
+<p>We can first start off with a giant struct/class with all the internals in it — whether they are public or private.</p>
+
+<p>But, we could refactor by having the main struct declared with all the public values and having a private extension to that struct.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Pokemon</span> <span class="p">{</span>
+   <span class="k">let</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span>
+   <span class="err">…</span>
+<span class="p">}</span>
+<span class="kd">private</span> <span class="kd">extension</span> <span class="kt">Pokemon</span> <span class="p">{</span>
+   <span class="kd">func</span> <span class="nf">applyDamage</span><span class="p">(</span><span class="nv">hitPoint</span><span class="p">:</span> <span class="kt">Int</span><span class="p">){</span>
+      <span class="o">...</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Now, no one can hurt our Pokemon with an evil intent!</p>
+
+<h2 id="grouping">Grouping</h2>
+
+<p>I came up with this awhile ago but the idea is that you can use extensions to just group various code blocks for your visual pleasure.</p>
+
+<p>One could say “Hey, just use a pragma mark or // Mark” or “If you need to do this, you should probably start by refactoring your code anyways.”</p>
+
+<p>I would agree to both of those opinions but hey, I’m just throwing stuff out there and maybe this could someday come to use!</p>
+
+<p>The idea is simple. Let’s say you have a view controller and things are starting to look like it’s leaning more towards the region of massive view controllers. So in order to tidy things up, you decide to break your code into chunks before you start with the real refactoring. You know you can use // Mark but you don’t like how they look so lets say you decided to go with extensions.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">MyMassivePokemonViewController</span> <span class="p">{</span>
+   <span class="kd">func</span> <span class="nf">addMorePokemons</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+   <span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>I agree this one is iffy. This is not what extensions were designed for but still, I think they are useful when starting to refactor large code bases.</p>
+
+<h2 id="grouping-for-protocol-conformance">Grouping for Protocol Conformance</h2>
+
+<p>This one is good. Tired of having code for UITableViewDelegate and UITableViewDataSource in the same place? Well, this is for you.</p>
+
+<p>The idea is simple. We are doing the same code grouping as we have done previously but only with code that conform to certain protocols. So you would have one extension for your TableViewController that contains code that conform to the TableViewDelegate and another for the TableViewDataSource.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">extension</span> <span class="kt">MyTableViewControler</span> <span class="p">:</span> <span class="kt">UITableViewDelegate</span> <span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="kd">extension</span> <span class="kt">MyTableViewControler</span> <span class="p">:</span> <span class="kt">UITableViewDataSource</span><span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This separates the code definitely when compared to using pragma marks and is one of the most effective ways of using protocols — I think. Am I starting to sound like Scott Myers?</p>
+
+<p>Oh and thanks to NatashaTheRobot for most of these ideas!</p>
+
+  </article>
+
+  <hr>
+
+  <div class="question">
+    <h2>Questions?</h2>
+    <p>Have a question regarding the post above? <br />
+    <a class="twitter-follow-button"
+    href="https://twitter.com/bananamlkshake2"
+    data-show-count="true"
+    data-size="large">
+    Follow @bananamlkshake2
+    </a>
+    <script type="text/javascript">
+    window.twttr = (function (d, s, id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src= "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+    </script>
+  </div>
+
+  <div class="related">
+    <h2>Related</h2>
+    
+      <li><a href="/globalizing-software-2/" title="Globalizing Software (Cont.)">Globalizing Software (Cont.)
+       &nbsp; <span class="post-meta">June 13, 2017</span></a>
+    
+      <li><a href="/globalizing-software-1/" title="Globalizing Software">Globalizing Software
+       &nbsp; <span class="post-meta">June 13, 2017</span></a>
+    
+      <li><a href="/ambiguous-function/" title="The Ambiguous Function">The Ambiguous Function
+       &nbsp; <span class="post-meta">January 28, 2016</span></a>
+    
+  </div>
+
+</div>
+
+        </div>
+        <footer class="site-footer">
+</footer>
+
+    </div>
+
+    <script src="//cdn.jsdelivr.net/headroomjs/0.5.0/headroom.min.js"></script>
+    <script type="text/javascript">
+      var el = document.querySelector(".header-container");
+      var headroom  = new Headroom(el, {
+        "offset": 205,
+        "tolerance": 5
+      });
+      headroom.init();
+    </script>
+
+
+    <!-- Twitter Shizzle -->
+    <script type="text/javascript">
+    window.twttr = (function (d, s, id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src= "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+    </script>
+
+  </body>
+</html>
