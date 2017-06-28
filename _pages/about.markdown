@@ -14,8 +14,6 @@ send you my resume.
 ----
 
 <h2>About the site</h2>
-This site was made on an [Apple MBP](https://www.apple.com/) using
-[VIM](https://www.vim.org/). It's powered by
-[jekyllrb.com](https://jekyllrb.com).
+This site was made on an [Apple MBP](https://www.apple.com/) powered by [Jekyll](https://jekyllrb.com) on [Github Pages](https://pages.github.com).
 
 I'd love to hear your feedback on this site and my work.
