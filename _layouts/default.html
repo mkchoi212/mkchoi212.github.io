@@ -5,5 +5,8 @@
         <main class="u-container">
         {{ content }}
         </main>
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
     </body>
 </html>
