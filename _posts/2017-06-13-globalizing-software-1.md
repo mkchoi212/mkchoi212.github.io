@@ -14,7 +14,7 @@ Here's a question you might want to ask yourself about your product.
 Before we start answering the question above, let's look at some of the existing methods most companies and software use to target the global audience
 
 ## Localization
-To most developers, going global means adding a localization feature on their app so that a button with the text "Search" becomes "검색" in South Korea or "Chercher" in France.
+To most developers, **going global means adding a localization feature on their app** so that a button with the text "Search" becomes "검색" in South Korea or "Chercher" in France.
 
 Localization is a feature most commonly implemented as it is the easiest to do so. The only difference between applications is the level of localization.
 
@@ -29,7 +29,7 @@ Instagram (US)            |  Instagram (Korea)
 ## Basic Cultural Support
 Now this is an approach that has been given slightly more thought than the basic localization and is something people should definitely start picking up as a must-have feature for their global apps.
 
-These basic cultural support features take in consideration of various cultural conventions. Those conventions may include
+These **basic cultural support features** take in consideration of various cultural conventions. Those conventions may include
 
 * Writing system
 * Directionality
@@ -49,7 +49,7 @@ These features allow the user to feel comfortable about the application's conten
 ## But something is missing...
 The two features mentioned above allows the app usable in various countries but there's something missing.
 
-It's almost as if an American car company exports a car to England after only having localized all the buttons in the car. No one is going to buy it in England because you know... they drive on the left side of the road and not on the right!
+It's almost as if an American car company exports a car to England after only having localized all the buttons in the car. No one is going to buy it in England because people in England drive on the left side of the road.
 
 What I'm trying to say is, the UI also has to adapt to the target culture.
 

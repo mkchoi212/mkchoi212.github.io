@@ -37,9 +37,11 @@ In Korea, wealth of information is something people favor over the popular minim
 
 ### Reasion #2
 Or here's another way of thinking about it if you are still not convinced.
-Everyday, countless people go to work using the extensive subway system in Korea. If you get on one, you will see that 90% of people are staring into their phone, 8% are sleeping, and 2% are reading a book/newspaper. The 90% of people needed something to do and as time went on, Naver became the goto website for people, henceforth making Naver part of the culture. As people used Naver more and more, users became more comfortable with the website's UI. In order to stay competitive, other websited began to take hints from Naver. And there you go... a specific UI preference just became part of the country's culture.
+Everyday, countless people go to work using the extensive subway system in Korea. If you get on one, you will see that 90% of people are staring into their phone, 8% are sleeping, and 2% are reading a book/newspaper.  <img align="right" height="200" src="http://www.englishspectrum.com/wp-content/uploads/2016/11/3.jpg">The 90% of people needed something to do and as time went on, Naver became the goto website for people, henceforth making Naver part of the culture. As people used Naver more and more, users became more comfortable with the website's UI. In order to stay competitive, other websited began to take hints from Naver. And there you go... a specific UI preference just became part of the country's culture. At this point, that particular UI is hard set in the culture because 
 
-**And culture tops personal preference most of the time.** Now this is quite a statement to make and is almost the same as saying "Hipsters don't exist" but still, hipsters still need a good search engine, right?
+> **Culture tops personal preference most of the time.** 
+
+Now this is quite a statement to make and is almost the same as saying "Hipsters don't exist" but still, hipsters still need a good search engine, right?
 
 
 ## So, I'm not a culture expert on all 195 different countries in the world
@@ -50,14 +52,12 @@ Well, I understand that. If you were a big corporation like Google, you could ju
 
 But it's weird to even think about Google becoming like that one Korean search engine full of media content.
 
-> The point here is to incrementally adapt cultural UI queues.
+> The point is to incrementally adapt cultural UI queues.
 
 So instead of going from 0 to 100 real quick, one should increment by 10 every quarter while observing users' reaction to the change.
 
 ## 0 to 10, not 100
 One of the most used feature in Naver (Korea) is the **Top 10 real-time searched keyword list.** So, allow me to propose the first incremental change Google could make to adopt to Korean culture. 
-
-*Note that Google Korea's current UI is identical to Google America's UI.*
 
 ![The continent would be the Korean peninsula but I'm working with limited graphic resources]({{ site.url }}/assets/google_korea.jpeg)
 
