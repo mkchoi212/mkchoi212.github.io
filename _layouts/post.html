@@ -9,6 +9,22 @@ layout: page
     <div class="c-article__main">
         {{ content }}
     </div>
+    <div class="PageNavigation">
+		{% if page.previous.url %}
+      <div align="left">
+        <small><b>Previous</b> {{page.previous.date | date: "%b %-d, %Y"}}</small>
+        <br>
+        <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+      </div>
+		{% endif %}
+		{% if page.next.url %}
+      <div align="right">
+        <small>{{page.next.date | date: "%b %-d, %Y"}} <b>Next</b></small>
+        <br>
+        <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+      </div>
+		{% endif %}
+		</div>
     <footer class="c-article__footer">
         <p>
         {% for tag in page.tags %}
