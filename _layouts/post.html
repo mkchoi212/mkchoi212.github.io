@@ -11,7 +11,7 @@ layout: page
     </div>
     <div class="PageNavigation">
 		{% if page.previous.url %}
-      <div align="left">
+      <div class="PageNavigation" align="left">
         <small><b>Previous</b> {{page.previous.date | date: "%b %-d, %Y"}}</small>
         <br>
         <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>

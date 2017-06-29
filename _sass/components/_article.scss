@@ -118,7 +118,8 @@
 .PageNavigation div {
   display:inline-block;
   width: 50%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: LightGrey;
 }
 
-.PageNavigation a {
-}
