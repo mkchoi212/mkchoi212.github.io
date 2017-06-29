@@ -2,6 +2,7 @@
 layout: post
 title:  "Swift Objective-C Interoperation"
 date:   2016-02-05 10:49:23 +0900
+description: Does it work?
 categories: swift objc
 ---
 

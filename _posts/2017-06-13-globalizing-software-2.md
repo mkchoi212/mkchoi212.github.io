@@ -2,7 +2,7 @@
 layout: post
 title:  "Globalizing Software (Cont.)"
 date:   2017-06-13 15:49:23 +0900
-description: Customize your UI to fit your target country's cultural preferences. 
+description: Customize your UI to a country's culture.
 categories: ui
 ---
 

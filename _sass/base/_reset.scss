@@ -90,6 +90,7 @@ a {
 
     position: relative;
     display: inline-block;
+    padding: 5px 1px;
     transition: color ease 0.3s;
 
     &::after {
@@ -141,3 +142,4 @@ pre { overflow: auto; }
 code, pre {
 
 }
+
