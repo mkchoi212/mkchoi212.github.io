@@ -102,3 +102,34 @@
 .c-article__footer {
 
 }
+
+.pagenav {
+  width: 100%;
+  text-align: center;
+  border: 1px solid LightGrey;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.pagenav div {
+  border-color: transparent;
+}
+
+.wrapper {
+  padding: 10px;
+  border: 1px solid LightGrey;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#left {
+  float: left;
+  text-align: left;
+}
+
+#right {
+  float: right;
+  text-align: right;
+}
