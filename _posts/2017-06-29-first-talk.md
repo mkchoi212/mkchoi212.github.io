@@ -10,7 +10,9 @@ categories: swift talk
 > Practice like it's real. So when it's real, it's just like practice
 
 # Product first
-<iframe src="https://www.slideshare.net/MikeJSChoi/slideshelf" width="700px" height="570px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+<div class="web-container">
+  <iframe src="https://www.slideshare.net/MikeJSChoi/slideshelf" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+</div>
 
 # The Talk
 Let's start off by saying the topic of the talk off the bat.

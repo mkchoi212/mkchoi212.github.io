@@ -13,7 +13,9 @@ It was Winter Break and I was watching Late Night with Jimmy Fallon and they wer
 
 Here's a video clip of the game
 
-<iframe width="590" height="315" src="https://www.youtube.com/embed/9nBBgD0q6rA" frameborder="0" allowfullscreen></iframe>
+<div class="web-container">
+  <iframe width="590" height="315" src="https://www.youtube.com/embed/9nBBgD0q6rA" frameborder="0" allowfullscreen></iframe>
+</div>
 
 I liked this game - *maybe too much* - and wanted to make it in to an app. So I did.
 
