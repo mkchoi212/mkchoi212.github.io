@@ -99,10 +99,6 @@
 		}
 }
 
-.c-article__footer {
-
-}
-
 .PageNavigation {
   padding: 10px 1px 10px 1px;
   font-size: 15px;
@@ -118,8 +114,14 @@
 .PageNavigation div {
   display:inline-block;
   width: 50%;
+}
+
+.PageNavigation .left {
   border-top-color: transparent;
   border-bottom-color: transparent;
   border-right-color: LightGrey;
 }
 
+.c-article__footer {
+
+}
