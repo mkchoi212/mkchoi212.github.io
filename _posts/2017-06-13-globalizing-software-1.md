@@ -24,7 +24,7 @@ Check out Instagram's localized settings page.
 
 Instagram (US)            |  Instagram (Korea)
 :-------------------------:|:-------------------------:
-![]({{ site.url }}/assets/instagram_english.png)  |  ![]({{ site.url }}/assets/instagram_korean.png)
+![]({{ site.url }}/assets/global/instagram_english.png)  |  ![]({{ site.url }}/assets/global/instagram_korean.png)
 
 ## Basic Cultural Support
 Now this is an approach that has been given slightly more thought than the basic localization and is something people should definitely start picking up as a must-have feature for their global apps.

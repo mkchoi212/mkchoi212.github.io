@@ -16,7 +16,7 @@ The most important step towards globalizing an application is the globalization 
 
 Naver (Korea)                        |  Google (US)
 :-----------------------------------:|:--------------------------------------:
-![]({{ site.url }}/assets/naver.png) | ![]({{ site.url }}/assets/google.png)
+![]({{ site.url }}/assets/global/naver.png) | ![]({{ site.url }}/assets/global/google.png)
 
 You can clearly see that while Naver's home page is full of media content while Google's home page has 3 main interactive elements. 
 
@@ -24,7 +24,7 @@ Here's another example,
 
 11st (Korea)            |  Amazon (US)
 :-----------------------------------:|:--------------------------------------:
-![]({{ site.url }}/assets/11.png)    | ![]({{ site.url }}/assets/amazon.png)
+![]({{ site.url }}/assets/global/11.png)    | ![]({{ site.url }}/assets/global/amazon.png)
 
 11st is one of the most popular shopping website in Korea. You can see here again that the amount of information being shown on the home page is significantly different. 
 
@@ -59,7 +59,7 @@ So instead of going from 0 to 100 real quick, one should increment by 10 every q
 ## 0 to 10, not 100
 One of the most used feature in Naver (Korea) is the **Top 10 real-time searched keyword list.** So, allow me to propose the first incremental change Google could make to adopt to Korean culture. 
 
-![The continent would be the Korean peninsula but I'm working with limited graphic resources]({{ site.url }}/assets/google_korea.jpeg)
+![The continent would be the Korean peninsula but I'm working with limited graphic resources]({{ site.url }}/assets/global/google_korea.jpeg)
 
 The above approach would be a good initial approach to UI globalization. The UI below indicating the currently trending searches were taken straight from Google Trends.
 
