@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "🚀 Word-Sneak: a card game"
-date:   2016-05-05 11:54:11 +0900
+date:   2016-02-03 11:54:11 +0900
 description: Name of your app matters, a lot!
 categories: app-store ios
 ---
