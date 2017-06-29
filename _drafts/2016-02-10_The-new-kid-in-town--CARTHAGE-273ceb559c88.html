@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>The new kid in town: CARTHAGE</title><meta name="description" content="This is a tough one. My relationship with CocoaPods has always been a love and hate relationship. It allowed me to manage so many cool…"><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">The new kid in town: CARTHAGE</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+This is a tough one. My relationship with CocoaPods has always been a love and hate relationship. It allowed me to manage so many cool…
+</section>
+<section data-field="body" class="e-content">
+<section name="0147" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="f47a" id="f47a" class="graf graf--h3 graf--leading graf--title">The new kid in town: CARTHAGE</h3><p name="03c0" id="03c0" class="graf graf--p graf-after--h3">This is a tough one. My relationship with CocoaPods has always been a love and hate relationship. It allowed me to manage so many cool frameworks with such ease but at the same time, it was sometimes a pain in the ass. Especially with its unstable beta version that supported dependency management with Swift, our relationship was shaky at best</p><p name="1060" id="1060" class="graf graf--p graf-after--p">Podspec files and the cross-dependency issues made me want to cry but in the end, the relationship was one that I liked most of the time, so I kept at it. But one day, a new kid called Carthage showed up in town… At first, I didn’t take notice of it but after awhile, people started to notice how cool Carthage was so I said, “why not?”</p><h4 name="95d1" id="95d1" class="graf graf--h4 graf-after--p">CARTHAGE</h4><p name="9837" id="9837" class="graf graf--p graf-after--h4">Before one starts off with Carthage, one should know that folks at Github thought that while CocoaPods was generally easy to use, they wanted to something that was so easy that a little child could use it. That meant no podspec files or brand new .xcworkspaces being created.</p><h4 name="98e5" id="98e5" class="graf graf--h4 graf-after--p">How do I get it?</h4><p name="7d7f" id="7d7f" class="graf graf--p graf-after--h4">Go here and download the latest release and just follow the steps and you should be good to go!</p><p name="2a33" id="2a33" class="graf graf--p graf-after--p">Now that you have Carthage, there is literally only ONE thing you have to know. Remember Podfiles? That is now called <strong class="markup--strong markup--p-strong">Cartfile </strong>and it pretty much does the same thing as Podfiles.</p><p name="df9c" id="df9c" class="graf graf--p graf-after--p">To create one, simply go to the root directory of your project and make a file called “Cartfile”. Then in the file, add lines like this</p><pre name="4370" id="4370" class="graf graf--pre graf-after--p">github &quot;Alamofire/Alamofire&quot; == 2.0</pre><p name="46c6" id="46c6" class="graf graf--p graf-after--pre">A little bit about the syntax. <strong class="markup--strong markup--p-strong">== </strong>means what you think it means. Then there is <strong class="markup--strong markup--p-strong">&gt;= 1.0</strong> which means use version 1.0 or anything higher. Lastly, <strong class="markup--strong markup--p-strong">~&gt;1.0</strong> means to use any version that is compatible with version 1.0.</p><p name="7daf" id="7daf" class="graf graf--p graf-after--p">Simple enough ,eh?</p><p name="eb36" id="eb36" class="graf graf--p graf-after--p">To install the new dependencies you’ve included in the Cartfile, you have to run the following command,</p><pre name="2499" id="2499" class="graf graf--pre graf-after--p">carthage update --platform iOS</pre><p name="f9c4" id="f9c4" class="graf graf--p graf-after--pre">which then shows stuff like this,</p><pre name="2ac8" id="2ac8" class="graf graf--pre graf-after--p"><strong class="markup--strong markup--pre-strong">***</strong> Fetching SwiftyJSON<br><strong class="markup--strong markup--pre-strong">***</strong> Fetching Alamofire<br><strong class="markup--strong markup--pre-strong">***</strong> Checking out Alamofire at &quot;2.0.0&quot;<br><strong class="markup--strong markup--pre-strong">***</strong> Checking out SwiftyJSON at &quot;2.3.0&quot;<br><strong class="markup--strong markup--pre-strong">***</strong> xcodebuild output can be found <strong class="markup--strong markup--pre-strong">in</strong> <strong class="markup--strong markup--pre-strong">/</strong>var<strong class="markup--strong markup--pre-strong">/</strong>folders<strong class="markup--strong markup--pre-strong">/</strong>h8<strong class="markup--strong markup--pre-strong">/</strong>qp5163ln7mz2d7_l_yn6hd0m0000gp<strong class="markup--strong markup--pre-strong">/</strong>T<strong class="markup--strong markup--pre-strong">/</strong>carthage-xcodebuild.HBRNcq.log<br><strong class="markup--strong markup--pre-strong">***</strong> Building scheme &quot;Alamofire iOS&quot; <strong class="markup--strong markup--pre-strong">in</strong> Alamofire.xcworkspace</pre><p name="28db" id="28db" class="graf graf--p graf-after--pre">The whole process is like <strong class="markup--strong markup--p-strong">pod update</strong> or <strong class="markup--strong markup--p-strong">pod install!</strong></p><p name="fe42" id="fe42" class="graf graf--p graf-after--p">Oh and by the way, that little platform option that we fed in is there to specify which platform Carthage will build the frameworks for. If you don’t specify that platform, Carthage will install to default platforms (usually both iOS and Mac).</p><h4 name="2773" id="2773" class="graf graf--h4 graf-after--p">Artifacts</h4><p name="0158" id="0158" class="graf graf--p graf-after--h4">Remember how CocoaPods made a special pods project that bound various frameworks with your Xcode workspace? Well, Carthage doesn’t do any of that junk and only builds the frameworks into the binary frameworks and it’s up to YOU to integrate it into the actually project.</p><p name="74d7" id="74d7" class="graf graf--p graf-after--p">After running,</p><pre name="b475" id="b475" class="graf graf--pre graf-after--p">carthage update</pre><p name="d28b" id="d28b" class="graf graf--p graf-after--pre">Carthage creates some files/folders for you.</p><figure name="85b7" id="85b7" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 276px; max-height: 320px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 115.9%;"></div><img class="graf-image" data-image-id="0*J5DZi02_KjDZk9sG.png" data-width="276" data-height="320" src="https://cdn-images-1.medium.com/max/1600/0*J5DZi02_KjDZk9sG.png"></div></figure><p name="7869" id="7869" class="graf graf--p graf-after--figure">You should <strong class="markup--strong markup--p-strong">Cartfile.resolved</strong> file because it shows the versions of the frameworks you’ve installed. And in the Carthage directory, you should see two folders. The first called <strong class="markup--strong markup--p-strong">Build </strong>contains the built frameworks for all of the dependencies. These are the ones you drag into your project. The <strong class="markup--strong markup--p-strong">Checkouts </strong>folder meanwhile is for Carthage’s smart way of managing the source code for all frameworks. It’s like caching the dependencies so the source doesn’t have to be copied over to other projects.</p><p name="fa92" id="fa92" class="graf graf--p graf-after--p">Also, remember that if you haven’t committed <strong class="markup--strong markup--p-strong">Build</strong> file, other people will need to run</p><pre name="6805" id="6805" class="graf graf--pre graf-after--p">carthage bootstarp</pre><p name="e754" id="e754" class="graf graf--p graf-after--pre">in order to actually compile the project.</p><p name="32c7" id="32c7" class="graf graf--p graf-after--p">The next part is where you actually drag the frameworks into your project. Here’s a little <a href="http://cdn2.raywenderlich.com/wp-content/uploads/2015/06/carthage-settings.gif" data-href="http://cdn2.raywenderlich.com/wp-content/uploads/2015/06/carthage-settings.gif" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><strong class="markup--strong markup--p-strong"><em class="markup--em markup--p-em">gif </em></strong></a>from Ray Wenderlinch that shows exactly how to do it. Video is worth probably million words from me.</p><p name="d59a" id="d59a" class="graf graf--p graf-after--p">Well, there you go. You learned something new today, right? Well I hope you did cause I know I did :) YAY</p><p name="3d1b" id="3d1b" class="graf graf--p graf--startsWithSingleQuote graf-after--p graf--trailing">‘till next time.</p></div></div></section>
+</section>
+<footer><p class="p-tags">Tagged in <a href="https://medium.com/tag/ios" class="p-tag">iOS</a></p><p>By <a href="https://medium.com/@mikejschoi" class="p-author h-card">Mike JS Choi</a> on <a href="https://medium.com/p/273ceb559c88"><time class="dt-published" datetime="2016-02-10T10:01:17.805Z">February 10, 2016</time></a>.</p><p>Exported from <a href="https://medium.com">Medium</a> on June 28, 2017.</p></footer></article>
+
+</body></html>

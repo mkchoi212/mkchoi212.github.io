@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Transducers in Swift — Part II</title><meta name="description" content="Let’s get the show started right away."><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Transducers in Swift — Part II</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Let’s get the show started right away.
+</section>
+<section data-field="body" class="e-content">
+<section name="d1d7" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="d50d" id="d50d" class="graf graf--h3 graf--leading graf--title">Transducers in Swift — Part II</h3></div><div class="section-inner sectionLayout--fullWidth"><figure name="8235" id="8235" class="graf graf--figure graf--layoutFillWidth graf-after--h3"><div class="aspectRatioPlaceholder is-locked"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 56.3%;"></div><img class="graf-image" data-image-id="1*dUDtOr6BXqcKArPy6tzXzA.jpeg" data-width="1600" data-height="900" src="https://cdn-images-1.medium.com/max/2000/1*dUDtOr6BXqcKArPy6tzXzA.jpeg"></div><figcaption class="imageCaption">Reduce all the things — into a tiny little rainbow!</figcaption></figure></div><div class="section-inner sectionLayout--insetColumn"><p name="220d" id="220d" class="graf graf--p graf-after--figure">Let’s get the show started right away.</p><p name="9180" id="9180" class="graf graf--p graf-after--p">Before we get started, let us declare some operators that will make function composition a little easier to deal with.</p><h3 name="ab86" id="ab86" class="graf graf--h3 graf-after--p">Function Composition Operator</h3><pre name="9df4" id="9df4" class="graf graf--pre graf-after--h3">infix operator |&gt; {associativity left}</pre><pre name="3c6c" id="3c6c" class="graf graf--pre graf-after--pre">func <strong class="markup--strong markup--pre-strong">|&gt;</strong> &lt;A, B&gt;(x: A, f: A -&gt; B) -&gt; B {<br>    return f(x)<br>}</pre><pre name="4a36" id="4a36" class="graf graf--pre graf-after--pre">func <strong class="markup--strong markup--pre-strong">|&gt;</strong> &lt;A, B, C&gt;(f: A -&gt; B, g: B -&gt; C) -&gt; A -&gt; C{<br>    return f(x)<br>}</pre><p name="73ab" id="73ab" class="graf graf--p graf-after--pre">Now we can do stuff like</p><pre name="c7a0" id="c7a0" class="graf graf--pre graf-after--p">// Instead of abs(sqrt(incr(-3)))<br>-3 |&gt; incr |&gt; sqrt |&gt; abs</pre><figure name="6f4b" id="6f4b" class="graf graf--figure graf--layoutOutsetLeft graf-after--pre"><div class="aspectRatioPlaceholder is-locked" style="max-width: 480px; max-height: 360px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 75%;"></div><img class="graf-image" data-image-id="1*ZM0zR1zuurJyGxve3Wqrqw.jpeg" data-width="480" data-height="360" src="https://cdn-images-1.medium.com/max/1200/1*ZM0zR1zuurJyGxve3Wqrqw.jpeg"></div><figcaption class="imageCaption">the man in the turquoise sweater &amp; pants</figcaption></figure><p name="a44e" id="a44e" class="graf graf--p graf-after--figure">This kind of looks like Unix pipelines, right? And if this guy said pipelines are a good thing, than this must be good! </p><p name="093d" id="093d" class="graf graf--p graf-after--p">Now, let’s add a <em class="markup--em markup--p-em">mapping </em>function to do what we just did for an array of data.</p><h3 name="7bbf" id="7bbf" class="graf graf--h3 graf-after--p">Basic Curried Functions</h3><pre name="a611" id="a611" class="graf graf--pre graf-after--h3">func fmap &lt;A, B&gt;(f: A -&gt; B) -&gt; [A] -&gt; [B] {<br>    return { map($0, f) }<br>}</pre><p name="ecd8" id="ecd8" class="graf graf--p graf-after--pre">This simply takes a <code class="markup--code markup--p-code">A -&gt; B</code> function and makes a function that <code class="markup--code markup--p-code">[A] -&gt; [B]</code> . Now we can do stuff like</p><pre name="d246" id="d246" class="graf graf--pre graf-after--p">userData |&gt; fmap(parse) |&gt; fmap(getFavs)</pre><p name="0887" id="0887" class="graf graf--p graf--empty graf-after--pre graf--trailing"><br></p></div></div></section>
+</section>
+<footer><p><a href="https://medium.com/p/95dd8e96c9d8">View original.</a></p><p>Exported from <a href="https://medium.com">Medium</a> on June 28, 2017.</p></footer></article>
+
+</body></html>
