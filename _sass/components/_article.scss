@@ -109,11 +109,15 @@
   border-width: 1px;
   border-left-color: transparent;
   border-right-color: transparent;
+  overflow: hidden;
 }
 
 .PageNavigation div {
   display:inline-block;
   width: 50%;
+}
+
+.PageNavigation a {
 }
 
 .PageNavigation .left {
