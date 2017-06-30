@@ -103,23 +103,30 @@
 
 }
 
-.PageNavigation {
-  padding: 10px 1px 10px 1px;
-  font-size: 15px;
+.pagenav {
   width: 100%;
-  white-space: nowrap;
-  border-style: solid;
-  border-color: LightGrey;
-  border-width: 1px;
+  text-align: center;
+  border: 1px solid LightGrey;
   border-left-color: transparent;
   border-right-color: transparent;
+  font-size: 18px;
+  overflow: hidden;
 }
 
-.PageNavigation div {
-  display:inline-block;
-  width: 50%;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: LightGrey;
+.pagenav div {
+  border-color: transparent;
 }
 
+.wrapper {
+  padding: 10px;
+  border: 1px solid LightGrey;
+  display: inline-block;
+}
+
+#left {
+  float: left;
+}
+
+#right {
+  float: right;
+}
