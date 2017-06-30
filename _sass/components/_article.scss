@@ -121,12 +121,15 @@
   padding: 10px;
   border: 1px solid LightGrey;
   display: inline-block;
+  margin: 0 auto;
 }
 
 #left {
   float: left;
+  text-align: left;
 }
 
 #right {
   float: right;
+  text-align: right;
 }
