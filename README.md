@@ -1,11 +1,25 @@
-# About
-Blog built with Jekyll.
-The blog runs on Jekyll v.2.5.3 (and above) and supports SASS.
+[![Build Status](https://travis-ci.org/mkchoi212/mkchoi212.github.io.svg?branch=master)](https://travis-ci.org/mkchoi212/mkchoi212.github.io)
+
+# 0xDEADBEEF
+A [blog](www.sickaf.xyz) built with Jekyll, deployed on Github Pages.
+
+# Posts
+1. The Ambiguous Function
+2. 🚀 Word-Sneak: a card game
+3. Swift Objective-C Interoperation
+4. 🚀 today: an information hub
+5. Different ways to use Swift Extensions
+6. Swift Sucess Enums
+7. Globalizing Software
+8. Globalizing Software (Cont.)
+9. 🔈 Swift Talk: Limiting the use of Protocols (Most Recent)
+
 
 # Usage
 ```
 git clone https://github.com/mkchoi212/mkchoi212.github.io.git
-jekyll serve
+bundle install
+bundle exec jekyll serve
 ```
 # Licnese
 MIT License
