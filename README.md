@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/mkchoi212/mkchoi212.github.io.svg?branch=master)](https://travis-ci.org/mkchoi212/mkchoi212.github.io)
 
 # 0xDEADBEEF
-A [blog](www.sickaf.xyz) built with Jekyll, deployed on Github Pages.
+A [blog](http://sickaf.xyz) built with Jekyll, deployed on Github Pages.
 
 # Posts
 1. The Ambiguous Function
