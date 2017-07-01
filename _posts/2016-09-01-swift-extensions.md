@@ -2,8 +2,10 @@
 layout: post
 title:  "Different ways to use Swift Extensions"
 date:   2016-09-01 20:21:23 +0900
-description: "Turns out, they are pretty controversial"
-categories: swift extensions
+description: "Content may be controversial"
+tags: 
+- swift 
+- extensions
 ---
 
 Having used them for awhile, I’m not sure how I feel about them. In the beginning, I loved them and the new workflow they enabled. But as time went on, extensions became a go to garbage pile for code.

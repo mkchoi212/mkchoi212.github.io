@@ -3,7 +3,9 @@ layout: post
 title:  "Swift Objective-C Interoperation"
 date:   2016-02-05 10:49:23 +0900
 description: Does it work?
-categories: swift objc
+tags: 
+- swift 
+- objc
 ---
 
 So, you aren’t really sure if you should go full Swift on your million dollar app idea and is considering going half way. You tell yourself, “I can fill in the fact that Swift is a very young language with some heavy Objective-C gut that has been supported by the iOS community over the years.” You may be right but as you go down the road towards the million dollars, you might start to think otherwise.

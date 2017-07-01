@@ -3,7 +3,8 @@ layout: post
 title:  "Swift Sucess Enums"
 date:   2016-02-05 10:49:23 +0900
 description: Handle errors without optionals
-categories: swift
+tags: 
+- swift
 ---
 
 **TL;DR** Enums may or may not be an optimal way to handle errors in Swift but are suitable to create types tailored to your needs.

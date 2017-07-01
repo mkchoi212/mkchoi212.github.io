@@ -3,7 +3,8 @@ layout: post
 title:  "Globalizing Software"
 date:   2017-06-13 15:49:23 +0900
 description: UI shouldn't uniform for all countries.
-categories: ui
+tags:
+-  ui
 ---
 
 **TL;DR** UI should not be the same for all countries for cultural reasons.

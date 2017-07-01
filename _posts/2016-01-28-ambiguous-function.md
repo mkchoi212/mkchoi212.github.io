@@ -3,7 +3,9 @@ layout: post
 title:  "The Ambiguous Function"
 date:   2016-01-28 11:49:23 +0900
 description: "The angelic operator"
-categories: AI lisp
+tags: 
+- AI 
+- lisp
 ---
 
 John McCarthy is known for being the pioneer of Artificial Intelligence. His work in Stanford and his creation of Lisp during the 50’s is something that was far ahead of the time. Here's a fun fact. Lisp, the ‘language’ John McCarthy created, was not supposed to be a programming language but something he created for himself to describe algorithms and functions in a ‘mechanical’, and a ‘logical’ way. Only after his death did graduate students at MIT create it into a computer programming language.
