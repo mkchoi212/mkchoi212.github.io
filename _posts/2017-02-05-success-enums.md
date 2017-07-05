@@ -13,11 +13,11 @@ Let’s talk about error handling in Swift. If you’ve been doing Swift for awh
 
 ## Why?
 
-Swift’s optional types are great but has a single drawback; we don’t get an error message when something goes wrong. This sucks because when it comes for us to report why an operation failed to the user via UI, we have to say something like “We failed because of nil”
+Swift’s optional types are great but has a single drawback; we don't retain any information regarding why the type became nil. This sucks because when it comes for us to report why an operation failed to the user, we have to say something vague like “We failed because of nil”
 
 ## How about an enum?
 
-So, in order to capture our possible error, we would want our failable function to return either the result or an ErrorType. So, why not return an enum instead of returning a “Optional(Result)” ?
+In order to capture our possible error, we want our failable function to return either the result or an ErrorType. So, why not return an enum instead of returning a “Optional(Result)” ?
 
 With Swift’s enums ability to have associated values, we can do stuff like this to retain information about what went wrong.
 
@@ -32,7 +32,11 @@ enum UserResult {
   case Success(String)
   case Error(LookupError)
 }
+```
 
+And then use it like this
+
+```swift
 func findUserStatus(name: String) -> UserResult {
   guard let userStats = users[name] else {
     return .Error(InvalidName)
@@ -40,7 +44,6 @@ func findUserStatus(name: String) -> UserResult {
   return .Success(userStats)
 }
 
-// USAGE
 switch findUserStatus("Stevie Wonder") {
   case let .Success(stats):
     print("Stevie Wonder's Stats: \(stats)")
@@ -49,14 +52,14 @@ switch findUserStatus("Stevie Wonder") {
 }
 ```
 
-Here, we can see that Stevie’s information could not be found and has been properly reported to our user. This is much better than just doing an if let/guard on an optional and return a null value when an error occurs.
+Here, we can see that Stevie’s information could not be found and has been properly reported to our user. This is much better than just doing an if let/guard on an optional and return a nil value when an error occurs.
 
 
 ## A Generic Version
 
-But, this version doesn’t work if we want to return a `NSData`, does it? The Success case is only defined for a `String`…
+But, this version doesn’t work if we want to return a `NSData`, does it? The Success case is only defined for a `String`. 
 
-We can simply use Swift’s generics to do this and turns out to be pretty easy.
+Let's use Swift’s generics to make it compatible with all types.
 
 ```swift
 enum Result<T> {
@@ -71,11 +74,8 @@ func findUserAge(name: String) -> Result<Int>
 
 ##So?
 
-If you look at the implementation of the Swift’s built-in error handling mechanisms, things work very similarly to what we just did with Result enums. But there is one limitation; error handling only works on the result type of a function. Swift won’t let you pass a possibly failed argument to a function but with our Result enums, you could because it’s just another value!
+If you look at the implementation of the Swift’s built-in error handling mechanisms, things work very similarly to what we just did with Result enums. But there is one limitation; error handling only works on the result type of a function. Swift won’t let you pass a possibly failed argument to a function but with our Result enums, you can because it’s just another value!
 
-But in the end, most people probably prefer using optionals since they are built-in to the language and the syntactic sugars that come with it are convenient; like ??. And so, here’s a quote I hope will help you make the decision.
+But in the end, most people probably prefer using optionals since they are built-in to the language and the syntactic sugars that come with it are convenient; like `??`. And so, here’s a quote I hope will help you make the decision.
 
->“Program into a language, not in it” - Steve McConnell
-
- 
-If you do end up using optionals, look at this post for an idea how to upgrade them!
+> “Program into a language, not in it” - Steve McConnell

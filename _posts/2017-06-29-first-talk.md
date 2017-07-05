@@ -5,7 +5,7 @@ date:   2017-06-29 13:03:23 +0900
 description: My first Swift talk
 tags: 
 - swift 
-- Talk
+- talk
 ---
 
 **TL;DR** (🧀 ❝ ❗)
@@ -17,18 +17,20 @@ tags:
 </div>
 
 # The Talk
-Let's start off by saying the topic of the talk off the bat.
+The talk's topic was...
 > Using protocols everywhere in Swift is not a good thing.
 
 ## Protocols?
-But before talking about what I just said, let's look at what a protocol is.
+To see where I am trying to go with this, we first need to know what a protocol
+is.
 There are tons of tutorials online about protocols so I will keep it simple.
 
 Object Oriented                       |  ✅ Protocol Oriented
 :-----------------------------------:|:--------------------------------------:
 ![](http://machinethink.net/images/mixins-and-traits-in-swift-2/ShootingHelper.png) | ![](http://machinethink.net/images/mixins-and-traits-in-swift-2/GameTraits.png)
 
-Basically, you can go from the left to the right. 
+Basically, protocols allow you to go from the left to the right and that's
+considered a good thing. 
 
 Flatter architecture made possible with the concept of **composition is easier to deal with than a complex class hiearchy**.
 
@@ -47,14 +49,16 @@ func sendRequest(urlString: URLStringConvertible, method: () -> ()) {
 }
 ```
 
-This `URLStringConvertible` is not accomplishing anything and can simply be replaced by a value. 
+This `URLStringConvertible` is not accomplishing anything here and can simply be replaced by a value. 
 
-But somehow, I think a lot people feel as if using protocols for everything is the right thing to do in Swift; I am one of those people as well. Maybe this is because of the large number of *"Protocol Oriented X"* tutorials on the web or maybe because Apple has been trying to sell Swift as a "Protocol Oriented Language". But whatever the reason,
+But somehow, I think a lot people feel as if using protocols for everything is the right thing to do in Swift.
+Maybe this is because of the large number of *"Protocol Oriented X"* tutorials on the web or maybe because Apple has been trying to sell Swift as a "Protocol Oriented Language". But whatever the reason,
 
-> Using a protocol without thinking about the consequences is **NOT** a good practice.
+> Using protocols without thinking about the consequences is **NOT** ideal
 
 # More Examples
-Suppose we are making a simple library that is good at creating UIView elements with data inserted in them. So we go ahead and use protocols.
+Suppose we are making a library that is good at creating `UIView` elements with data inserted in them. 
+I'm going to completely ignore what I just said above and make a protocol first because that's the *"cool thing to do"*.
 
 ## Protocol Oriented Approach 
 
@@ -64,9 +68,8 @@ protocol HeaderViewProtocol {
     func setHeader(data: Content)
 }
 ```
-At this point, I used to think that I am doing the right thing because **I just created a protocol and that's what you are supposed to do in Swift.**
-
-Let's continue to apply this protocol to various UIView subclassess.
+That looks like a cool protocol that will make us look like we know what we are doing. 
+Let's now apply this protocol to various UIView subclassess to build up our library.
 
 ```swift
 class MyLabel: UILabel, HeaderViewProtocol {
@@ -82,20 +85,28 @@ class MyButton: UIButton, HeaderViewProtocol {
 }
 ```
 
-Simple enough. Now, I want to make an array of `HeaderViewProtocol` elements so that I can later insert them into a `UICollectionView`.
+Simple enough. I just successfully abstracted the idea of a class that can be used as a `HeaderView` with a single protocol.
+Now, I want to make an array of `HeaderViewProtocol` elements so that I can later insert them into a `UICollectionView`.
 
 ```swift
-// Uh.. what's up with the UIStackView?
-// I wanted an array of HeaderViewProtocols...
 let elements = [MyLabel(), MyButton(), UIStackView()]
 ```
 
-To compose classes and protocols to make a type, we could have done `UIView<HeaderViewProtocol>` in Objective-C. But in Swift 3, you can't.
-
-**Note: you can in Swift 4 with class and subtype existentials by doing**
+Wait.. `UIStackView` isn't a `HeaderViewProtocol` but why does the compiler not raise any errors?
+If you look at `elements` type, the Swift compiler tells us that it's just a `[UIView]` and not an array of `UIView`s that conform to `HeaderViewProtocol`.
+You could go ahead and try things like
 
 ```swift
-let elements: HeaderViewProtocol & UIView
+let elements : [HeaderViewProtocol] = [MyLabel(), MyButton(), UIStackView()]
+let elements : [UIView<HeaderViewProtocol>] = [MyLabel(), MyButton(), UIStackView()]
+```
+
+but nothing works because there is not a way to express a class that conforms to a protocol type in Swift 3.
+We could have done `UIView<HeaderViewProtocol>` in Objective-C but that's a whole different story.
+
+> **Note**: turns out you can do this in **Swift 4** with class subtype existentials but this doesn't really change anything
+```swift
+let elements: [HeaderViewProtocol & UIView]
 ```
 
 So in Swift 3, we need to go ahead and create a type eraser like this.
@@ -118,12 +129,13 @@ Ok, that's a lot of code to keep the compiler happy. Anyway, we can now go ahead
 ```swift
 let elements = [AnyHeaderView(MyLabel()), AnyHeaderView(MyButton())]
 ```
+
 ## Value Oriented Approach
 > But instead of **passing in a type that promises things, couldn't we just pass the things we promised?**
 
 Read that again and think about that for a second.
 
-Let's make a type that can wrap all the things we promised.
+And to do just that, let's make a type that can wrap all the things we promised into a struct.
 
 ```swift
 struct HeaderView<T>{
@@ -144,16 +156,14 @@ let imageView = UIImageView()
 let imageHeader = HeaderView<UIImage>(view: imageView ) { img in
     imageView.image = img
 }
-
-// Displays error! The type safety we wanted!!
-let elements = [labelHeader, imageHeader]
 ```
 Using a struct instead of a protocol halved the code size. Once implemented, the solution seems almost too simple to be true that we wonder, "Why couldn't we think of this the first time?"
+The reason maybe because we came up with a solution to a problem we didn't even try tounderstand.
 
 > Pick the right tool for the job, not the other way around.
 
 # Conclusion
-If using protocols in your code is making you write unncessary code to keep the compiler quiet and satisfied, maybe you should consider using a struct / function values instead.
+If using protocols in your code is making you write unncessary code to keep the compiler quiet and satisfied, maybe you should consider using struct / function values instead.
 
 Here's a general rule of thumb.
 

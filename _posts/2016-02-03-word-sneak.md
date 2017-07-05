@@ -20,10 +20,10 @@ Here's a video clip of the game
   <iframe width="590" height="315" src="https://www.youtube.com/embed/9nBBgD0q6rA" frameborder="0" allowfullscreen></iframe>
 </div>
 
-I liked this game - *maybe too much* - and wanted to make it in to an app. So I did.
+I liked the game - *maybe too much* - and wanted to make it in to an app. So I did.
 
 # The Execution
-I grabbed my laptop and my iPod touch. I downloaded Xcode for the first time and started looking up stuff on Google. I was constantly on Stackoverflow, looking up things like how to make a `UIColor` from an RGB value and how to use Cocoapods. 
+I grabbed my laptop and my iPod touch. I downloaded Xcode for the first time and started looking up stuff on Google. I was constantly on Stackoverflow, looking up ways to make a `UIColor` from an RGB value and how to use Cocoapods. 
 
 A week before Winter break was over, I finished the app.
 
@@ -33,31 +33,31 @@ A week before Winter break was over, I finished the app.
 ![End game summary]({{ site.url }}/assets/word-sneak/word-5.png)
 
 # 😲😲😲 (Updated 2016)
-> This app is the **first app I ever made** and took **2 weeks to make**. And out of 5 apps I have made so far, **it has been the best selling one**. It sold (free/paid) about **500 copies per month**.
+> This app is the **first app I ever made** and took **2 weeks to finish**. And out of 5 apps I have made so far, **it has been the best selling one**. It sold (free/paid) about **500 copies per month**.
 
-Is it beginner's luck? I don't think so. I don't believe in luck. So, let's go scientific on this.
+Is it beginner's luck? I don't think so. I don't believe in luck. To find out why it sold well, let's go scientific on this.
 
 # Hypothesis
-The app was mediocre at best and lacked many features. The UI was not natural and the code was inefficient. The app itself could have not been the reason it succeeded.
+The app was mediocre at best and lacked many features. The UX was not natural and the code was ugly. The app itself could have not been the reason it succeeded.
 
 After some thought, I came to the conclusion that 
 
-> The app was very discoverable due to its name and people ended up buying it.
+> The app was **very discoverable** due to its name and people ended up buying it.
 
 # Supporting Argument
 My guess is that every time Jimmy Fallon did a corner of Word Sneak on his show, 500 people thought of the same thing I thought of; "It would be cool to play this on my iPhone/iPod."
 
-They went on to search for it on the App Store and what do you know, there's only one app name Word Sneak. Simple as that.
+They would then grab their iPhones and search on the App Store to find out that there is only one app with the name "Word Sneak". And because they are curious about the app, they would download it.
 
 # Conclusion
 **Your app's name is CRUCIAL.**
 
 If you name your app poorly, people are not going to find your app no matter how good it may be.
 
-This app was lucky in that it ended up getting free global scale advertisement thanks to Jimmy Fallon. But for most people, this won't be the case. So, I believe naming your application in the following format
+This app was lucky in the sense that it ended up getting free global scale advertisement thanks to Jimmy Fallon. But for most people, this won't be the case. So, I believe naming your application in the following format
 
 ```
 [catchy name] - "8 words describing your app with a key adjective/verb"
 ```
 
-is a good way to make it discoverable.
+is a good first step towards making your app more discoverable.
