@@ -3,6 +3,7 @@ layout: post
 title:  "Swift Sucess Enums"
 date:   2016-02-05 10:49:23 +0900
 description: Handle errors without optionals
+comments: true
 tags: 
 - swift
 ---

@@ -3,6 +3,7 @@ layout: post
 title:  "🔈 Swift Talk: Limiting the use of Protocols"
 date:   2017-06-29 13:03:23 +0900
 description: My first Swift talk
+comments: true
 tags: 
 - swift 
 - talk

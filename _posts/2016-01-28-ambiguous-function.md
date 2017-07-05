@@ -3,6 +3,7 @@ layout: post
 title:  "The Ambiguous Function"
 date:   2016-01-28 11:49:23 +0900
 description: "The angelic operator"
+comments: true
 tags: 
 - AI 
 - lisp

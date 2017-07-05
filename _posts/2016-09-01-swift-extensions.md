@@ -3,6 +3,7 @@ layout: post
 title:  "Different ways to use Swift Extensions"
 date:   2016-09-01 20:21:23 +0900
 description: "Content may be controversial"
+comments: true
 tags: 
 - swift 
 - extensions

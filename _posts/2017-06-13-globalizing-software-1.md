@@ -3,6 +3,7 @@ layout: post
 title:  "Globalizing Software"
 date:   2017-06-13 15:49:23 +0900
 description: UI shouldn't uniform for all countries.
+comments: true
 tags:
 -  ui
 ---
