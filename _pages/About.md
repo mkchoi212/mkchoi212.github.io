@@ -6,7 +6,7 @@ permalink: /about/
 Hi, I'm Mike and I live in Seoul, Korea. Thanks for visiting my site.
 
 I build iOS / Mac apps, dabble in other cool programming languages and write
-about software development when I have the time. More information can be found through [LinkedIn](https://www.linkedin.com/in/mikejschoi/).
+about software development when I have the time. More information can be found through <a href="https://www.linkedin.com/in/mikejschoi" data-network="LinkedIn" data-proofer-ignore>LinkedIn.</a>
 
 I am also actively looking for an internship. [Email](mailto:mkchoi212@icloud.com) me and I will be happy to
 send you my resume.
@@ -23,6 +23,6 @@ I'd love to hear your feedback on this site and my work.
 
 ## Etcetera
 
-- [Instagram](https//www.instagram.com/mikejschoi/) for 📸
+- [Instagram](https://www.instagram.com/mikejschoi/) for 📸
 - [Facebook](https://www.facebook.com/mikejchoijr) for 🕺
 
