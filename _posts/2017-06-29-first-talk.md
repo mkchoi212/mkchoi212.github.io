@@ -9,16 +9,21 @@ tags:
 - talk
 ---
 
-**TL;DR** (🧀 ❝ ❗)
-> Practice like it's real. So when it's real, it's just like practice
+**TL;DR** Practice like it's real. So when it's real, it's just like practice
 
 # Product first
 <div class="web-container">
   <iframe src="https://www.slideshare.net/MikeJSChoi/slideshelf" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 </div>
 
+![]({{ site.url }}/assets/let_us_go/talk_1.jpg)
+![]({{ site.url }}/assets/let_us_go/talk_2.jpg)
+![]({{ site.url }}/assets/let_us_go/talk_3.jpg)
+![]({{ site.url }}/assets/let_us_go/talk_4.jpg)
+*Credits to these awesome photos go to* [@gbmksquare](https://twitter.com/gbmKSquare)
+
 # The Talk
-The talk's topic was...
+The topic of the talk was...
 > Using protocols everywhere in Swift is not a good thing.
 
 ## Protocols?
@@ -186,3 +191,4 @@ The talk was held in Korea, at one of [Kakao's buildings](http://www.kakao.com/m
 My flight landed the day before the conference so I was sleep deprived and so tired that I couldn't really say all the things I had in my head. I was not prepared for this and maybe I was almost arrogant to think that I would be able to pull this off.
 
 Oh well, at least I learned something from this. At least I won't make the same mistake for my next talk! 🤦‍♂️
+
