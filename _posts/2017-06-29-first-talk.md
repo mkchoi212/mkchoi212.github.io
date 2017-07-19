@@ -12,9 +12,8 @@ tags:
 **TL;DR** Practice like it's real. So when it's real, it's just like practice
 
 # Product first
-<div class="web-container">
-  <iframe src="https://www.slideshare.net/MikeJSChoi/slideshelf" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-</div>
+
+<iframe src="https://www.slideshare.net/MikeJSChoi/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 
 ![]({{ site.url }}/assets/let_us_go/talk_1.jpg)
 ![]({{ site.url }}/assets/let_us_go/talk_2.jpg)
