@@ -9,7 +9,7 @@ tags:
 - swift
 ---
 
-If you haven't read the first part of this post, I recommend you to [read it here first]( {{ site.baseurl }}{% post_url 2017-07-17-transducers %} ) to see how transducers work. If you don't care about that kind of stuff, read on.
+If you haven't read the first part of this post, I recommend you to [read it here first]( {{ site.url }}{% post_url 2017-07-17-transducers %} ) to see how transducers work. If you don't care about that kind of stuff, read on.
 
 # Performance
 So, transducers look cool and all but.. is it fast? To see how fast it is, I will compare various implementations of transducers with `map`, `filter`, and `reduce` that are provided by the Swift Standard Library. And let's throw in an imperative version of the loop into the list

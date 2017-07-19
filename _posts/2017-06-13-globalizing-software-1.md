@@ -62,5 +62,5 @@ It's almost as if an American car company tries to export a car to England after
 
 What I'm trying to say is that the **UI** also has to adapt to the target culture.
 
-Check out the **[next blog post]({{ site.baseurl }}{% post_url 2017-06-13-globalizing-software-2 %})** to find out how to do this.
+Check out the **[next blog post]({{ site.url }}{% post_url 2017-06-13-globalizing-software-2 %})** to find out how to do this.
 

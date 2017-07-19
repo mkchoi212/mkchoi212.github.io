@@ -292,4 +292,4 @@ The array was created after going through the range only `n` times!
 We managed to apply multiple transformations to an array whilst in full control of the reduction process! In addition, it looks pretty as hell. Here's a link to the [git repo containing the .playground file](https://github.com/mkchoi212/Transducers) if you want to play around with it.
 
 
-For some of you, Swift's `lazy` may have come into mind while reading this post. Don't worry as in the [next]({{ site.baseurl }}{% post_url 2017-07-18-transducers-pt2 %}) post, we will look and compare transducer's performance and see how they can be used in the real world.
+For some of you, Swift's `lazy` may have come into mind while reading this post. Don't worry as in the [next]({{ site.url }}{% post_url 2017-07-18-transducers-pt2 %}) post, we will look and compare transducer's performance and see how they can be used in the real world.

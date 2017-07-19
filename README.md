@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/mkchoi212/mkchoi212.github.io.svg?branch=master)](https://travis-ci.org/mkchoi212/mkchoi212.github.io)
 
 # 0xDEADBEEF
-A [blog](http://sickaf.xyz) built with Jekyll, deployed on Github Pages.
+A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 
 # Posts
 1. The Ambiguous Function
@@ -12,8 +12,9 @@ A [blog](http://sickaf.xyz) built with Jekyll, deployed on Github Pages.
 6. Swift Sucess Enums
 7. Globalizing Software
 8. Globalizing Software (Cont.)
-9. 🔈 Swift Talk: Limiting the use of Protocols (Most Recent)
-
+9. 🔈 Swift Talk: Limiting the use of Protocols 
+10. Transducers in Swift
+11. Transducers in Swift II **(Most Recent)**
 
 # Usage
 ```
