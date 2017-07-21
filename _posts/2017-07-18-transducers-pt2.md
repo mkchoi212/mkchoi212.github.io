@@ -77,18 +77,25 @@ Well, it looks like our implementation performed about the same as Apple's imple
 While at it, let's benchmark an imperative version.
 
 ```swift
-var res = 0
-for i in input where i % 2 == 0 {
-   res += (i + 1)
+// EDITED 2017.07.21
+// Return from @inline(never) because compiler is very aggressive about
+// disregarding results that are not used
+
+@inline(never) func loop(input: [Int]) -> Int {
+    var res = 0
+    for i in input where i % 2 == 0 {
+        res += (i + 1)
+    }
+    return res
 }
 ```
 
 ![Imperative]({{ site.url }}/assets/transducers/imperative.png)
 
-Seems like the Swift compiler just optimized the for-loop away... But no one uses for-loops anymore, right??
+Turns out `lazy` is as speedy as an imperative loop. 
 
 {: .center}
-![Right??](https://media.giphy.com/media/10JLfyir1DEesM/giphy.gif)
+![Right??](http://www.reactiongifs.com/wp-content/uploads/2013/03/thumbs-aloft.gif)
 
 # So What?
 > **Transducers may be as fast as Swift's `LazyCollection` but is highly inefficient.**
