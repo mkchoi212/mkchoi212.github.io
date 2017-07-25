@@ -95,7 +95,7 @@ While at it, let's benchmark an imperative version.
 Turns out `lazy` is as speedy as an imperative loop. 
 
 {: .center}
-![Right??](http://www.reactiongifs.com/wp-content/uploads/2013/03/thumbs-aloft.gif)
+![Right??](https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif)
 
 # So What?
 > **Transducers may be as fast as Swift's `LazyCollection` but is highly inefficient.**

@@ -13,7 +13,19 @@ tags:
 
 # Product first
 
-<iframe src="https://www.slideshare.net/MikeJSChoi/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=84797675741";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<center><div class="fb-post" data-href="https://www.facebook.com/realmkr/posts/1225888860872574" data-width="500" data-show-text="true"><blockquote cite="https://www.facebook.com/realmkr/posts/1225888860872574" class="fb-xfbml-parse-ignore"><p>Swift&#xb2c8;&#xae4c; &#xbb34;&#xc870;&#xac74; &#xd504;&#xb85c;&#xd1a0;&#xcf5c;&#xc744; &#xc368;&#xc57c; &#xd560;&#xae4c;&#xc694;? &#x1f914;
+&#xd504;&#xb85c;&#xd1a0;&#xcf5c;&#xc744; &#xc81c;&#xb300;&#xb85c; &#xc0ac;&#xc6a9;&#xd558;&#xb294; &#xbc29;&#xbc95;&#xc744; &#xc54c;&#xb824;&#xb4dc;&#xb9bd;&#xb2c8;&#xb2e4;!</p><a href="https://www.facebook.com/realmkr/">Realm Korea</a>에 의해 게시 됨&nbsp;<a href="https://www.facebook.com/realmkr/posts/1225888860872574">2017년 7월 24일 월요일</a></blockquote></div></center>
+
 
 ![]({{ site.url }}/assets/let_us_go/talk_1.jpg)
 ![]({{ site.url }}/assets/let_us_go/talk_2.jpg)
@@ -180,8 +192,6 @@ Here's a general rule of thumb.
 | Used a lot? (data source, delegate)              | Protocol |
 
 # About the talk
-<blockquote class="embedly-card"><h4><a href="https://iosdevkor.github.io/let_us_go_2017_summer/">let us: Go!</a></h4><p>iOS Developers Korea 세미나 let us: Go!</p></blockquote>
-<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
 
 This was my first ever programming talk. My content was very techinal and the talk had some live coding in the middle. So naturally, I was nervous.
 
