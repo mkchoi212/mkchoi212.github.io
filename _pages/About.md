@@ -3,7 +3,7 @@ layout: content
 title: About
 permalink: /about/
 ---
-Hi, I'm Mike and I live in Seoul, Korea. Thanks for visiting my site.
+Hi, I'm Mike and I'm a university student & developer. Thanks for visiting my site.
 
 I build iOS / Mac apps, dabble in other cool programming languages and write
 about software development when I have the time. More information can be found through <a href="https://www.linkedin.com/in/mikejschoi" data-network="LinkedIn" data-proofer-ignore>LinkedIn.</a>

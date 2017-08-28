@@ -4,6 +4,7 @@ rvm:
 
 install:
   - bundle install
+
 script: 
   - bundle exec jekyll build 
   - htmlproofer --assume-extension --alt-ignore '/.*/' ./_site
