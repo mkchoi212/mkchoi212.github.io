@@ -14,7 +14,10 @@ A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 8. Globalizing Software (Cont.)
 9. 🔈 Swift Talk: Limiting the use of Protocols 
 10. Transducers in Swift
-11. Transducers in Swift II **(Most Recent)**
+11. Transducers in Swift II
+12. Contributing to Swift
+13. Contributing to Swift 2
+14. Reentrant and multithreaded code **(Most Recent)**
 
 # Usage
 ```
