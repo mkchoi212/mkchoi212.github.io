@@ -13,6 +13,10 @@ permalink: /projects/
 - [Habitats](https://github.com/mkchoi212/Habitats) - iOS app for Habitats for Humanity shack bidding charity event
 - [Word Sneak](https://github.com/mkchoi212/Wordsneak) - iOS card game based on a segment from [Late Night with Jimmy Fallon](https://www.youtube.com/watch?v=9nBBgD0q6rA) [(blog post)](https://www.deadbeef.me/2016/02/word-sneak)
 
+# Hacks
+- [CrowdSense](https://github.com/mkchoi212/crowd_sense)
+- [Shovel](https://github.com/muinmomin/vision) - [🎉 1st place](https://twitter.com/EEP_TAMU/status/932409691350724608)
+
 # Talks
 - [Let us go: 2017 Swift Conf @ Seoul, Korea](https://iosdevkor.github.io/let_us_go_2017_summer_review/) - Limiting the use of protocols [(blog post)](https://www.deadbeef.me/2017/06/first-talk) [(video)](https://news.realm.io/kr/news/understanding-swift-protocol/)
 
