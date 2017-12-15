@@ -18,7 +18,8 @@ A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 12. Contributing to Swift
 13. Contributing to Swift 2
 14. Reentrant and multithreaded code **(Most Recent)**
-15. Monoids on steroids **(Most Recent)**
+15. Monoids on steroids
+16. RSS == Really Sucky Syndrome  **(Most Recent)**
 
 # Usage
 ```
