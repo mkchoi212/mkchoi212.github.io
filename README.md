@@ -19,7 +19,8 @@ A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 13. Contributing to Swift 2
 14. Reentrant and multithreaded code
 15. Monoids on steroids
-16. RSS == Really Sucky Syndrome  **(Most Recent)**
+16. RSS == Really Sucky Syndrome
+17. Things we can learn from Microsoft **(Most Recent)**
 
 # Usage
 ```
