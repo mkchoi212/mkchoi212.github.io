@@ -21,7 +21,7 @@ So… here are **three lessons we can all learn from Microsoft during the 1980's
 
 ## Lesson #1. Optimize the most common operations
 
-Before you quote Don Knuth, here is a story of how Microsoft Word became the most popular word processing document in the world.
+Before you quote Don Knuth, here is a story of how Microsoft Word became the most popular word processor in the world.
 
 
 
@@ -65,11 +65,11 @@ Microsoft's Setup/Upgrade team figured out that every single user had a "deal-br
 
 ![](https://media.giphy.com/media/nAZ3JTRUYiis0/giphy.gif)
 
-Excuse my poor attempt to reference Glengarry Glen Ross but the message still stands; Always Be Considerate! Unlike Alec Baldwin here, I am not saying you shouldn't be considerate of the people you are trying to sell houses to. Instead, you should be considerate to the end users of your software.
+Excuse my poor attempt to reference Glengarry Glen Ross but the message still stands; Always Be Considerate! Unlike Alec Baldwin here, I am not saying you should be considerate to the people you are trying to sell houses to. Instead, you should be considerate to the end users of your software.
 
 
 
-When Microsoft wanted to make a scripting language for Excel users, they started a project called Visual Basic for Applications. In the beginning, the developers had to decide whether if they wanted the program to be *statically (strong) typed* or *dynamically (weak) typed*. Personally, I am in the statically typed languages camp as I love using Swift and Golang. These [two](http://blog.cleancoder.com/uncle-bob/2017/01/11/TheDarkPath.html) [posts](http://elbenshira.com/blog/the-end-of-dynamic-languages/) do a better job than me describing each side of the argument so I highly recommend you to read those when you have the time.
+When Microsoft wanted to make a scripting language for Excel users, they started a project called Visual Basic for Applications. In the beginning, the developers had to decide whether if they wanted the language to be *statically (strong) typed* or *dynamically (weak) typed*. Personally, I am in the statically typed languages camp as I love using Swift and Golang. These [two](http://blog.cleancoder.com/uncle-bob/2017/01/11/TheDarkPath.html) [posts](http://elbenshira.com/blog/the-end-of-dynamic-languages/) do a better job than me describing each side of the argument so I highly recommend you to read those when you have the time.
 
 >  TL;DR The main gist of the argument is that statically typed languages allow you to find errors at compile time while dynamically typed languages allow you to find errors during runtime.
 
