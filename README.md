@@ -20,7 +20,8 @@ A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 14. Reentrant and multithreaded code
 15. Monoids on steroids
 16. RSS == Really Sucky Syndrome
-17. Things we can learn from Microsoft **(Most Recent)**
+17. Things we can learn from Microsoft
+18. Common Gotchas in Go **(Most Recent)**
 
 # Usage
 ```
