@@ -4,6 +4,8 @@ title: Projects
 permalink: /projects/
 ---
 
+- [Fix All Conflicts](https://github.com/mkchoi212/fac) - command-line interface for fixing git merge conflicts
+- [CircularCrownSelector](https://github.com/mkchoi212/CircularCrownSelector) - watchOS selection UI
 - [LBaC-Swift](https://github.com/mkchoi212/LBAC-Swift) - [Let's Build a Compiler](https://compilers.iecc.com/crenshaw/) translated to Swift Playgrounds
 - [bitbuf](https://github.com/mkchoi212/bitbuf) - C API for creation and analysis of binary data
 - [Paper](https://github.com/mkchoi212/paper-jekyll-theme) - Jekyll theme used in my personal blog
