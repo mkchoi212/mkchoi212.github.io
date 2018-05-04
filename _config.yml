@@ -1,10 +1,11 @@
 # Site settings
 title: "0xDEADBEEF"
 description: > 
-    Hi, I'm Mike. Here, I mainly write about Swift and software on Apple platforms but I dabble.
+    Hi, I'm Mike. Here, I write about Swift, Go, and random computer, life musings.
+
 author: Mike JS. Choi
 email: mkchoi212@icloud.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: ""
 url: "https://www.deadbeef.me" # the base hostname & protocol for your site
 twitter_username: bananamlkshake2
 github_username:  mkchoi212
