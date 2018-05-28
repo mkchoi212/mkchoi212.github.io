@@ -19,7 +19,7 @@ The process was quite fun and I learned a lot about Go in the process. So, to wr
 ![](http://www.confusedcoders.com/wp-content/uploads/2016/10/golang-1.jpg)
 > Gophers can be quite aggressive sometimes.
 
-# ⚠️ #1. Range
+# ⚠️ 1.) Range
 
 The `range` function is one of the most commonly used functions in Go. Here's a sample use case of the `range` function. Note that for some demented reason, we decided to make all the animals in the zoo have `999` legs.
 ```go
@@ -56,11 +56,11 @@ The above code looks innocent enough. However, you may be surprised to find that
 -> After update  [{Dog 4} {Chicken 2} {Snail 0}] 🚨🚨🚨 
 ```
 
-#### Lesson
+### Lesson
 
 > Value property of `range` (stored here as `animal`) is a **copy of the value from `zoo`, not a pointer to the value in `zoo`.**
 
-#### 🛠️ The Fix
+### The Fix
 
 In order to modify an element within the array, we must change the element via its **pointer**.
 
@@ -73,7 +73,7 @@ This may look quite trivial but you may be surprised to find this as a one of th
 
 [>> Go playground #1 for you to play around in](https://play.golang.org/p/jhL_MNbXnPC)
 
-# ⚠️ #2. The … thingy
+# ⚠️ 2.) The … thingy
 
 You may have used the `…` keyword in the C programming language to create a [variadic function](https://www.gnu.org/software/libc/manual/html_node/Variadic-Functions.html); variadic function is a function that takes a variable number or type of arguments.
 
@@ -116,7 +116,7 @@ file.txt : line 49
 
 You'd think that the compiler would throw an error here for using the variadic parameter `a` in a wrong way. But notice how `fmt.Sprintf` just used the first argument in `a ` without throwing a fit.
 
-#### Lesson
+### Lesson
 
 > In Go, **variadic parameters are converted to slices by the compiler**
 
@@ -129,13 +129,13 @@ for _, elem := range a {
 }
 ```
 
-#### 🛠️ The Fix
+### The Fix
 
 > **Remember to type ALL THREE DOTS whenever using variadic parameters!**
 
 [>> Go playground #2 for you to play around in](https://play.golang.org/p/303g8_1IVFD)
 
-# ⚠️ #3. Slicing
+# ⚠️ 3.) Slicing
 If you have done your fair share of slicing in Python, you may remember that slicing in Python gives you a new list with just the references to the elements copied over. This property allows for code like this in Python.
 
 ```python
@@ -166,11 +166,11 @@ func main() {
 [999 2]
 ```
 
-#### Lesson
+### Lesson
 
 > In Go, **a slice shares the same backing array and capacity as the original.** So if you change an element in the slice, the original contents are modified as well.
 
-#### 🛠️ The Fix
+#### The Fix
 
 If you want to get an independent slice, you have two options.
 
