@@ -21,7 +21,8 @@ A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 15. Monoids on steroids
 16. RSS == Really Sucky Syndrome
 17. Things we can learn from Microsoft
-18. Common Gotchas in Go **(Most Recent)**
+18. Common Gotchas in Go 
+19. Go test your tests in Go with Go Tests **(Most Recent)**
 
 # Usage
 ```
