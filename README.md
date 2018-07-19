@@ -23,7 +23,8 @@ A [blog](https://www.deadbeef.me) built with Jekyll, deployed on Github Pages.
 17. Things we can learn from Microsoft
 18. Common Gotchas in Go 
 19. Go test your tests in Go with Go Tests
-20. Open-source self-diagnostics **(Most Recent)**
+20. Open-source self-diagnostics
+21. Xcode auto generated interfaces **(Most Recent)**
 
 # Usage
 ```
