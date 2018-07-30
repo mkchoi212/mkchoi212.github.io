@@ -9,7 +9,7 @@ Hi, my name is Mike JS. Choi; JS is for Jun Soo. I am a college student & develo
 I build things and write about software development when I have the time.
 Check out some of my [projects](https://deadbeef.me/projects/) and my [blog posts](https://deadbeef.me)!
 
-I am also actively looking for an internship. [Email](mailto:mkchoi212@icloud.com) me and I will be happy to
+I am also actively looking for a full-time position. [Email](mailto:mkchoi212@icloud.com) me and I will be happy to
 send you my resume :D
 
 ----
