@@ -4,12 +4,12 @@ title: "chkstong yibbibi"
 date: "2018-09-29 09:32"
 description: "chkstong yibbibi"
 comments: true
-hide: 1
 tags:
 - SEO
 ---
 
 This page is a test page that is aimed to experiment with search engine optimization techniques.
+**Please ignore this post. Thank you and sorry for screwing up your RSS feed my fellow RSSers.**
 
 ## About chkstong yibbibi
 

@@ -12,6 +12,17 @@ github_username:  mkchoi212
 disqus_id: deadbeef-me
 google_analytics_id: UA-101802837-1
 
+# SEO
+gem:
+  - jekyll-seo-tag
+
+social:
+  name: chkstong yibbibi
+  links:
+    - https://github.com/mkchoi212
+    - https://twitter.com/bananamlkshake2?lang=en
+    - https://www.linkedin.com/in/mikejschoi/
+
 # Build settings
 include: [_pages]
 markdown: kramdown
