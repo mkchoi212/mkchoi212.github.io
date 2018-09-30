@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Go test your tests in Go with go test - 0xDEADBEEF</title>
+    <meta name="description" content="Today, we are going to talk about something that is boring… but necessary; tests.">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2018/05/go-test">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Go test your tests in Go with go test | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Go test your tests in Go with go test" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Test coverage: 42.24%" />
+<meta property="og:description" content="Test coverage: 42.24%" />
+<link rel="canonical" href="https://www.deadbeef.me/2018/05/go-test" />
+<meta property="og:url" content="https://www.deadbeef.me/2018/05/go-test" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-27T20:17:11-05:00" />
+<script type="application/ld+json">
+{"description":"Test coverage: 42.24%","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2018/05/go-test","headline":"Go test your tests in Go with go test","dateModified":"2018-05-27T20:17:11-05:00","datePublished":"2018-05-27T20:17:11-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2018/05/go-test"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Go test your tests in Go with go test</h1>
+        <p class="c-article__time"><time datetime="2018-05-27T20:17:11-05:00" itemprop="datePublished">May 27, 2018</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">go</li>
+    
+      <li class="c-tag">testing</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p>Today, we are going to talk about something that is boring… but necessary; tests.</p>
+
+<p>But you are probably tired of reading blog posts that talk about <em>“Why testing is important”, “Why your thing should have tests”, and “Top 5 reasons you should adopt test-driven development”</em>. So, instead of writing about the usual “You need tests because it will blah your blah with blah because of blah”, I want to talk about something else; <strong>how to make writing tests not suck as much.</strong></p>
+
+<p>Here are some tips and tricks I picked up while writing tests for <a href="https://github.com/mkchoi212/fac">fac</a>.</p>
+
+<h2 id="1-current-testing-directory">1. Current Testing Directory</h2>
+
+<p>Here is a fun fact; when you run <code class="highlighter-rouge">go test</code> for a package, the test binary will be run within the package being tested.</p>
+
+<p>Allow me to demonstrate. Assume your project directory is setup like this</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>project
+└── server
+    ├── server.go
+    └── server_test.go
+</code></pre>
+</div>
+
+<p>And your <code class="highlighter-rouge">server_test.go</code> looks like this</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">server</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+	</span><span class="s">"os"</span><span class="x">
+	</span><span class="s">"testing"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">TestCoolServerStuff</span><span class="p">(</span><span class="n">t</span><span class="x"> </span><span class="o">*</span><span class="n">testing</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+	</span><span class="n">wd</span><span class="p">,</span><span class="x"> </span><span class="n">_</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">os</span><span class="o">.</span><span class="n">Getwd</span><span class="p">()</span><span class="x">
+	</span><span class="n">t</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="n">wd</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>If you run this from your root <code class="highlighter-rouge">project</code> directory, you will get the following output</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>➜ <span class="nb">pwd</span>
+/Users/mikechoi/src/go/src/github.com/mkchoi212/project
+
+➜ go <span class="nb">test</span> -v
+<span class="o">===</span> RUN   TestCoolServerStuff
+--- PASS: TestCoolServerStuff <span class="o">(</span>0.00s<span class="o">)</span>
+          server_test.go:10: github.com/mkchoi212/project/server
+PASS
+ok        github.com/mkchoi212/project/server        0.007s
+</code></pre>
+</div>
+
+<p>Notice that the log says <code class="highlighter-rouge">github.com/mkchoi212/project/server</code> and not whatever <code class="highlighter-rouge">pwd</code> said.</p>
+
+<h2 id="2-testdata-is-ignored">2. testdata is ignored</h2>
+
+<p>According to <a href="https://golang.org/cmd/go/#hdr-Package_lists">this Go documentation</a>,</p>
+
+<blockquote>
+  <p>Directory and file names that begin with “.” or “_” are ignored by the go tool, as are directories named “testdata”.</p>
+</blockquote>
+
+<p>So, if you need mock files to test something - such as <code class="highlighter-rouge">response.json</code> for your networking functions - you can place it in <code class="highlighter-rouge">package_directory/testdata/response.json</code>. Now, you can easily load the mock files like so</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="n">TestServerResponse</span><span class="p">(</span><span class="n">t</span><span class="x"> </span><span class="o">*</span><span class="n">testing</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="k">if</span><span class="x"> </span><span class="n">json</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">os</span><span class="o">.</span><span class="n">Open</span><span class="p">(</span><span class="s">"testdata/response.json"</span><span class="p">);</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+        </span><span class="n">doStuffWithNetworkResponse</span><span class="p">(</span><span class="n">json</span><span class="p">)</span><span class="x">
+        </span><span class="n">t</span><span class="o">.</span><span class="n">Log</span><span class="p">(</span><span class="s">"🎉"</span><span class="p">)</span><span class="x">
+    </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Notice that we are able to simple say <code class="highlighter-rouge">testdata/response.json</code> because of #1.</p>
+
+<h2 id="3-testhelper">3. testhelper</h2>
+
+<p>This is a simple concept but is very helpful when writing tests in Go. When writing code in Go, you probably have written thousands of lines of code that look like this</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">if</span><span class="x"> </span><span class="n">data</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">doSomethingCool</span><span class="p">();</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">doMoreCoolThingsHere</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>The trouble is that this is what 80% of statements you are going to tests are going to look like. After all, you are testing if something either didn’t return an error, is equal to something, and or didn’t crap out. Eventually, your testsuite will get filled with <code class="highlighter-rouge">if data, err := ....; err != nil</code> statements. So, the brilliant solution to this is <strong>to make helper functions</strong>.</p>
+
+<script src="https://gist.github.com/mkchoi212/730f09c9a2676803d34138da6d923db0.js"></script>
+
+<p>Instead of writing the code you saw previously with bunch of if-statements, you can now write the following.</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="n">TestCoolThing</span><span class="p">(</span><span class="n">t</span><span class="x"> </span><span class="o">*</span><span class="n">testing</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">data</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">doSomethingCool</span><span class="p">()</span><span class="x">
+    </span><span class="c">// Awesome</span><span class="x">
+    </span><span class="n">testhelper</span><span class="o">.</span><span class="n">Ok</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="p">)</span><span class="x">
+    
+    </span><span class="n">otherData</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">doSomethingAmazing</span><span class="p">()</span><span class="x">
+    </span><span class="n">testhelper</span><span class="o">.</span><span class="n">Ok</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="p">)</span><span class="x">
+
+    </span><span class="c">// This is really useful as well</span><span class="x">
+    </span><span class="n">testhelper</span><span class="o">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="x"> </span><span class="n">data</span><span class="p">,</span><span class="x"> </span><span class="n">otherData</span><span class="p">)</span><span class="x">	
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>And if a test fails for some reason, the helper functions will print out the error messages in red and pin-point the location where the test failed.</p>
+
+<h2 id="3-go-test-tricks">3. go test tricks</h2>
+
+<p>Here are some additional tips and tricks you can use while using <code class="highlighter-rouge">go test</code>.</p>
+
+<h4 id="test-all-packages-in-project-directory">Test all packages in project directory</h4>
+
+<p><code class="highlighter-rouge">./...</code> is the magic argument.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>➜ go <span class="nb">test
+</span>ok      github.com/mkchoi212/project              <span class="o">[</span>no <span class="nb">test </span>files]
+
+➜ go <span class="nb">test</span> ./...
+ok      github.com/mkchoi212/project              <span class="o">[</span>no <span class="nb">test </span>files]
+ok      github.com/mkchoi212/project/server       0.012s
+ok      github.com/mkchoi212/project/testhelper   <span class="o">[</span>no <span class="nb">test </span>files]
+</code></pre>
+</div>
+
+<h4 id="ignore-package-while-testing">Ignore package while testing</h4>
+
+<p>You might need this when you don’t necessarily need to test something or because you just want a higher code coverage percentage 😄</p>
+
+<blockquote>
+  <p>Notice <code class="highlighter-rouge">testhelper</code> is not being tested any more</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>➜ go <span class="nb">test</span> <span class="sb">`</span>go list ./... | grep -v <span class="s1">'testhelper'</span><span class="sb">`</span>
+ok      github.com/mkchoi212/project              <span class="o">[</span>no <span class="nb">test </span>files]
+ok      github.com/mkchoi212/project/server       0.012s
+</code></pre>
+</div>
+
+<h4 id="code-coverage-statistics">Code coverage statistics</h4>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>➜ go <span class="nb">test</span> --cover
+PASS
+coverage: 100.0% of statements
+ok      github.com/mkchoi212/project/server  0.011s
+</code></pre>
+</div>
+
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Jan 1, 2018</small>
+          <br>
+            <a class="no-hov" href="/2018/01/go-gotchas">&laquo; Common Gotchas in Go</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>Jun 22, 2018 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2018/06/oss">Open-source self-diagnostics &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2018/05/go-test';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2018/05/go-test'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

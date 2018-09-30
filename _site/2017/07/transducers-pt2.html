@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Transducers in Swift II - 0xDEADBEEF</title>
+    <meta name="description" content="If you haven’t read the first part of this post, I recommend you to read it here first to see how transducers work. If you don’t care about that kind of stuf...">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2017/07/transducers-pt2">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Transducers in Swift II | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Transducers in Swift II" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lazy performance evaluation" />
+<meta property="og:description" content="Lazy performance evaluation" />
+<link rel="canonical" href="https://www.deadbeef.me/2017/07/transducers-pt2" />
+<meta property="og:url" content="https://www.deadbeef.me/2017/07/transducers-pt2" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-18T10:13:00-05:00" />
+<script type="application/ld+json">
+{"description":"Lazy performance evaluation","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2017/07/transducers-pt2","headline":"Transducers in Swift II","dateModified":"2017-07-18T10:13:00-05:00","datePublished":"2017-07-18T10:13:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2017/07/transducers-pt2"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Transducers in Swift II</h1>
+        <p class="c-article__time"><time datetime="2017-07-18T10:13:00-05:00" itemprop="datePublished">Jul 18, 2017</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">functional-programming</li>
+    
+      <li class="c-tag">swift</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p>If you haven’t read the first part of this post, I recommend you to <a href="https://www.deadbeef.me/2017/07/transducers">read it here first</a> to see how transducers work. If you don’t care about that kind of stuff, read on.</p>
+
+<h1 id="performance">Performance</h1>
+<p>So, transducers look cool and all but.. is it fast? To see how fast it is, I will compare various implementations of transducers with <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">filter</code>, and <code class="highlighter-rouge">reduce</code> that are provided by the Swift Standard Library. And let’s throw in an imperative version of the loop into the list</p>
+
+<h2 id="setup">Setup</h2>
+<p>We will use <a href="https://github.com/lorentey/Attabench">Attabench</a>, an awesome benchmarking app made by <a href="https://twitter.com/lorentey">@lorentey</a> to generate all the pretty graphs.</p>
+
+<p>The tests will be based on three operations that will start with an array of random integers and</p>
+
+<ol>
+  <li>Increment by 1</li>
+  <li>Filter evens</li>
+  <li>Reduce by adding to 0</li>
+</ol>
+
+<h2 id="original-transducer-vs-stl">Original Transducer vs. STL</h2>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// STL</span>
+<span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span><span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="o">+</span><span class="p">))</span>
+
+<span class="c1">// Transducer</span>
+<span class="k">let</span> <span class="nv">_</span>  <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="kd">lazy</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">==&gt;</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)</span> <span class="o">==&gt;</span> <span class="nf">filtering</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p><img src="https://www.deadbeef.me/assets/transducers/comp.png" alt="Transducer (comp) vs. STL" /></p>
+
+<p>Here, we can clearly see that the STL’s version is faster. <em>But because we are using custom operators to chain operations, maybe the compiler isn’t able to do aggressive optimizations.</em> Let’s try this again without the custom operators.</p>
+
+<h2 id="transduers-no-custom-operators-vs-stl">Transduers (no custom operators) vs. STL</h2>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// STL</span>
+<span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span><span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="o">+</span><span class="p">))</span>
+
+<span class="c1">// Transducer</span>
+<span class="k">let</span> <span class="nv">_</span>  <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="nf">filtering</span> <span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)(</span><span class="o">+</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<p><img src="https://www.deadbeef.me/assets/transducers/without_comp.png" alt="Transducer (no comp) vs. STL" /></p>
+
+<p>Well, it seems like using operators to make things pretty cost quite a lot of performance. Without that extra overhead, we can see that our transducers beat Apple’s engineers!! 🎉🎉🎉</p>
+
+<h2 id="but-did-we">But did we???</h2>
+<p>Turns out Apple engineers thought about the problem of intermediate arrays and made this thing called <a href="https://developer.apple.com/documentation/swift/lazycollection">LazyCollection</a>. It’s the same old collection but implemented lazily.</p>
+
+<p>Here is Apple’s explanation of <code class="highlighter-rouge">LazyCollection</code>’s <code class="highlighter-rouge">lazy</code> property.</p>
+
+<blockquote>
+  <p>Use the lazy property when chaining operations to prevent intermediate operations from allocating storage, or when you only need a part of the final collection to avoid unnecessary computation.</p>
+</blockquote>
+
+<p>So… it does the same thing transducers do but with four letters…</p>
+
+<p class="center"><img src="https://media.giphy.com/media/tpwwhv1BLd31e/giphy.gif" alt="Welp" /></p>
+
+<p>Anyways, let’s go ahead and apply <code class="highlighter-rouge">lazy</code> to both STL and transducer versions of the code to see what happens.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// STL (lazy)</span>
+<span class="k">let</span> <span class="nv">_</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="kd">lazy</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span><span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="o">+</span><span class="p">))</span>
+
+<span class="c1">// Transducer (lazy)</span>
+<span class="k">let</span> <span class="nv">_</span>  <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="kd">lazy</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="nf">filtering</span> <span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)(</span><span class="o">+</span><span class="p">)))</span>
+</code></pre>
+</div>
+<p><img src="https://www.deadbeef.me/assets/transducers/lazy.png" alt="Lazy" /></p>
+
+<p>Well, it looks like our implementation performed about the same as Apple’s implementation. But when tested out on an iPhone 7, <strong>heap allocation of our version was much higher than the STL’s; transducers allocated x10 memory in the heap… 😞😞😞</strong></p>
+
+<p>While at it, let’s benchmark an imperative version.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// EDITED 2017.07.21</span>
+<span class="c1">// Return from @inline(never) because compiler is very aggressive about</span>
+<span class="c1">// disregarding results that are not used</span>
+
+<span class="kd">@inline(never)</span> <span class="kd">func</span> <span class="nf">loop</span><span class="p">(</span><span class="nv">input</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">input</span> <span class="k">where</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><img src="https://www.deadbeef.me/assets/transducers/imperative.png" alt="Imperative" /></p>
+
+<p>Turns out <code class="highlighter-rouge">lazy</code> is as speedy as an imperative loop.</p>
+
+<p class="center"><img src="https://media.giphy.com/media/XreQmk7ETCak0/giphy.gif" alt="Right??" /></p>
+
+<h1 id="so-what">So What?</h1>
+<blockquote>
+  <p><strong>Transducers may be as fast as Swift’s <code class="highlighter-rouge">LazyCollection</code> but is highly inefficient.</strong></p>
+</blockquote>
+
+<p>So when trying to come up with practical use cases for transducers…</p>
+
+<blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr">I think transducers are a cool idea but unnecessary in Swift (because we have lazy). Seems like forcing FP when it&#39;s not necessary :)</p>&mdash; Chris Eidhof (@chriseidhof) <a href="https://twitter.com/chriseidhof/status/885441861699203072">July 13, 2017</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="lessons">Lessons</h2>
+<ol>
+  <li>
+    <p><strong>Don’t force functional programming concepts into Swift.</strong> Swift is not a purely functional language. It’s a multi-paradigm language</p>
+  </li>
+  <li>
+    <p><strong>Grab a complicated functional programming language concept and try to implement it in your favorite programming language</strong> if you want a real taste of FP</p>
+  </li>
+  <li>
+    <p>Write more Swift code 😃</p>
+  </li>
+</ol>
+
+<p>Although transducers may not have much practicality, I feel like I took my first REAL steps into the world of functional programming. Reading “Little/Seasoned Schemer” didn’t leave me feeling like a true functional programmer but aching over how to implement transducers certainly did!</p>
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Jul 16, 2017</small>
+          <br>
+            <a class="no-hov" href="/2017/07/transducers">&laquo; Transducers in Swift</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>Aug 9, 2017 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2017/08/contributing-to-swift">Contributing to Swift &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2017/07/transducers-pt2';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2017/07/transducers-pt2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

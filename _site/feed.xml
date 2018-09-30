@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>0xDEADBEEF</title>
+    <description>Hi, I'm Mike. Here, I mainly write about Swift, Go, and random computer musings.  
+</description>
+    <link>https://www.deadbeef.me/</link>
+    <atom:link href="https://www.deadbeef.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 30 Sep 2018 13:22:32 -0500</pubDate>
+    <lastBuildDate>Sun, 30 Sep 2018 13:22:32 -0500</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>chkstong yibbibi</title>
+        <description>&lt;p&gt;This page is a test page that is aimed to experiment with search engine optimization techniques.
+&lt;strong&gt;Please ignore this post. Thank you and sorry for screwing up your RSS feed my fellow RSSers.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;about-chkstong-yibbibi&quot;&gt;About chkstong yibbibi&lt;/h2&gt;
+
+&lt;p&gt;chkstong yibbibi ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum varius venenatis quam, consectetur dignissim justo vestibulum et. Pellentesque dui ligula, dapibus quis lacinia in, ultricies sed nulla. Mauris pretium elementum enim vitae bibendum. Maecenas semper luctus est, et accumsan metus hendrerit nec. Nunc non urna pulvinar, accumsan velit iaculis, commodo ex. Praesent porta tempus ullamcorper. Cras fermentum fringilla mattis. Mauris malesuada feugiat nunc nec
+dapibus.&lt;/p&gt;
+
+&lt;p&gt;Phasellus malesuada facilisis placerat. Proin egestas leo enim, id finibus neque dapibus in. Fusce rutrum ornare mi id dapibus. Vestibulum aliquet vitae purus nec faucibus. Suspendisse ut lorem sit amet dolor pellentesque interdum. Morbi vel sollicitudin risus. Maecenas eros tortor, dignissim sed tempor at, lobortis ut turpis. Sed massa ipsum, maximus in odio at, imperdiet ultricies est. Quisque venenatis ante non nibh volutpat elementum. Nullam mollis diam quis odio facilisis sodales.
+Aliquam blandit justo nisl, vel gravida orci porta vel. Quisque at turpis purus.&lt;/p&gt;
+
+&lt;p&gt;Integer et consectetur ante. Suspendisse facilisis ipsum vel efficitur pharetra. Ut maximus varius felis ac sodales. Sed et justo ac risus pretium euismod. Aliquam a pretium mi. Nunc molestie est vel ante lobortis, et posuere tortor egestas. Suspendisse a lectus scelerisque, dignissim tellus sagittis, aliquet augue. Vivamus lacus nisl, congue et nulla ut, porttitor gravida quam. chkstong yibbibi pharetra erat feugiat tincidunt eleifend. Proin tellus massa, tempus in pharetra vel, tristique nec
+sapien. Pellentesque ultrices justo a ornare efficitur. Cras ullamcorper convallis metus, hendrerit mollis augue malesuada sed. Nam eget lobortis velit.&lt;/p&gt;
+
+&lt;p&gt;chkstong yibbibi sit amet vehicula ipsum. chkstong yibbibi porttitor turpis sit amet gravida pellentesque. Quisque dui lacus, porta ac aliquet scelerisque, fermentum viverra purus. Suspendisse potenti. Aenean rutrum feugiat sollicitudin. Nullam vitae volutpat neque. chkstong yibbibi nec nibh elementum, convallis enim ut, gravida tellus. Quisque auctor volutpat mauris, facilisis commodo odio cursus ut.&lt;/p&gt;
+
+&lt;p&gt;Duis a suscipit erat. chkstong yibbibi quis magna id dui placerat maximus at at nisi. Duis bibendum massa finibus tristique mollis. Vivamus in ornare orci. Curabitur augue purus, commodo et rhoncus quis, pellentesque in eros. Nullam rutrum nisi metus, vitae tincidunt nibh malesuada sed. Sed mattis pulvinar pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu mollis elit. Mauris est tellus, mollis vel dui at, lacinia auctor tellus.
+Maecenas consectetur, metus in scelerisque pellentesque, metus metus tincidunt orci, non viverra massa erat vel purus. Aenean fermentum mattis arcu sed vulputate. Fusce mauris est, ultricies commodo consequat quis, viverra vel quam. Aliquam libero odio, scelerisque nec lacinia at, volutpat et quam. chkstong yibbibi in dolor congue neque rutrum egestas.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Sep 2018 09:32:00 -0500</pubDate>
+        <link>https://www.deadbeef.me/2018/09/chkstong-yibbibi</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/09/chkstong-yibbibi</guid>
+        
+        <category>SEO</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Google Summer of Code Final Report Part 2</title>
+        <description>&lt;p&gt;To be honest, things get kind of boring when you just write tests. To fix this, I wanted to do something more…. visually pleasing.
+Here are some of the work I did with &lt;a href=&quot;https://github.com/videolan/vlc-ios&quot;&gt;VLC for iOS&lt;/a&gt;, which uses VLCKit as its backend :D&lt;/p&gt;
+
+&lt;h2 id=&quot;design&quot;&gt;Design&lt;/h2&gt;
+
+&lt;h4 id=&quot;1-tutorial-screens&quot;&gt;1. &lt;a href=&quot;https://www.figma.com/file/N1BNpVjtnU2vevYgICq1bWEK/VLC-Tutorial180710&quot;&gt;Tutorial screens&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This required a lot of bouncing off ideas from lead designer, &lt;a href=&quot;http://www.louiscurrie.co&quot;&gt;Louis&lt;/a&gt;. After about 3~4 feedback rounds from Louis, the designs started to take shape.&lt;/p&gt;
+
+&lt;p&gt;The purpose of the screens below are to teach the user the main features of VLC for iOS.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://www.deadbeef.me/assets/gsoc/tutorial.png&quot; alt=&quot;Tutorial screens&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;2-application-launch-screens&quot;&gt;2. &lt;a href=&quot;https://www.figma.com/file/fewdBwJ6f8jB1INf6Mx5buWW/VLC-Launch180626&quot;&gt;Application launch screens&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;With the new UI in the progress, the launchscreen was desperately in need of an upgrade. The design itself is simple but the number of different screens Apple requires is ridiculous!&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://www.deadbeef.me/assets/gsoc/launch.png&quot; alt=&quot;Launch screens&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And 11 more that look exactly the same!&lt;/p&gt;
+
+&lt;h2 id=&quot;pull-requests&quot;&gt;Pull Requests&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/28&quot;&gt;Automated framed screenshots&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/29&quot;&gt;Empty view for media library view&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/76&quot;&gt;Settings view&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/79&quot;&gt;CI: Cache installed pods&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/84&quot;&gt;Modally present About view&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/86&quot;&gt;Launchscreen: New design&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/91&quot;&gt;Settings: tableView section separator&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/98&quot;&gt;README: Add link to beginners guide&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/102&quot;&gt;Settings: Actionsheet&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/videolan/vlc-ios/pull/109&quot;&gt;Fix Settings view (closes #268)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sat, 04 Aug 2018 20:32:01 -0500</pubDate>
+        <link>https://www.deadbeef.me/2018/08/gsoc-2</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/08/gsoc-2</guid>
+        
+        <category>oss</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Google Summer of Code Final Report Part 1</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#premise&quot;&gt;Premise&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#vlckit-testsuite&quot;&gt;VLCKit TestSuite&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-add-singular-form-for-verbose-time-description&quot;&gt;1. Add singular form for verbose time description&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-setup-testing-schemes-in-xcode&quot;&gt;2. Setup testing schemes in Xcode&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-tests-vlctime&quot;&gt;3. Tests: VLCTime&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-create-rakefile&quot;&gt;4. Create Rakefile&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-setup-circleci&quot;&gt;5. Setup CircleCI&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6-enable-code-coverage-via-xccov&quot;&gt;6. Enable code coverage via xccov&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#7-setup-testing-schemes-for-vlckit&quot;&gt;7. Setup testing schemes for VLCKit&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#8-setup-testing-schemes-for-tvvlckittests&quot;&gt;8. Setup testing schemes for TVVLCKitTests&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#9-tests-vlcmedia&quot;&gt;9. Tests: VLCMedia&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#10-tests-add-video-samples&quot;&gt;10. Tests: Add video samples&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#11-tests-vlcaudio&quot;&gt;11. Tests: VLCAudio&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#12-project-organization&quot;&gt;12. Project organization&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#13-readme-reformat&quot;&gt;13. README: Reformat&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#14-readme-link-build-status-badge-with-master&quot;&gt;14. README: Link build status badge with master&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#15-vlclibrary-debuglogging-status-closes-186&quot;&gt;15. VLCLibrary: debugLogging status (closes #186)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#16-tests-vlclibrary&quot;&gt;16. Tests: VLCLibrary&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#17-vlcmediathumbnailer-upate-dimensions-fixes-183&quot;&gt;17. VLCMediaThumbnailer: Update dimensions (fixes #183)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#18-vlcmedialist-removemediaat-closes-182&quot;&gt;18. VLCMediaList: removeMediaAt (closes #182)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#19-tests-vlcmedialist&quot;&gt;19. Tests: VLCMediaList&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#20-tests-vlcmediathumbnailer&quot;&gt;20. Tests: VLCMediaThumbnailer&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#moving-forward&quot;&gt;Moving forward&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This summer, I participated in &lt;a href=&quot;https://summerofcode.withgoogle.com/about/&quot;&gt;Google Summer of Code&lt;/a&gt; with &lt;a href=&quot;https://www.videolan.org/&quot;&gt;VideoLAN&lt;/a&gt;. My personal project was to establish the much needed test-suite for &lt;a href=&quot;https://github.com/videolan/vlckit&quot;&gt;VLCKit&lt;/a&gt;, a generic multimedia library for audio or video playback needs on macOS, iOS and tvOS.&lt;/p&gt;
+
+&lt;p&gt;Before diving into the post, I would like to let you know that I will explain each pull request and why the said action was taken. This way, if you - the coherant reader - come by similar problems, you will know exactly what to do :D&lt;/p&gt;
+
+&lt;h1 id=&quot;premise&quot;&gt;Premise&lt;/h1&gt;
+
+&lt;p&gt;Before the project started, VLCKit was already available to the public via source code and &lt;a href=&quot;https://cocoapods.org/pods/VLCKit&quot;&gt;Cocoapods&lt;/a&gt;. However, even with over 80,000 downloads, and over 5,000 activate applications relying on it, the repo lacked a test-suite. My GSoC project aimed to solve this by integrating a test-suite along with a continuous integration workflow that would act as a safety net for any potential breakages.&lt;/p&gt;
+
+&lt;p&gt;Before listing all of my contributions, I would like to note that while my main task was to establish the said test-suite, I also decided to contribute to other projects within VideoLAN during the coding period. You can read about them in the &lt;a href=&quot;https://www.deadbeef.me/2018/08/gsoc-2&quot;&gt;second part&lt;/a&gt; of the series.&lt;/p&gt;
+
+&lt;h1 id=&quot;vlckit-testsuite&quot;&gt;VLCKit TestSuite&lt;/h1&gt;
+
+&lt;p&gt;Below is a list of pull requests that have been made throughout the GSoC coding period.&lt;/p&gt;
+
+&lt;h4 id=&quot;1-add-singular-form-for-verbose-time-description&quot;&gt;1. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/10&quot;&gt;Add singular form for verbose time description&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;To be honest, the big code base kinda scared me in the beginning. To overcome this, I went and looked for the &lt;strong&gt;easiest, simplest looking class.&lt;/strong&gt; After a bit of searching, I found &lt;code class=&quot;highlighter-rouge&quot;&gt;VLCTime.h&lt;/code&gt;, an &lt;code class=&quot;highlighter-rouge&quot;&gt;NSObject&lt;/code&gt; that represented the…. time. While browsing through the code, I found that its &lt;code class=&quot;highlighter-rouge&quot;&gt;verboseTimeDescription:&lt;/code&gt; function returned &lt;strong&gt;1 minutes 20 seconds&lt;/strong&gt; instead of &lt;strong&gt;1 minute 20 seconds&lt;/strong&gt;. It was really small but I had found my first bug 🎉&lt;/p&gt;
+
+&lt;p&gt;With &lt;a href=&quot;https://twitter.com/feepk&quot;&gt;@felix&lt;/a&gt;’s suggestion, I used Apple’s date component API. And voilà! My first PR was merged.&lt;/p&gt;
+
+&lt;h4 id=&quot;2-setup-testing-schemes-in-xcode&quot;&gt;2. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/11&quot;&gt;Setup testing schemes in Xcode&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This was a simple PR setting up the testing scheme within Xcode. But the big lesson in this PR is this,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A pull request should only &lt;strong&gt;deal with ONE thing and ONE thing only.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;3-tests-vlctime&quot;&gt;3. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/12&quot;&gt;Tests: VLCTime&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This was the first PR that added tests to the codebase. After much discussion with my mentors, all tests written from this point followed the &lt;a href=&quot;http://softwaretestingfundamentals.com/black-box-testing/&quot;&gt;blackbox&lt;/a&gt; method of testing.&lt;/p&gt;
+
+&lt;h4 id=&quot;4-create-rakefile&quot;&gt;4. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/14&quot;&gt;Create Rakefile&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;I wanted a script to expedite the process of building and testing. After having used &lt;a href=&quot;http://fastlane.tools&quot;&gt;fastlane&lt;/a&gt; not long ago in VLC-iOS, my mind went immediately to it. But considering fastlane has something like 20 dependencies, &lt;a href=&quot;https://twitter.com/_Caro_N&quot;&gt;@caro&lt;/a&gt; thought that it would be too much when we were only going to use one of fastlane’s many features.&lt;/p&gt;
+
+&lt;p&gt;I agreed and began to look for &lt;em&gt;lighter&lt;/em&gt; solutions. I eventually came across &lt;a href=&quot;https://github.com/PSPDFKit/PSPDFKitSwift&quot;&gt;PSPDFKitSwift&lt;/a&gt; made by the good folks at PSPDFKit. In the repo, PSPDFKit uses a &lt;a href=&quot;https://github.com/PSPDFKit/PSPDFKitSwift/blob/master/Rakefile&quot;&gt;Rakefile&lt;/a&gt; to easily compile, and release the framework.&lt;/p&gt;
+
+&lt;p&gt;Inspired by this, I basically copied what they did… but with additional tasks for testing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Lesson here? Never be satisfied with option #1. Look at other options and you will probably be surprised :D&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;5-setup-circleci&quot;&gt;5. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/15&quot;&gt;Setup CircleCI&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This was relatively easy thanks to CircleCI’s thorough documentation. And with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt; from the previous PR, &lt;code class=&quot;highlighter-rouge&quot;&gt;.circleci.yml&lt;/code&gt; ended up looking clean.&lt;/p&gt;
+
+&lt;h4 id=&quot;6-enable-code-coverage-via-xccov&quot;&gt;6. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/16&quot;&gt;Enable code coverage via xccov&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;I previously had used code coverage services like &lt;a href=&quot;https://codecov.io&quot;&gt;codecov&lt;/a&gt; and &lt;a href=&quot;http://coveralls.io&quot;&gt;coveralls&lt;/a&gt;. So, I suggested VLCKit use one of these services. But after &lt;a href=&quot;https://twitter.com/_Caro_N&quot;&gt;@caro&lt;/a&gt; mentioned that Apple had recently released &lt;code class=&quot;highlighter-rouge&quot;&gt;xccov&lt;/code&gt;, a code coverage report generator, I ended up integrating it in the aforementioned &lt;code class=&quot;highlighter-rouge&quot;&gt;Rakefile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;While xccov is very easy to integrate, its output is &lt;strong&gt;too hard to read and not visually pleasing.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To solve this, I decided to create a xccov prettifier called &lt;a href=&quot;https://github.com/mkchoi212/xcperfect&quot;&gt;xcperfect&lt;/a&gt;. Hopefully it can become a part of VLCKit once it becomes stable enough.&lt;/p&gt;
+
+&lt;h4 id=&quot;7-setup-testing-schemes-for-vlckit&quot;&gt;7. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/17&quot;&gt;Setup testing schemes for VLCKit&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Simple PR to setup Xcode schemes 😵&lt;/p&gt;
+
+&lt;h4 id=&quot;8-setup-testing-schemes-for-tvvlckittests&quot;&gt;8. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/18&quot;&gt;Setup testing schemes for TVVLCKitTests&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Once more 🙃&lt;/p&gt;
+
+&lt;h4 id=&quot;9-tests-vlcmedia&quot;&gt;9. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/19&quot;&gt;Tests: VLCMedia&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;The test here cover simple in &amp;amp; out style function with no internal mutations. The tests may look un-eventful, but &lt;strong&gt;make sure you cover all the edge cases. 😎&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;10-tests-add-video-samples&quot;&gt;10. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/23&quot;&gt;Tests: Add video samples&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;The question here was,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“How do we store test video assets in the repo?”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I will start by listing some of the options we considered and their pros &amp;amp; cons.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Just store it in the repo
+    &lt;ul&gt;
+      &lt;li&gt;Pro: Easy&lt;/li&gt;
+      &lt;li&gt;Con: Assets might get big and bloat the repo&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Git-LFS
+    &lt;ul&gt;
+      &lt;li&gt;Pro: Easy to setup and buying into Git’s infra&lt;/li&gt;
+      &lt;li&gt;Con: Github requires you to pay 💰&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Git-Submodules
+    &lt;ul&gt;
+      &lt;li&gt;Pro: Easy to setup and buying into Git’s infra&lt;/li&gt;
+      &lt;li&gt;Con: &lt;em&gt;“If you use git-submodules, you’ll have a bad time”&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Upload to server and download when building
+    &lt;ul&gt;
+      &lt;li&gt;Pro: Large reliable storage is available for FREE&lt;/li&gt;
+      &lt;li&gt;Con: Relies on network to start initial test&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And after consulting Twitter &lt;a href=&quot;https://twitter.com/Bananamlkshake2/status/1022417680928653312&quot;&gt;here&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/_Caro_N/status/1016293967787372544&quot;&gt;here&lt;/a&gt;, we ended up with a combination of few options&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Create a new repo called &lt;strong&gt;TestAssets&lt;/strong&gt; and clone it via a Shell script during Xcode project’s initial build via RunBuildPhase.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;11-tests-vlcaudio&quot;&gt;11. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/24&quot;&gt;Tests: VLCAudio&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;VLCAudio&lt;/code&gt; contains numerous internal state mutations. After initial doubts of whether blackbox testing was going work, this pull request proved that blackbox testing is going to work just fine.&lt;/p&gt;
+
+&lt;h4 id=&quot;12-project-organization&quot;&gt;12. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/25&quot;&gt;Project organization&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;The most satisfying thing ever is when git tells you…&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+31 **-980**
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;13-readme-reformat&quot;&gt;13. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/26&quot;&gt;README: Reformat&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;As &lt;a href=&quot;https://twitter.com/_Caro_N&quot;&gt;@caro&lt;/a&gt; would say,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“People judge repositories by its… cover”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Inspired by Swift’s Github repo, the README went through a major makeover.&lt;/p&gt;
+
+&lt;h4 id=&quot;14-readme-link-build-status-badge-with-master&quot;&gt;14. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/29&quot;&gt;README: Link build status badge with master&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;To make the README even more attractive, a table with various status badges was added. This allows the users to immediately know the status of the repo along with the latest version of the framework.&lt;/p&gt;
+
+&lt;h4 id=&quot;15-vlclibrary-debuglogging-status-closes-186&quot;&gt;15. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/30&quot;&gt;VLCLibrary: debugLogging status (closes #186)&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;When the user sets the &lt;code class=&quot;highlighter-rouge&quot;&gt;debugLoggingLevel/Status&lt;/code&gt; of their &lt;code class=&quot;highlighter-rouge&quot;&gt;VLCLibrary&lt;/code&gt; instance, no information was being saved nor checked. This PR fixed exactly that.&lt;/p&gt;
+
+&lt;h4 id=&quot;16-tests-vlclibrary&quot;&gt;16. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/32&quot;&gt;Tests: VLCLibrary&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This implements tests for &lt;code class=&quot;highlighter-rouge&quot;&gt;VLCLibrary&lt;/code&gt; with the previous PR merged in. Tests here are pretty straightforward however, there are couple of functions that could not tested due their dependency on network calls.&lt;/p&gt;
+
+&lt;h4 id=&quot;17-vlcmediathumbnailer-update-dimensions-fixes-183&quot;&gt;17. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/33&quot;&gt;VLCMediaThumbnailer: Update dimensions (fixes #183)&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This PR fixes a bug where the media thumbnail’s dimensions are not updated internally.&lt;/p&gt;
+
+&lt;h4 id=&quot;18-vlcmedialist-removemediaat-closes-182&quot;&gt;18. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/34&quot;&gt;VLCMediaList: removeMediaAt (closes #182)&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;This PR fixes a bug detected via HockeyApp crash reports from the production release of VLC-iOS. There were many ways this bug could have been fixed. However, all methods shared a common theme&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;An API shouldn’t crash due to a potentially inconsistent state.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Think about this the next time you design your API.&lt;/p&gt;
+
+&lt;h4 id=&quot;19-tests-vlcmedialist&quot;&gt;19. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/35&quot;&gt;Tests: VLCMediaList&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Table-driven tests for the win!&lt;/p&gt;
+
+&lt;h4 id=&quot;20-tests-vlcmediathumbnailer&quot;&gt;20. &lt;a href=&quot;https://github.com/videolan/vlckit/pull/37&quot;&gt;Tests: VLCMediaThumbnailer&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;XCTest doing some major heavy lifting in this PR.&lt;/p&gt;
+
+&lt;h1 id=&quot;moving-forward&quot;&gt;Moving forward&lt;/h1&gt;
+
+&lt;p&gt;There are still some test code that has not been pushed to the repository. To ensure that these get merged into the repo, I plan on keep submitting PRs to VLCKit in hopes to achieve 100% code coverage!&lt;/p&gt;
+
+&lt;h2 id=&quot;you-have-just-finished-part-1-read-part-2-of-the-story-for-more-eye-opening-panic-inducing-blockbuster-action-in-the-world-of-ios&quot;&gt;You have just finished part 1! Read &lt;strong&gt;&lt;a href=&quot;https://www.deadbeef.me/2018/08/gsoc-2&quot;&gt;PART 2&lt;/a&gt;&lt;/strong&gt; of the story for more eye-opening, panic-inducing, blockbuster action in the world of iOS.&lt;/h2&gt;
+
+</description>
+        <pubDate>Sat, 04 Aug 2018 16:49:23 -0500</pubDate>
+        <link>https://www.deadbeef.me/2018/08/gsoc</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/08/gsoc</guid>
+        
+        <category>oss</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Xcode Auto Generated Interfaces</title>
+        <description>&lt;p&gt;If you have ever called Objective-C code from Swift, you may have noticed the “Generated Interfaces” feature in Xcode. But have you noticed the details of the said “generated interfaces”?&lt;/p&gt;
+
+&lt;p&gt;For those of you who don’t know what I’m talking about, Xcode has a feature where you can view the automatically generated Swift interfaces of Objective-C files from the editor. This is way, you can see how your Objective-C expressions are parsed into their Swift counterparts, &lt;strong&gt;before compiling anything.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://www.deadbeef.me/assets/auto-gen-interface/howto.png&quot; alt=&quot;How to bring up Generated Interfaces&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;look-closely-&quot;&gt;Look closely 👓&lt;/h2&gt;
+
+&lt;p&gt;That’s cool and all but did you notice how objc expressions were exactly parsed into their Swift counterparts? If you didn’t, let me point them out to you.&lt;/p&gt;
+
+&lt;h2 id=&quot;initializers&quot;&gt;Initializers&lt;/h2&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initWithName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;instancetype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;initFor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;years&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;🔻 Generated Interfaces&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;years&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Notice that the &lt;code class=&quot;highlighter-rouge&quot;&gt;initWithName&lt;/code&gt; is automatically shrunk to &lt;code class=&quot;highlighter-rouge&quot;&gt;init(name:)&lt;/code&gt; to follow Swift’s naming style 😱. This allows you to name your objc functions without worrying about how they are going to look in Swift.&lt;/p&gt;
+
+&lt;p&gt;Also, notice how &lt;code class=&quot;highlighter-rouge&quot;&gt;initFor&lt;/code&gt; is separated into &lt;code class=&quot;highlighter-rouge&quot;&gt;init(for:)&lt;/code&gt;. Cool, eh?&lt;/p&gt;
+
+&lt;h2 id=&quot;functions&quot;&gt;Functions&lt;/h2&gt;
+
+&lt;p&gt;Assuming the above initializers are for the &lt;code class=&quot;highlighter-rouge&quot;&gt;Animal&lt;/code&gt; class, let’s make our &lt;code class=&quot;highlighter-rouge&quot;&gt;Animal&lt;/code&gt; do something by adding some functions.&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sleepFor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;playAt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;playWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Toy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;toy&lt;/span&gt;                         
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;🔻 Generated Interfaces&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;minutes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;toy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Toy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Here, things seem pretty straightforward but once again, notice the details! The &lt;code class=&quot;highlighter-rouge&quot;&gt;sleepFor:&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;playAt:&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;playWith:&lt;/code&gt; have been parsed as &lt;code class=&quot;highlighter-rouge&quot;&gt;sleep(for:)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;play(at:)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;play(with:)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;enums&quot;&gt;enums&lt;/h2&gt;
+
+&lt;p&gt;Now that the &lt;code class=&quot;highlighter-rouge&quot;&gt;Animal&lt;/code&gt;s can do something, let’s make some &lt;code class=&quot;highlighter-rouge&quot;&gt;Location&lt;/code&gt;s where we can play with our &lt;code class=&quot;highlighter-rouge&quot;&gt;Animal&lt;/code&gt;s.&lt;/p&gt;
+
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NS_ENUM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSInteger&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;LocationPark&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;LocationHome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;LocationLake&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Notice how I named the enum cases like how any good objc developer should; &lt;code class=&quot;highlighter-rouge&quot;&gt;TypeNameCaseName&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That’s cool but Swift favors simplicity and readability when it comes to naming. Thankfully, Xcode automatically takes care of that for you, again.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Location&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;park&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;home&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lake&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now look at the below Swift code that is calling objc code. Doesn’t it look like you are calling native Swift code?&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;🦄&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Shadowfax&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;neighhhhh&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        
+&lt;span class=&quot;n&quot;&gt;🦄&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;boomerang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;🦄&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;park&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Well, I hope you found that to be some what interesting. In the next post, I will maybe look into how this is done behind the scenes 😎&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Here’s a &lt;a href=&quot;https://www.dropbox.com/sh/vjth76ug53mq5fa/AABn5ukKNuVszOXAEugy7mh_a?dl=0&quot;&gt;sample Xcode project&lt;/a&gt; for you to play around with.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Wed, 18 Jul 2018 01:23:10 -0500</pubDate>
+        <link>https://www.deadbeef.me/2018/07/auto-generated-interfaces</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/07/auto-generated-interfaces</guid>
+        
+        <category>swift</category>
+        
+        <category>objc</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Open-source self-diagnostics</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;☠️ Warning: This post may be too much for the faint hearted. Please proceed with caution. Viewer discretion is advised.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Open source is great. You get great software for free and meet great people while doing it. However, like most things, open source has it’s dark-sides.&lt;/p&gt;
+
+&lt;p&gt;Because the world of open source is purely online and takes place on the fricking internet, it’s very tempting for people to turn into assholes. &lt;em&gt;But please, please, don’t be an asshole.&lt;/em&gt; We have a good thing going on and it would be great if we can keep that going.&lt;/p&gt;
+
+&lt;p&gt;Now, you may be thinking, &lt;em&gt;“Hey asshole, I’m not an asshole. Who are you calling an asshole, asshole?”&lt;/em&gt;. Well, consider this blog post as a self-diagnostic test to find out if you are an asshole or not.&lt;/p&gt;
+
+&lt;h2 id=&quot;symptom-1--do-you-use-words-such-as-simply-or-just&quot;&gt;Symptom #1.  Do you use words such as “simply” or “just”?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;e.g. &lt;strong&gt;&lt;u&gt;Just&lt;/u&gt; integrate X with Y. After that, &lt;u&gt;simply&lt;/u&gt; do X on Y to do Z.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hey asshole, not everyone is a superstar programmer like you. While it may be easy for you, it may be hard for others. Using the &lt;em&gt;j-word&lt;/em&gt; and the &lt;em&gt;s-word&lt;/em&gt; is the easiest way to make other people shitty.&lt;/p&gt;
+
+&lt;h4 id=&quot;prescription-&quot;&gt;Prescription 💊&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;Just dont use the &lt;em&gt;j-word&lt;/em&gt; and the &lt;em&gt;s-word&lt;/em&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If that’s too much for you, just point them to a stackoverflow answer, blog post, or a reference material. Let other people be the asshole for you.&lt;/p&gt;
+
+&lt;h2 id=&quot;symptom-2-do-you-give-out-orders&quot;&gt;Symptom #2. Do you give out orders?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;e.g. &lt;strong&gt;&lt;u&gt;Do&lt;/u&gt; this and that&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;No one likes being ordered to do something. And considering the nature of open source, there is no reason why that person should listen to you; an asshole. It’s a miracle in the first place that these people made their code open to the public for everyone to use. So, if you want them to do something for you, try being nice for once in your life.&lt;/p&gt;
+
+&lt;p&gt;You may now be saying &lt;em&gt;“I said those things to help this repo get better.”&lt;/em&gt; That’s very nice of you but you are doing the exact opposite because this is how things usually go down.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;You give out orders &lt;em&gt;(like an asshole)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Repo maintainer read your shitty comment&lt;/li&gt;
+  &lt;li&gt;Maintainer gets pissed&lt;/li&gt;
+  &lt;li&gt;Maintainer gets sad&lt;/li&gt;
+  &lt;li&gt;Maintainer tries to keep up with all your shitty comments&lt;/li&gt;
+  &lt;li&gt;Maintainer gets burnt out and stops giving any shits&lt;/li&gt;
+  &lt;li&gt;All pull requests are ignored&lt;/li&gt;
+  &lt;li&gt;Repo goes to shit&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;prescription--1&quot;&gt;Prescription 💊&lt;/h4&gt;
+
+&lt;p&gt;Try to format your shitty comments into less-shittier comments. In other words, &lt;strong&gt;ask nicely.&lt;/strong&gt; Once again, if that’s too hard for you, try using these pre-constructed sentences.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What do you think about doing ___?&lt;/li&gt;
+  &lt;li&gt;How do you feel about doing ___?&lt;/li&gt;
+  &lt;li&gt;Have you thought about doing ___?&lt;/li&gt;
+  &lt;li&gt;If I were you, I would do ___.&lt;/li&gt;
+  &lt;li&gt;That’s a great idea but I would do ___ if I were you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If saying these make you feel weird or uncomfortable on the inside, try using these things called emojis. They make you seem like less of an asshole with minimum effort. If you are new to the whole thing, here are some popular emojis people often use to make their comments seem less shitty.&lt;/p&gt;
+
+&lt;p&gt;🎉 😄 🙏 ❤️  😍 👍 🤔 🙅‍♂&lt;/p&gt;
+
+&lt;h2 id=&quot;symptom-3-do-you-feel-entitled&quot;&gt;Symptom #3. Do you feel entitled?&lt;/h2&gt;
+
+&lt;p&gt;Of course these people should make their code open source. Of course these people should implement the features you request them. Of course they should fix this bug ASAP because they don’t have anything better to do. Right?&lt;/p&gt;
+
+&lt;p&gt;Hate to break it to you but people in the open source community are real people. It may not seem like it, but they are. It’s very likely that these people already have jobs, commitments, and other stuff to do. So don’t be surprised if they can’t fix that one bug you found right away or refuse to implement a very specific feature only a small percentage of users would use. That’s why Github has that little “Fork” button at the top right corner.&lt;/p&gt;
+
+&lt;h4 id=&quot;prescription--2&quot;&gt;Prescription 💊&lt;/h4&gt;
+
+&lt;p&gt;This one is hard. All I can tell you is that you aren’t entitled to anything. If you really want something, open up a pull request and ask nicely, pretty please.&lt;/p&gt;
+
+&lt;h2 id=&quot;to-wrap-up&quot;&gt;To wrap up…&lt;/h2&gt;
+
+&lt;p&gt;I just counted and this blog post contains 17 assholes. What I’ve said may have rubbed off in a wrong way for some of you and I apologize. But I felt the need to share this because some people just need the rude awakening; including me.&lt;/p&gt;
+
+&lt;p&gt;It’s been a year I started to really contribute to open source projects and I always catch myself being an asshole. It’s definitely not easy to come off as being asshole online but hey, you can at least try 😄.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 22 Jun 2018 21:49:23 -0500</pubDate>
+        <link>https://www.deadbeef.me/2018/06/oss</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/06/oss</guid>
+        
+        <category>OSS</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Go test your tests in Go with go test</title>
+        <description>&lt;p&gt;Today, we are going to talk about something that is boring… but necessary; tests.&lt;/p&gt;
+
+&lt;p&gt;But you are probably tired of reading blog posts that talk about &lt;em&gt;“Why testing is important”, “Why your thing should have tests”, and “Top 5 reasons you should adopt test-driven development”&lt;/em&gt;. So, instead of writing about the usual “You need tests because it will blah your blah with blah because of blah”, I want to talk about something else; &lt;strong&gt;how to make writing tests not suck as much.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are some tips and tricks I picked up while writing tests for &lt;a href=&quot;https://github.com/mkchoi212/fac&quot;&gt;fac&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;1-current-testing-directory&quot;&gt;1. Current Testing Directory&lt;/h2&gt;
+
+&lt;p&gt;Here is a fun fact; when you run &lt;code class=&quot;highlighter-rouge&quot;&gt;go test&lt;/code&gt; for a package, the test binary will be run within the package being tested.&lt;/p&gt;
+
+&lt;p&gt;Allow me to demonstrate. Assume your project directory is setup like this&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;project
+└── server
+    ├── server.go
+    └── server_test.go
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And your &lt;code class=&quot;highlighter-rouge&quot;&gt;server_test.go&lt;/code&gt; looks like this&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;server&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;os&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testing&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestCoolServerStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Getwd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you run this from your root &lt;code class=&quot;highlighter-rouge&quot;&gt;project&lt;/code&gt; directory, you will get the following output&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;➜ &lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/Users/mikechoi/src/go/src/github.com/mkchoi212/project
+
+➜ go &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; -v
+&lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; RUN   TestCoolServerStuff
+--- PASS: TestCoolServerStuff &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;0.00s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+          server_test.go:10: github.com/mkchoi212/project/server
+PASS
+ok        github.com/mkchoi212/project/server        0.007s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Notice that the log says &lt;code class=&quot;highlighter-rouge&quot;&gt;github.com/mkchoi212/project/server&lt;/code&gt; and not whatever &lt;code class=&quot;highlighter-rouge&quot;&gt;pwd&lt;/code&gt; said.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-testdata-is-ignored&quot;&gt;2. testdata is ignored&lt;/h2&gt;
+
+&lt;p&gt;According to &lt;a href=&quot;https://golang.org/cmd/go/#hdr-Package_lists&quot;&gt;this Go documentation&lt;/a&gt;,&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Directory and file names that begin with “.” or “_” are ignored by the go tool, as are directories named “testdata”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, if you need mock files to test something - such as &lt;code class=&quot;highlighter-rouge&quot;&gt;response.json&lt;/code&gt; for your networking functions - you can place it in &lt;code class=&quot;highlighter-rouge&quot;&gt;package_directory/testdata/response.json&lt;/code&gt;. Now, you can easily load the mock files like so&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestServerResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testdata/response.json&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doStuffWithNetworkResponse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;🎉&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Notice that we are able to simple say &lt;code class=&quot;highlighter-rouge&quot;&gt;testdata/response.json&lt;/code&gt; because of #1.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-testhelper&quot;&gt;3. testhelper&lt;/h2&gt;
+
+&lt;p&gt;This is a simple concept but is very helpful when writing tests in Go. When writing code in Go, you probably have written thousands of lines of code that look like this&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doSomethingCool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;no&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doMoreCoolThingsHere&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The trouble is that this is what 80% of statements you are going to tests are going to look like. After all, you are testing if something either didn’t return an error, is equal to something, and or didn’t crap out. Eventually, your testsuite will get filled with &lt;code class=&quot;highlighter-rouge&quot;&gt;if data, err := ....; err != nil&lt;/code&gt; statements. So, the brilliant solution to this is &lt;strong&gt;to make helper functions&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/mkchoi212/730f09c9a2676803d34138da6d923db0.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Instead of writing the code you saw previously with bunch of if-statements, you can now write the following.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TestCoolThing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doSomethingCool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// Awesome&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testhelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;otherData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;doSomethingAmazing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testhelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// This is really useful as well&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testhelper&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Equals&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;otherData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;	
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And if a test fails for some reason, the helper functions will print out the error messages in red and pin-point the location where the test failed.&lt;/p&gt;
+
+&lt;h2 id=&quot;3-go-test-tricks&quot;&gt;3. go test tricks&lt;/h2&gt;
+
+&lt;p&gt;Here are some additional tips and tricks you can use while using &lt;code class=&quot;highlighter-rouge&quot;&gt;go test&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;test-all-packages-in-project-directory&quot;&gt;Test all packages in project directory&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;./...&lt;/code&gt; is the magic argument.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;➜ go &lt;span class=&quot;nb&quot;&gt;test
+&lt;/span&gt;ok      github.com/mkchoi212/project              &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;files]
+
+➜ go &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; ./...
+ok      github.com/mkchoi212/project              &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;files]
+ok      github.com/mkchoi212/project/server       0.012s
+ok      github.com/mkchoi212/project/testhelper   &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;files]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;ignore-package-while-testing&quot;&gt;Ignore package while testing&lt;/h4&gt;
+
+&lt;p&gt;You might need this when you don’t necessarily need to test something or because you just want a higher code coverage percentage 😄&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Notice &lt;code class=&quot;highlighter-rouge&quot;&gt;testhelper&lt;/code&gt; is not being tested any more&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;➜ go &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;go list ./... | grep -v &lt;span class=&quot;s1&quot;&gt;'testhelper'&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
+ok      github.com/mkchoi212/project              &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;no &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;files]
+ok      github.com/mkchoi212/project/server       0.012s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;code-coverage-statistics&quot;&gt;Code coverage statistics&lt;/h4&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;➜ go &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt; --cover
+PASS
+coverage: 100.0% of statements
+ok      github.com/mkchoi212/project/server  0.011s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 27 May 2018 20:17:11 -0500</pubDate>
+        <link>https://www.deadbeef.me/2018/05/go-test</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/05/go-test</guid>
+        
+        <category>go</category>
+        
+        <category>testing</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Common Gotchas in Go</title>
+        <description>&lt;p&gt;First thing is first. Happy New Years 🎉🎉&lt;/p&gt;
+
+&lt;p&gt;Now that’s out of the way, let’s talk about Go. I recently finished making my first real Go program. It’s called “Fix All Conflicts” or &lt;a href=&quot;https://github.com/mkchoi212/fac&quot;&gt;fac&lt;/a&gt; for short. It’s an easy-to-use console user interface for fixing git merge conflicts. I made it because I never found a merge tool that was intuitive enough to use.&lt;/p&gt;
+
+&lt;p&gt;The process was quite fun and I learned a lot about Go in the process. So, to wrap up my first official foray into Rob Pike’s mystical land of gophers, I decided to write down some of the common “Gotchas!” that any beginning Gopher - me - can run into.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;http://www.confusedcoders.com/wp-content/uploads/2016/10/golang-1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Gophers can be quite aggressive sometimes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;️-1-range&quot;&gt;⚠️ 1.) Range&lt;/h1&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;range&lt;/code&gt; function is one of the most commonly used functions in Go. Here’s a sample use case of the &lt;code class=&quot;highlighter-rouge&quot;&gt;range&lt;/code&gt; function. Note that for some demented reason, we decided to make all the animals in the zoo have &lt;code class=&quot;highlighter-rouge&quot;&gt;999&lt;/code&gt; legs.&lt;/p&gt;
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fmt&quot;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zoo&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Dog&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chicken&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Animal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Snail&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;-&amp;gt; Before update %v&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+	&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zoo&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// 🚨 Oppps! `animal` is a copy of an element 😧&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-&amp;gt; After update %v&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The above code looks innocent enough. However, you may be surprised to find that &lt;code class=&quot;highlighter-rouge&quot;&gt;animals.legs = 999&lt;/code&gt; didn’t do anything.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-&amp;gt; Before update [{Dog 4} {Chicken 2} {Snail 0}]
+-&amp;gt; After update  [{Dog 4} {Chicken 2} {Snail 0}] 🚨🚨🚨 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;lesson&quot;&gt;Lesson&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Value property of &lt;code class=&quot;highlighter-rouge&quot;&gt;range&lt;/code&gt; (stored here as &lt;code class=&quot;highlighter-rouge&quot;&gt;animal&lt;/code&gt;) is a &lt;strong&gt;copy of the value from &lt;code class=&quot;highlighter-rouge&quot;&gt;zoo&lt;/code&gt;, not a pointer to the value in &lt;code class=&quot;highlighter-rouge&quot;&gt;zoo&lt;/code&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;the-fix&quot;&gt;The Fix&lt;/h3&gt;
+
+&lt;p&gt;In order to modify an element within the array, we must change the element via its &lt;strong&gt;pointer&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zoo&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;legs&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;This may look quite trivial but you may be surprised to find this as a one of the most common source of bugs; at least for me!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.golang.org/p/jhL_MNbXnPC&quot;&gt;» Go playground #1 for you to play around in&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;️-2-the--thingy&quot;&gt;⚠️ 2.) The … thingy&lt;/h1&gt;
+
+&lt;p&gt;You may have used the &lt;code class=&quot;highlighter-rouge&quot;&gt;…&lt;/code&gt; keyword in the C programming language to create a &lt;a href=&quot;https://www.gnu.org/software/libc/manual/html_node/Variadic-Functions.html&quot;&gt;variadic function&lt;/a&gt;; variadic function is a function that takes a variable number or type of arguments.&lt;/p&gt;
+
+&lt;p&gt;In C, you have to successively call the &lt;code class=&quot;highlighter-rouge&quot;&gt;va_arg&lt;/code&gt; macro in order to access the optional arguments. And if you use the variadic argument in any other way, the compiler will throw an error.&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add_em_up&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,...)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;va_start&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;         &lt;span class=&quot;cm&quot;&gt;/* Initialize the argument list */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;va_arg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;   &lt;span class=&quot;cm&quot;&gt;/* Get the next argument value */&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;va_end&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;                  &lt;span class=&quot;cm&quot;&gt;/* Clean up */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In Go however, things are similar but quite different at the same time. Here is a variadic function &lt;code class=&quot;highlighter-rouge&quot;&gt;myFprint&lt;/code&gt; in Go. Notice how the variadic argument &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; is being used.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myFprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// ⚠️ `a` should be `a...`&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// ✅&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+		&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myFprint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s : line %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file.txt&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;49&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[file.txt %!s(int=49)] : line %!d(MISSING)
+file.txt : line 49
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You’d think that the compiler would throw an error here for using the variadic parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; in a wrong way. But notice how &lt;code class=&quot;highlighter-rouge&quot;&gt;fmt.Sprintf&lt;/code&gt; just used the first argument in &lt;code class=&quot;highlighter-rouge&quot;&gt;a &lt;/code&gt; without throwing a fit.&lt;/p&gt;
+
+&lt;h3 id=&quot;lesson-1&quot;&gt;Lesson&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In Go, &lt;strong&gt;variadic parameters are converted to slices by the compiler&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This means that the variadic argument &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; is in fact, just a slice. Because of this, the code below is completely valid.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;// `a` is just a slice!&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;the-fix-1&quot;&gt;The Fix&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Remember to type ALL THREE DOTS whenever using variadic parameters!&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.golang.org/p/303g8_1IVFD&quot;&gt;» Go playground #2 for you to play around in&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;️-3-slicing&quot;&gt;⚠️ 3.) Slicing&lt;/h1&gt;
+&lt;p&gt;If you have done your fair share of slicing in Python, you may remember that slicing in Python gives you a new list with just the references to the elements copied over. This property allows for code like this in Python.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;			&lt;span class=&quot;c&quot;&gt;# 👀 a completely new list!&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;However if you try the same thing in Go, you get something else.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;999&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fmt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[999 2 3]
+[999 2]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;lesson-2&quot;&gt;Lesson&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In Go, &lt;strong&gt;a slice shares the same backing array and capacity as the original.&lt;/strong&gt; So if you change an element in the slice, the original contents are modified as well.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;the-fix-2&quot;&gt;The Fix&lt;/h4&gt;
+
+&lt;p&gt;If you want to get an independent slice, you have two options.&lt;/p&gt;
+
+&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;// Option #1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// appending elements to a nil slice&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// `...` changes slice to arguments for the variadic function `append`&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// Option #1&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// Create slice with length of 2&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;// copy(dest, src)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And according to &lt;a href=&quot;https://stackoverflow.com/a/44337887/4064189&quot;&gt;StackOverflow&lt;/a&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;append&lt;/code&gt; option is slightly faster than the &lt;code class=&quot;highlighter-rouge&quot;&gt;make. + copy&lt;/code&gt; option!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://play.golang.org/p/HvVFmQZTcjp&quot;&gt;» Go playground #3 for you to play around in&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://news.ycombinator.com/item?id=16048206&quot;&gt;Hacker News thread 🤩&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Jan 2018 00:55:03 -0600</pubDate>
+        <link>https://www.deadbeef.me/2018/01/go-gotchas</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2018/01/go-gotchas</guid>
+        
+        <category>go</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Things we can learn from Microsoft</title>
+        <description>&lt;p&gt;Let me tell you something about me. I was &lt;a href=&quot;https://deadbeef.me/2017/12/rss&quot;&gt;obsessed with HackerNews&lt;/a&gt; for about three months. Not a single day went by where I didn’t check the front-page.&lt;/p&gt;
+
+&lt;p&gt;Anyways, during those three months, hundreds of articles went past my fingers. I admit I don’t remember all of them but there were few articles that lingered in the back of my head. And surprisingly, a big chunk of those articles had to do with Microsoft during its early days. So, this is me writing them down to see what I can learn from them.&lt;/p&gt;
+
+&lt;p&gt;So… here are &lt;strong&gt;three lessons we can all learn from Microsoft during the 1980’s&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;lesson-1-optimize-the-most-common-operations&quot;&gt;Lesson #1. Optimize the most common operations&lt;/h2&gt;
+
+&lt;p&gt;Before you quote Don Knuth, here is a story of how Microsoft Word became the most popular word processor in the world.&lt;/p&gt;
+
+&lt;p&gt;In 1983, PC Word 1.0 and Mac Word 1.0 shipped with a feature called “Piece Table”. The piece table wasn’t an official feature that was printed on the floppy disk but it was the data structure that enabled many of the listed features.&lt;/p&gt;
+
+&lt;p&gt;For example, it allowed for super fast copy and paste, undo and redo operations. You can go &lt;a href=&quot;https://web.archive.org/web/20160308183811/http://1017.songtrellisopml.com/whatsbeenwroughtusingpiecetables&quot;&gt;here&lt;/a&gt; to see how they were actually implemented but here is the TL;DR version of it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Instead of storing text in the document as a single long string of characters, one can maintain a small set of records; a piece table. This table can then hold a collection of data that is only a few bytes long - a piece - that describes how a string is fragmented into pieces.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Although this sounds quite mundane now, super fast undo/redo and paste operations were like black magic to people in the 80’s. This is because back then, you had to go grab a cup of coffee and take a stroll around the park in your Reeboks while waiting for your word processor to finish copying and pasting a paragraph from the “American Psycho”. Nevertheless, people loved these features they allowed them to write without being interrupted and therefore save countless hours.&lt;/p&gt;
+
+&lt;p&gt;Later when Word 3.0 launched, Microsoft revolutionized the word processing industry once again with a feature called fast save. I won’t describe how they managed to implement &lt;a href=&quot;https://web.archive.org/web/20160308183811/http://1017.songtrellisopml.com/whatsbeenwroughtusingpiecetables&quot;&gt;fast save&lt;/a&gt; but I think that this feature is the best thing Microsoft has ever shipped… ever.&lt;/p&gt;
+
+&lt;h2 id=&quot;lesson-2-make-it-backwards-compatible&quot;&gt;Lesson #2. Make it backwards compatible&lt;/h2&gt;
+
+&lt;p&gt;Microsoft has shipped many versions of their Windows operating system but here’s a lesson we can all learn from them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It takes only one program to sour an upgrade.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Now, allow me to elaborate.&lt;/p&gt;
+
+&lt;p&gt;Let’s say you are an IT manager of a company and you find out that if you upgrade to a new fancy version of the OS, program X the entire company uses won’t work anymore. You really want that one feature that comes with the new OS so you desperately make the call to the company that makes program X to request for an upgrade. But it turns out, the upgrade won’t be free. At this point, would you upgrade to the new OS?&lt;/p&gt;
+
+&lt;p&gt;Microsoft’s Setup/Upgrade team figured out that every single user had a “deal-breaker” program, a program that must run or they won’t upgrade. This is why Microsoft Windows has that one mysterious directory &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\WINDOWS\AppPatch&lt;/code&gt; that stores all the &lt;code class=&quot;highlighter-rouge&quot;&gt;.dll&lt;/code&gt;s to support application backwards compatibility; this is why you can still play Sims 1 on your computer.&lt;/p&gt;
+
+&lt;h2 id=&quot;lesson-3-abc-always-be-considerate&quot;&gt;Lesson #3. A.B.C. Always Be Considerate&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/nAZ3JTRUYiis0/giphy.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Excuse my poor attempt to reference Glengarry Glen Ross but the message still stands; Always Be Considerate! Unlike Alec Baldwin here, I am not saying you should be considerate to the people you are trying to sell houses to. Instead, you should be considerate to the end users of your software.&lt;/p&gt;
+
+&lt;p&gt;When Microsoft wanted to make a scripting language for Excel users, they started a project called Visual Basic for Applications. In the beginning, the developers had to decide whether if they wanted the language to be &lt;em&gt;statically (strong) typed&lt;/em&gt; or &lt;em&gt;dynamically (weak) typed&lt;/em&gt;. Personally, I am in the statically typed languages camp as I love using Swift and Golang. These &lt;a href=&quot;http://blog.cleancoder.com/uncle-bob/2017/01/11/TheDarkPath.html&quot;&gt;two&lt;/a&gt; &lt;a href=&quot;http://elbenshira.com/blog/the-end-of-dynamic-languages/&quot;&gt;posts&lt;/a&gt; do a better job than me describing each side of the argument so I highly recommend you to read those when you have the time.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;TL;DR The main gist of the argument is that statically typed languages allow you to find errors at compile time while dynamically typed languages allow you to find errors during runtime.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We could go on for days arguing over which one is better than the other and keep furiously typing away on our keyboards until our butterfly mechanism keys break. &lt;strong&gt;However, the end-user, who is most likely to be an accountant at a paper company like Dunder Mifflin, won’t care if it’s statically typed or dynamically typed.&lt;/strong&gt; What that accountant cares about the most is whether if he can easily whip up a script for Excel that will let him automate repetitive tasks so he can go home to his kids a bit sooner.&lt;/p&gt;
+
+&lt;p&gt;If you decide to make the language statically typed, the intern that is in charge of writing the manual will have to describe to the accountant what a variable is and most importantly, what types are and why they are so important. Or you could make the language dynamically typed and let the accountant just start coding away immediately. Yes, the accountant will get runtime errors but he probably isn’t writing a program for the Apollo 11 lunar module. All the accountant wants to do is add up column A through Z.&lt;/p&gt;
+
+&lt;p&gt;You may have strong beliefs about a certain decision that has to be made in a project. However, are you being considerate of the user?&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Dec 2017 00:22:11 -0600</pubDate>
+        <link>https://www.deadbeef.me/2017/12/learn-from-microsoft</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2017/12/learn-from-microsoft</guid>
+        
+        <category>type-system</category>
+        
+        <category>algorithms</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RSS == Really Sucky Syndrome</title>
+        <description>&lt;p&gt;I don’t know about you or what other cool cats are doing nowadays, but I use RSS (Really Simple Syndication) to suck in all the content from the Internet. To get specific, I use &lt;a href=&quot;http://reederapp.com/mac/&quot;&gt;Reeder&lt;/a&gt; as my primary RSS application and &lt;a href=&quot;https://www.instapaper.com&quot;&gt;Instapaper&lt;/a&gt; as my goto save-for-later bucket.&lt;/p&gt;
+
+&lt;p&gt;During the summer of 2016, I became obsessed with HackerNews. In the beginning, it was nice because I was reading and absorbing anything and everything interesting that was going on the Internet. I was learning something new everyday and was becoming a better developer. In addition, I was up-to-date with the latest gossips and practically heard of every “new cool language/framework/testing tool”. However, this came with a price. I was checking HackerNews about 10-15 times a day. No article went by me unread. Every single article had that faint light gray color as they went past my fingers of fury. At a certain point, it seemed like I was reading more than I was coding.&lt;/p&gt;
+
+&lt;p&gt;Then school started again.&lt;/p&gt;
+
+&lt;p&gt;What used to be a morning ritual of checking HackerNews became impossible. If I was lucky, I got to check the feed once or twice a day. Even then, I would only be able to read one or two articles and save the rest into Instapaper. And eventually, Instapaper became a place where essays and blog posts go to die and rot in a pile of their own digital waste.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://www.deadbeef.me/assets/blogging/insta.jpeg&quot; alt=&quot;My Insta&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;RSS was even worse. I had subscribed to about 30+ RSS sources and was getting up to 60 new articles per day. After about a week into school, I didn’t even try to catch up on these. In fact, Reeder ended up losing its spot on my Dock.&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://www.deadbeef.me/assets/blogging/rss.png&quot; alt=&quot;Oh god..&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I bet 5000 unread articles is some sort of new record. I also bet 5000 is the highest number of unread articles Feedly will let you have.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;It’s Winter Break now and it’s about 55 degrees in Texas. I’m currently sitting at a cafe drinking a latte that is way too sweet and trying to fix the mess I have found myself in. To do this, I wrote myself a little prescription. If you are experiencing the same symptoms as I am, I recommend you do the same.&lt;/p&gt;
+
+&lt;h2 id=&quot;rules-of-engagement-with-articles-from-the-interwebhackernews&quot;&gt;Rules of Engagement with articles from the Interweb/HackerNews&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-read-at-least-5-articles-from-my-saved-instapaper-feed-every-day&quot;&gt;&lt;strong&gt;1. Read at least 5 articles from my saved Instapaper feed every day&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;DO NOT ADD NEW ARTICLES UNTIL THE RED BUBBLE THINGY REACHES ZERO!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2-limit-reading-hackernews-to-only-twice-a-day&quot;&gt;&lt;strong&gt;2. Limit reading HackerNews to only TWICE a day&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;3-only-keep-4-5-most-interesting-subscriptions-in-reeders-rss-feed&quot;&gt;&lt;strong&gt;3. Only keep 4-5 most interesting subscriptions in Reeder’s RSS feed&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;I know there are lots of interesting articles out there but you will never get to all of them.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 14 Dec 2017 21:14:13 -0600</pubDate>
+        <link>https://www.deadbeef.me/2017/12/rss</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2017/12/rss</guid>
+        
+        <category>blogging</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Monoids deployed</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;First of all, an explanation of the title is in order. I used the word “deployed” just because it kind of rhymed with “Monoid”. It’s probably a better choice than what I was originally going to use; “Monoids on Steroids”.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Anyways, this post will be an attempt to explain what monoids are, why they are useful and most importantly, how they can be used. We will also build a simple shapes library in Haskell and Swift as an example.&lt;/p&gt;
+
+&lt;p&gt;To start off with, here is an example of a monoid. Ready?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1 + 0 = 1
+0 + 1 = 1
+1 + (2 + 3) = 6
+(1 + 2) + 3 = 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you understand these highly complex mathematical equations, you understand what monoids are. Congratulations 🎉🎉🎉.&lt;/p&gt;
+
+&lt;h1 id=&quot;formal-definition&quot;&gt;Formal Definition&lt;/h1&gt;
+
+&lt;h2 id=&quot;mathematical&quot;&gt;Mathematical&lt;/h2&gt;
+
+&lt;p&gt;A monoid is a tuple &lt;code class=&quot;highlighter-rouge&quot;&gt;(M, op, e)&lt;/code&gt; where&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;M is a set of element&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;op&lt;/code&gt; is an associative binary operation on two elements &lt;code class=&quot;highlighter-rouge&quot;&gt;M&lt;/code&gt;, returning a new element of &lt;code class=&quot;highlighter-rouge&quot;&gt;M&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt; is an element of &lt;code class=&quot;highlighter-rouge&quot;&gt;M&lt;/code&gt;, neutral for &lt;code class=&quot;highlighter-rouge&quot;&gt;op&lt;/code&gt; on both left and right side&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So for example, the above addition operator would form the following tuple of &lt;code class=&quot;highlighter-rouge&quot;&gt;(Int, +, 0)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;statically-typed-languages&quot;&gt;Statically typed languages&lt;/h2&gt;
+
+&lt;p&gt;Since we are programmers, let us translate the above definition to code. A monoid consists of a type &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and a function &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; where&lt;/p&gt;
+
+&lt;h2 id=&quot;f-takes-an-instance-of-t-and-returns-an-instance-of-t&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; takes an instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and returns an instance of &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;func foobar(_ in: String, _in2: String) -&amp;gt; String&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The above statement says that a binary operation of monoids takes two elements of type &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt; and will always return &lt;code class=&quot;highlighter-rouge&quot;&gt;T&lt;/code&gt;. The input type is same as the output type. This property is very important as it will &lt;strong&gt;allows us to chain operations indefinitely.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;f-is-associative&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; is associative&lt;/h2&gt;
+
+&lt;p&gt;Associative property is when &lt;code class=&quot;highlighter-rouge&quot;&gt;f(c, f(a, b)) == f(f(c, a), b)&lt;/code&gt; holds true.&lt;/p&gt;
+
+&lt;p&gt;In other words, we are looking for the situation where something like &lt;code class=&quot;highlighter-rouge&quot;&gt;1 + (2 + 3) == (1 + 2) + 3&lt;/code&gt; makes sense. This allows us to not worry about the ordering when we compose functions. We will see examples of this later.&lt;/p&gt;
+
+&lt;h2 id=&quot;f-has-a-neutral-element-e-where-fe-a--fa-e&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt; has a neutral element &lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt; where &lt;code class=&quot;highlighter-rouge&quot;&gt;f(e, a) == f(a, e)&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;We are looking for &lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt; that allows &lt;code class=&quot;highlighter-rouge&quot;&gt;foobar(NEUTRAL_ELEMENT, 5) == foobar(5, NEUTRAL_ELEMENT)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; is the neutral element for the addition operator since &lt;code class=&quot;highlighter-rouge&quot;&gt;0 + 3 == 3 + 0&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;monoids-everywhere&quot;&gt;Monoids everywhere&lt;/h1&gt;
+
+&lt;p&gt;By now, you hopefully have a sense of what monoids are. And the funny thing is, you probably have been using monoids all along without evening knowing it. Here are some examples of commonly used monoids that are unfortuantley not acknowledged as monoids most of the time.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Integers under addition with neutral element zero&lt;/li&gt;
+  &lt;li&gt;Integers under multiplication with neutral element one&lt;/li&gt;
+  &lt;li&gt;Sequential containers under concatenation (&lt;code class=&quot;highlighter-rouge&quot;&gt;String&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;List&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Associative containers under union (&lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;set&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;but-why-should-i-care&quot;&gt;But why should I care?&lt;/h1&gt;
+
+&lt;p&gt;Th idea of monoids come from the realms of functional programming where the ultimate goal is to come up with simple abstractions that can later be composed to create complex behaviors. &lt;strong&gt;Monoids are a great representation of the FP mindset as it gives us a way to build complexity out of simplicity.&lt;/strong&gt; This means that before you dive into a problem, you can start by formulating a very simple idea. Once you solidify this idea, you can then use it to build complex objects that will eventually solve your problem.&lt;/p&gt;
+
+&lt;h1 id=&quot;ascii-art-generator&quot;&gt;ASCII Art Generator&lt;/h1&gt;
+
+&lt;p&gt;To see how monoids can be used, we will create a library with power enough abstractions that will allows us to create some interesting ASCII art. Our library will mainly deal with creating geometric shapes.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; As we go through the code, I will demonstrate each example in &lt;em&gt;Haskell and then follow up with Swift.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;abstracting-a-shape&quot;&gt;Abstracting a “Shape”&lt;/h2&gt;
+
+&lt;p&gt;Here, we will &lt;strong&gt;define a shape as a function that takes a coordinate point as an input and returns a boolean as an output&lt;/strong&gt;. The idea is simple; you ask the function if the point &lt;code class=&quot;highlighter-rouge&quot;&gt;(x, y)&lt;/code&gt; is contained in the shape and, if  &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; is returned, we then know it’s part of the shape.&lt;/p&gt;
+
+&lt;p&gt;To define a shape, we will make a &lt;code class=&quot;highlighter-rouge&quot;&gt;Shape&lt;/code&gt; type with the function - &lt;code class=&quot;highlighter-rouge&quot;&gt;isInShape&lt;/code&gt; - I just described above. We will also define some typealiases to make life easier. Notice that we are using a generic struct. This is so that we can use not only &lt;code class=&quot;highlighter-rouge&quot;&gt;Coord2D&lt;/code&gt; but also &lt;code class=&quot;highlighter-rouge&quot;&gt;Coord3D&lt;/code&gt;,  &lt;code class=&quot;highlighter-rouge&quot;&gt;Coord4D&lt;/code&gt; in the future.&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;newtype&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;	  
+  &lt;span class=&quot;n&quot;&gt;isInShape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;	
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	
+&lt;span class=&quot;kr&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape2D&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;isInShape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;typealias&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;typealias&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape2D&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Because we are describing shapes as functions, we can easily define the complement of a shape. For example, we can make the function &lt;code class=&quot;highlighter-rouge&quot;&gt;outside&lt;/code&gt;. All it would have to do is negate the predicate of the input shape.&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;outside&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;outside&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isInShape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Thanks to u/thisischemistry, code is now more understandable and self-documenting&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;outside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;notInOriginalShape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isInShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;isInShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;notInOriginalShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;creating-shapes&quot;&gt;Creating Shapes&lt;/h2&gt;
+
+&lt;p&gt;To define a shape, we need to specify the &lt;code class=&quot;highlighter-rouge&quot;&gt;isInShape&lt;/code&gt; function to describe whether a point belongs in the shape or not. Here’s how we would define a disk.&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;disk&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Radius&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape2D&lt;/span&gt;	
+&lt;span class=&quot;n&quot;&gt;disk&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+	&lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;euclidianDistance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;center&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;isInShape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;guard&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as?&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center must be a 2D point&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;euclidianDistance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now, we can experiment and have some fun with some sample coordinates&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;disk&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;disk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isInShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;13.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;13.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And with a simple loop, we can print the disk out. The output looks a bit off because the line widths are larger than the character spacings. But hey, still pretty cool, eh?&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      *******                                     
+     ***********                                   
+    *************                                  
+    *************                                  
+   ***************                                 
+   ***************                                 
+   ***************                                 
+   ***************                                 
+   ***************                                 
+   ***************                                 
+   ***************                                 
+    *************                                  
+    *************                                  
+     ***********                                   
+       *******                                     
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/6pSJGZW0ZmbUA/giphy.gif&quot; alt=&quot;Awesome!&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;complex-shapes&quot;&gt;Complex shapes&lt;/h2&gt;
+
+&lt;p&gt;Now that we have our basic idea down, let’s stat complicating things. And since we are in the realm of FP, what would this post be without some composition!? Let’s try to build cooler shapes via composition.&lt;/p&gt;
+
+&lt;p&gt;We can first start by defining the &lt;code class=&quot;highlighter-rouge&quot;&gt;intersect&lt;/code&gt; function which defines a new shape within the region of intersection.&lt;/p&gt;
+
+&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;intersect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;	
+&lt;span class=&quot;n&quot;&gt;intersect&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;	  
+	&lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;$&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isInShape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isInShape&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s2&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;extension&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;intersect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isInShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;isInShape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;disk&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;8.00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;square&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Shape&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Coord2D&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;origin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;7.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;disk&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;intersect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;outside&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Printing &lt;code class=&quot;highlighter-rouge&quot;&gt;ring&lt;/code&gt; yields the below result&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      ********                                     
+     ***********                                   
+    *************                                  
+    *************                                  
+   ****       ****                                 
+   ****       ****                                 
+   ****       ****                                 
+   ****       ****                                 
+   ****       ****                                 
+   ****       ****                                 
+   ****       ****                                 
+    *************                                  
+    *************                                  
+     ***********                                   
+       *******      
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kind of looks like those rings from Sonic, eh?&lt;/p&gt;
+
+&lt;p class=&quot;center&quot;&gt;&lt;img src=&quot;https://media.giphy.com/media/2mmYAQ23kZ3XO/giphy.gif&quot; alt=&quot;S'cute!&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h1&gt;
+
+&lt;p&gt;I hope the shapes example demonstrated how great monoids are when it comes to composition and abstraction. Personally, I have constantly failed to recognize the fact that I have been using something people have discovered, named and implemented. I try to recognize them and utilize them when I code but it can be very hard to do so.&lt;/p&gt;
+
+&lt;p&gt;Monoids are a great example of this. It’s something functional programmers use all the time but is something that never gets called out explicitly in imperative programming languages. I think this is a shame because once you recognize the fact that something is a monoid, you get access to some incredible perspectives from where you can look at your code.&lt;/p&gt;
+
+&lt;p&gt;Anyways, the one thing I wish you got away from this post is that after recognizing a good use case for a monoid, you can start with something really simple. Then, as the logic grows, you can build something very complex on top of a very firm foundation.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;http://conal.net&quot;&gt;Conal Elliott&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 22 Sep 2017 23:34:45 -0500</pubDate>
+        <link>https://www.deadbeef.me/2017/09/monoids</link>
+        <guid isPermaLink="true">https://www.deadbeef.me/2017/09/monoids</guid>
+        
+        <category>haskell</category>
+        
+        <category>swift</category>
+        
+        <category>fp</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

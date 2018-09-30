@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Swift Objective-C Interoperation - 0xDEADBEEF</title>
+    <meta name="description" content="So, you aren’t really sure if you should go full Swift on your million dollar app idea and is considering going half way. You tell yourself, “I can fill in t...">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2016/02/swift-objc-interop">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Swift Objective-C Interoperation | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Swift Objective-C Interoperation" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Does it work?" />
+<meta property="og:description" content="Does it work?" />
+<link rel="canonical" href="https://www.deadbeef.me/2016/02/swift-objc-interop" />
+<meta property="og:url" content="https://www.deadbeef.me/2016/02/swift-objc-interop" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-02-04T19:49:23-06:00" />
+<script type="application/ld+json">
+{"description":"Does it work?","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2016/02/swift-objc-interop","headline":"Swift Objective-C Interoperation","dateModified":"2016-02-04T19:49:23-06:00","datePublished":"2016-02-04T19:49:23-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2016/02/swift-objc-interop"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Swift Objective-C Interoperation</h1>
+        <p class="c-article__time"><time datetime="2016-02-04T19:49:23-06:00" itemprop="datePublished">Feb 4, 2016</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">swift</li>
+    
+      <li class="c-tag">objc</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p>So, you aren’t really sure if you should go full Swift on your million dollar app idea and is considering going half way. You tell yourself, “I can fill in the fact that Swift is a very young language with some heavy Objective-C gut that has been supported by the iOS community over the years.” You may be right but as you go down the road towards the million dollars, you might start to think otherwise.</p>
+
+<h2 id="in-the-beginning">In the Beginning</h2>
+
+<p>In WWDC 2014 or 2013, Swift was released along with iOS 7 and one of the promises Apple made was that Swift will be great to work with Objective-C and that we would be able to do all the things in Swift that we could do in Objective-C. But can we???</p>
+
+<p>Sorry if I made you throw up a little bit there. As you would know if you have already tried some interop, type briding between Swift and Objective-C requires you to check EVERYTHING. This is of course because Swift needs to know the type of an object at compile time and there is no such thing as nil (well, for most things)</p>
+
+<p>So, in the end, these as?‘s will start to make you feel sick and make you think if that million dollars was just a little dream of yours. Apple felt kinda bad about this and released some ways of making things nicer with if-lets and guards but still, you can’t evade the truth.</p>
+
+<p>Oh and by the way, as doesn’t really work when you’re go from Objective-C to a Swift protocol.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">seller</span> <span class="o">=</span> <span class="kt">ObjcObject</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="n">seller</span><span class="o">.</span><span class="nf">sellItems</span><span class="p">()</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">Cookie</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>Here, Cookies is a Swift protocol and because Objective-C doesn’t know about it, the compiler immediately complains… So you have to do this</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">seller</span> <span class="o">=</span> <span class="kt">ObjcObject</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="n">seller</span><span class="o">.</span><span class="nf">sellItems</span><span class="p">()</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nv">$0</span> <span class="k">as</span> <span class="kt">Coookie</span> <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>and things turn out to be okay. But there are times when you return a generic NSArray and when you use an as, the array you get is actually not the type you specified. Thanks a lot, Chris Lattner.</p>
+
+<h2 id="obj-everywhere">@obj everywhere</h2>
+
+<p>Have you had error messages that go “class needs to be Objective-C because it implements this stupid protocol”. You Google for a bit and throw in a @obj and once it compiles, you move on. But by writing those 4 characters, you just kinda screwed yourself and inhibited yourself from Swift awesome-tasticness.</p>
+
+<h2 id="xctests">XCTests?</h2>
+
+<p>Oh, they don’t work.</p>
+
+<blockquote>
+  <p>rdar://24200114: Bi-directional interop between Objective-C and Swift does not work in XCTest targets.”</p>
+</blockquote>
+
+<h2 id="so-should-i">So.. Should I?</h2>
+<p>I guess that depends on how your app has been structured. But in general, I think Apple’s done a good job getting things to at least work (except for XCTests)</p>
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Feb 2, 2016</small>
+          <br>
+            <a class="no-hov" href="/2016/02/word-sneak">&laquo; 🚀 Word-Sneak: a card game</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>Feb 4, 2016 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2016/02/success-enums">Swift Sucess Enums &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2016/02/swift-objc-interop';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2016/02/swift-objc-interop'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

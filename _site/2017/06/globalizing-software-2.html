@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Globalizing Software II - 0xDEADBEEF</title>
+    <meta name="description" content="TL;DR You want to customize your UI to fit your target country’s cultural preferences. To find out what how to do so, start by looking at the most famous web...">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2017/06/globalizing-software-2">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Globalizing Software II | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Globalizing Software II" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Customize your UI to a country’s culture." />
+<meta property="og:description" content="Customize your UI to a country’s culture." />
+<link rel="canonical" href="https://www.deadbeef.me/2017/06/globalizing-software-2" />
+<meta property="og:url" content="https://www.deadbeef.me/2017/06/globalizing-software-2" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-06-13T01:49:23-05:00" />
+<script type="application/ld+json">
+{"description":"Customize your UI to a country’s culture.","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2017/06/globalizing-software-2","headline":"Globalizing Software II","dateModified":"2017-06-13T01:49:23-05:00","datePublished":"2017-06-13T01:49:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2017/06/globalizing-software-2"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Globalizing Software II</h1>
+        <p class="c-article__time"><time datetime="2017-06-13T01:49:23-05:00" itemprop="datePublished">Jun 13, 2017</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">ui</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p><strong>TL;DR</strong> You want to customize your UI to fit your target country’s cultural preferences. To find out what how to do so, start by looking at the most famous websites in that country.</p>
+
+<h2 id="recap">Recap</h2>
+<p>In the last post, I talked about two main methods an application can apply in order to become a global application. The first method was to simply localized the app. The second method was to provide basic cultural support within the app for things such as string formatting and language specific input method.</p>
+
+<h2 id="ui-globalization">UI Globalization</h2>
+<p>Despite the two methods listed above, the most important step towards globalizing an application is the globalization of the UI to fit the target country’s culture. In order to explain what I mean by this, I will take <a href="https://www.naver.com">Naver</a> as the example throughout this post. Naver is the larget search engine / media content provider company in Korea. Here’s a picture of its website compared to Google’s.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Naver (Korea)</th>
+      <th style="text-align: center">Google (US)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="https://www.deadbeef.me/assets/global/naver.png" alt="" /></td>
+      <td style="text-align: center"><img src="https://www.deadbeef.me/assets/global/google.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can clearly see that while Naver’s web-page is littered with content, Google’s only has two buttons for searching and couple of buttons for various apps on the top.</p>
+
+<p>Here’s another example,</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">11st Street (Korea)</th>
+      <th style="text-align: center">Amazon (US)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="https://www.deadbeef.me/assets/global/11.png" alt="" /></td>
+      <td style="text-align: center"><img src="https://www.deadbeef.me/assets/global/amazon.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="http://www.11st.co.kr/html/main.html">11st Street</a> is one of the most popular shopping websites in Korea. You can see here again that the amount of information being shown on a website varies significantly between different cultures.</p>
+
+<p>I could go on for days with these examples but I think you are starting to get the point.</p>
+
+<blockquote>
+  <p>Different cultures have different UI preferences.</p>
+</blockquote>
+
+<p>Out of the thousands of reasons I am not smart enough to know, here are the two that I could think of.</p>
+
+<h3 id="reason-1">Reason #1</h3>
+<p>In Korea, <strong>wealth of information is something people favor</strong> over the popular minimalism ideals supported by most American software companies. The reasoning behind this is that by being able to see more contents on a website, Koreans are able to catch up to the lastest news, fashion trends, and more. In a fast paced, image conscious culture such as Korea, being up to date on things matter on a personal and a social level.</p>
+
+<h3 id="reasion-2">Reasion #2</h3>
+<p>Here’s another way of thinking about it if you are still not convinced.
+Everyday, countless people go to work using the extensive subway system in Korea. If you get on one, you will see that 90% of people are staring into their phone, 8% are sleeping, 0.5% are reading a book/newspaper and the rest are just staring into nothing; that would be me.  <img align="right" height="200" src="http://www.englishspectrum.com/wp-content/uploads/2016/11/3.jpg" /> The 90% need something to do and as time went on, Naver became the goto website for people, henceforth making Naver an essential part of the culture. If you don’t know what Naver is, you probably are a Norht Korean spy. Heck, I bet they even know what it is! As people used Naver more and more, users became more comfortable with the website’s UI. In order to stay competitive, other websites began to take hints from Naver. And there you go… a specific UI preference just became part of the country’s culture. And at this point, that particular UI is hard set in the culture because</p>
+
+<blockquote>
+  <p><strong>Culture tops personal preference most of the time.</strong></p>
+</blockquote>
+
+<p>Now, this is quite a statement to make and is almost the same as saying “Hipsters don’t exist”. But still, hipsters need good search engines too, right?</p>
+
+<h2 id="so-im-not-a-culture-expert-on-all-195-different-countries-in-the-world">So, I’m not a culture expert on all 195 different countries in the world</h2>
+
+<p>Well, I understand that. If you were a big corporation like Google, you could just set up a local company in all 195 countries and solve the problem that way. But… you aren’t. So, here’s my suggestion.</p>
+
+<blockquote>
+  <p><strong>Refer to the most famous websites in that country for design queues.</strong></p>
+</blockquote>
+
+<p>But it’s weird to think about Google abandoning material design to become like Naver after a single update, right? So, as the Lawrence of Arabia would say,</p>
+
+<blockquote>
+  <p><strong>The trick is to incrementally adapt cultural UI queues.</strong></p>
+</blockquote>
+
+<p>Instead of going from 0 to 100 real quick, one should increment by 10 each quarter while observing users’ reaction to the change and making adjustments as needed.</p>
+
+<h2 id="0-to-10-not-100">0 to 10, not 100</h2>
+<p>One of the most used features in Naver is the <strong>Top 10 real-time searched keyword list.</strong> So, allow me to propose the first incremental change Google could make to adopt to Korean culture.</p>
+
+<p><em>The continents would be the Korean peninsula but I’m working with limited graphic resources here!</em>
+<img src="https://www.deadbeef.me/assets/global/google_korea.jpeg" alt="" /></p>
+
+<p>The above approach would be a good initial step towards UI globalization. And all I did was grab a UI from Google Trends and paste it on Google’s home page.</p>
+
+<h2 id="wrap-up">Wrap up</h2>
+<p>So… instead of just localizing couple of languages and saying “Ok, we just went global”, give some consideration about the UI and the culture of people who are going to be interacting with it by</p>
+
+<ol>
+  <li>Look at the most visited website in the country</li>
+  <li>Take notes on its UI</li>
+  <li>Divide UI features into 10 (x) unique characteristics/elements</li>
+  <li>Make necessary changes over 10 (x) quarters</li>
+</ol>
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Jun 13, 2017</small>
+          <br>
+            <a class="no-hov" href="/2017/06/globalizing-software-1">&laquo; Globalizing Software</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>Jun 28, 2017 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2017/06/first-talk">🔈 Swift Talk: Limiting the use of Protocols &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2017/06/globalizing-software-2';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2017/06/globalizing-software-2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

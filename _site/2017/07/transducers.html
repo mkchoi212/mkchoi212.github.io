@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Transducers in Swift - 0xDEADBEEF</title>
+    <meta name="description" content="The necessary metaphor 🌯🌯🌯Let’s say that you work at a teddy bear factory. Your boss comes and tells you to remove all the faulty teddy bears from the line a...">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2017/07/transducers">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Transducers in Swift | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Transducers in Swift" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Will it blend?" />
+<meta property="og:description" content="Will it blend?" />
+<link rel="canonical" href="https://www.deadbeef.me/2017/07/transducers" />
+<meta property="og:url" content="https://www.deadbeef.me/2017/07/transducers" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-16T20:17:11-05:00" />
+<script type="application/ld+json">
+{"description":"Will it blend?","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2017/07/transducers","headline":"Transducers in Swift","dateModified":"2017-07-16T20:17:11-05:00","datePublished":"2017-07-16T20:17:11-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2017/07/transducers"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Transducers in Swift</h1>
+        <p class="c-article__time"><time datetime="2017-07-16T20:17:11-05:00" itemprop="datePublished">Jul 16, 2017</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">functional-programming</li>
+    
+      <li class="c-tag">swift</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <h1 id="the-necessary-metaphor-">The necessary metaphor 🌯🌯🌯</h1>
+<p>Let’s say that you work at a teddy bear factory. Your boss comes and tells you to remove all the faulty teddy bears from the line and package the good ones after putting a price tag on them.</p>
+
+<p>Easy enough. You go to the conveyor belt where teddy bears are born and start looking at the teddy bears one by one. As you scan them, you throw away the faulty ones while labeling and boxing the good ones. If your quota for the day is 1000 bears, you would only have to scan 1000 bears.</p>
+
+<p><strong>Now, what would happen if we write a program for this?</strong>
+In Swift, we could do something like this</p>
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">packagedBox</span> <span class="o">=</span> <span class="n">bears</span><span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isValid</span><span class="p">)</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">putPriceTag</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Cool, but let’s see whats going on here. By doing <code class="highlighter-rouge">bears.filter(isValid)</code>, you are throwing away the faulty ones but also packaging the good ones into a box.</p>
+
+<p>When the time comes for you to put a price tag on the good bears by doing <code class="highlighter-rouge">map(putPriceTag)</code>, you notice that you need to re-open the box and look at all the bears for the second time. At the end of the day, you feel twice as tired and you should because you just scanned twice as many teddy bears!</p>
+
+<p>You end up getting home, feeling tired after looking at so many teddy bears and search for a solution on StackOverflow. And it turns out, there is an idea called ‘Transducers’ from Clojure that seems like a perfect solution to the problem. So you start Googling for answers…</p>
+
+<p class="center"><img src="https://media.giphy.com/media/10lvrPfoXDHoTm/giphy.gif" alt="TED!" /></p>
+
+<h1 id="what-are-transducers">What are Transducers?</h1>
+<blockquote>
+  <p>Transducers modify a process by transforming their internal reducing functions.</p>
+</blockquote>
+
+<p>The basic purpose is to look again at <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">filter</code> and see if there is some idea in them that can be made more reusable.</p>
+
+<p>We can do this by recasting them as process transformations;
+or successions of steps that ingests an input and blots out an output.</p>
+
+<p>If you think about it this way, <code class="highlighter-rouge">map</code> basically does what we said above and stores the collection of outputs into a collection.
+That’s a specialization of the idea. The generalized form of the idea is the “seeded left reduce”; taking something we are building up and a new thing and continuing to building up.</p>
+
+<p>So, we want to get away from the idea that reduction is about creating a
+praticular thing. Instead, we should focus more on it being a process because some processes build things while others are infinite.</p>
+
+<p>The concept may be hard to understand at first - it certainly took me awhile - so, here are some gifs because gifs are good…</p>
+
+<p><em>Map</em>
+<img src="https://www.deadbeef.me/assets/transducers/map.gif" alt="STL Map" />
+<em>Transducers</em>
+<img src="https://www.deadbeef.me/assets/transducers/transducers.gif" alt="Transducers" /></p>
+
+<h1 id="implementation">Implementation</h1>
+<p>Before going all crazy, let’s process lists in the naive/easy way.</p>
+
+<h2 id="naive-way">Naive Way</h2>
+<p>I’m guessing that from all the FP buzz, you are familiar with <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">filter</code>. So I’m going to use them to combine multiple functions to process an array of integers.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">isEven</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">incr</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">naive1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span>
+                     <span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</code></pre>
+</div>
+
+<p>¯_(ツ)_/¯</p>
+
+<h1 id="analysis">Analysis</h1>
+<p>The above function calls <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">filter</code> twice on a range of integers.
+And the performance-conscience you may say,</p>
+
+<blockquote>
+  <p>“Hey, that just looped over that range n * 2 times and created an intermediate array! Can we make it so that it iterates only n times?”</p>
+</blockquote>
+
+<p>And I would say</p>
+<blockquote>
+  <p>“Yes, we can. We can use transducers for that”</p>
+</blockquote>
+
+<p>But first, here’s some theoretical stuff we need to cover first.</p>
+
+<h1 id="reduce-everything">Reduce everything</h1>
+<p>You need to understand that <strong>all list processing functions - such as <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">filter</code> - can be redefined in terms of <code class="highlighter-rouge">reduce</code></strong></p>
+
+<p>But what does this have to do with transducers?</p>
+
+<p>Recognizing this gives us regularity/uniformity because the things we can prove about <code class="highlighter-rouge">reduce</code> can also apply to the rest of the list processing functions as well.</p>
+
+<p>Basically, if theory <code class="highlighter-rouge">A</code> applies to <code class="highlighter-rouge">reduce</code> and <code class="highlighter-rouge">map</code> can be expressed in terms of <code class="highlighter-rouge">reduce</code>, <code class="highlighter-rouge">A</code> must also apply to <code class="highlighter-rouge">map</code>.</p>
+
+<p>Here are some examples to illustrate this.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="n">append</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">to</span> <span class="nv">accum</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">],</span> <span class="n">with</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">accum</span> <span class="o">+</span> <span class="p">[</span><span class="n">input</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">Collection</span> <span class="p">{</span>
+  <span class="kd">typealias</span> <span class="kt">A</span> <span class="o">=</span> <span class="kt">Iterator</span><span class="o">.</span><span class="kt">Element</span>
+
+  <span class="kd">func</span> <span class="n">mmap</span><span class="o">&lt;</span><span class="kt">B</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">f</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">B</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">B</span><span class="p">]</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">reduce</span><span class="p">([])</span> <span class="p">{</span> <span class="n">accum</span><span class="p">,</span> <span class="n">elem</span> <span class="k">in</span>
+          <span class="nf">append</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">accum</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="nf">f</span><span class="p">(</span><span class="n">elem</span><span class="p">))</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">mfilter</span><span class="p">(</span><span class="n">_</span> <span class="nv">f</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">A</span><span class="p">]</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nf">reduce</span><span class="p">([])</span> <span class="p">{</span> <span class="n">accum</span><span class="p">,</span> <span class="n">elem</span> <span class="k">in</span>
+          <span class="k">if</span> <span class="nf">f</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="nf">append</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">accum</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">elem</span><span class="p">)</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="n">accum</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Notice that <code class="highlighter-rouge">mmap</code> reduces with <code class="highlighter-rouge">append</code> and <code class="highlighter-rouge">mfilter</code> reduces with <code class="highlighter-rouge">append</code> as well. But it is important to recognize that <strong>we chose to append <code class="highlighter-rouge">elem</code> to <code class="highlighter-rouge">accum</code> to create a new collection in both cases.</strong></p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">naive2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="nf">mmap</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span>
+                     <span class="o">.</span><span class="nf">mfilter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span>
+<span class="n">naive1</span> <span class="o">==</span> <span class="n">naive2</span>
+<span class="o">&gt;&gt;</span> <span class="kc">true</span>
+</code></pre>
+</div>
+
+<p>So, this works. But, if you haven’t noticed yet, both <code class="highlighter-rouge">mmap</code> and <code class="highlighter-rouge">mfiler</code> still use intermediate arrays to process elements.
+What this means is that everytime <code class="highlighter-rouge">mmap</code> prepares to process things, it <strong>starts with an empty array</strong> and so does <code class="highlighter-rouge">mfilter</code>.</p>
+
+<p>This means that <code class="highlighter-rouge">naive2</code> still had to iterate n * 2 times.</p>
+
+<h1 id="transducers">Transducers</h1>
+
+<p>We can do better than that. And this is where transducers come in.</p>
+
+<blockquote>
+  <p>Transducers allow us to use only <strong>one intermeidate array</strong> and <strong>one iteration through the array</strong> to apply many transformations while being in control of the way it reduces.</p>
+</blockquote>
+
+<h3 id="thoughts-before-going-in">Thoughts before going in…</h3>
+
+<p>So, how should we go about this? Well right now, we know that both <code class="highlighter-rouge">mmap</code> and <code class="highlighter-rouge">mfilter</code> are implemented using <code class="highlighter-rouge">reduce</code> and that they both use a function called <code class="highlighter-rouge">append</code>. But why do we use <code class="highlighter-rouge">append</code> here? Do we even <strong>have</strong> to use it here? There’s nothing special about it. Afterall, it’s just a function 😃</p>
+
+<p>If we think about it that way, I could use any function with the type <code class="highlighter-rouge">(accum, elem) -&gt; (accum)</code> in place of <code class="highlighter-rouge">append</code>. Turns out, functions with the following type signitures are called <strong>reducing functions</strong>. Let’s go ahead and write a version of map/filter that can take a reducing function in its closure.</p>
+
+<h1 id="code">Code</h1>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="n">mapping</span> <span class="o">&lt;</span><span class="kt">A</span><span class="p">,</span> <span class="kt">B</span><span class="p">,</span> <span class="kt">C</span><span class="o">&gt;</span> <span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">B</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kd">@escaping</span> <span class="p">((</span><span class="kt">C</span><span class="p">,</span> <span class="kt">B</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">C</span><span class="p">)))</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">C</span><span class="p">,</span> <span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">C</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="n">reducer</span> <span class="k">in</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="n">accum</span><span class="p">,</span> <span class="n">input</span> <span class="k">in</span>
+          <span class="nf">reducer</span><span class="p">(</span><span class="n">accum</span><span class="p">,</span> <span class="nf">f</span><span class="p">(</span><span class="n">input</span><span class="p">))</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="n">filtering</span><span class="o">&lt;</span><span class="kt">A</span><span class="p">,</span> <span class="kt">C</span><span class="o">&gt;</span> <span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kd">@escaping</span> <span class="p">((</span><span class="kt">C</span><span class="p">,</span> <span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">C</span><span class="p">)))</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">C</span><span class="p">,</span> <span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">C</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="n">reducer</span> <span class="k">in</span>
+      <span class="k">return</span> <span class="p">{</span> <span class="n">accum</span><span class="p">,</span> <span class="n">input</span> <span class="k">in</span>
+          <span class="k">if</span> <span class="nf">f</span><span class="p">(</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="nf">reducer</span><span class="p">(</span><span class="n">accum</span><span class="p">,</span> <span class="n">input</span><span class="p">)</span>
+          <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+              <span class="k">return</span> <span class="n">accum</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>😵😵😵😵</p>
+
+<p>I know it looks like a lot but stay with me. It’s not TOO complicated.
+Here’s what each parameter/generic type is trying to say.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">A</code> -&gt; Input type</li>
+  <li><code class="highlighter-rouge">B</code> -&gt; Output type</li>
+  <li><code class="highlighter-rouge">C</code> -&gt; Accumulated data type (Array, Int, etc)</li>
+  <li><code class="highlighter-rouge">f: (A) -&gt; (B)</code>
+    <ul>
+      <li>Transformation function that takes an input and returns an ouput</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">((C, B) -&gt; (C)) -&gt; ((C, A) -&gt; (C))</code>
+    <ul>
+      <li>Returning closure parameters
+        <ul>
+          <li><em>Input</em> : <strong>Reducing function</strong>. Takes <code class="highlighter-rouge">(accum, output)</code> and returns a new accumulated output.</li>
+          <li><em>Output</em> : A closure fed into <code class="highlighter-rouge">reduce</code>. Takes a <code class="highlighter-rouge">(accum, input)</code> and applies <code class="highlighter-rouge">f()</code> to the input and calls <code class="highlighter-rouge">reducer</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="example">Example</h1>
+<p>To use these, let’s start off with a simple reducing function; function that adds two numbers and returns a number.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">l</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">r</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">l</span> <span class="o">+</span> <span class="n">r</span>
+<span class="p">}</span>
+
+<span class="c1">// or just (+)</span>
+</code></pre>
+</div>
+
+<p>In the first <code class="highlighter-rouge">reduce</code>, we <strong>choose</strong> to append the new element to the array
+and in the second <code class="highlighter-rouge">reduce</code>, we <strong>choose</strong> to numerically add the new element to the initial value.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">let</span> <span class="nv">clever</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">([],</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="n">append</span><span class="p">))</span>
+                     <span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nf">filtering</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)(</span><span class="o">+</span><span class="p">))</span>
+
+<span class="k">let</span> <span class="nv">oldWay</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span><span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">+</span><span class="p">)</span>
+
+<span class="n">clever</span> <span class="o">==</span> <span class="n">oldWay</span>
+<span class="o">&gt;&gt;</span> <span class="kc">true</span>
+</code></pre>
+</div>
+<p>👍👍👍👍</p>
+
+<p>In our old naive way, we have to add one more <code class="highlighter-rouge">reduce</code> after the <code class="highlighter-rouge">filter</code> to do the adding because we have no control over how these functions reduce.</p>
+
+<p>To see what <code class="highlighter-rouge">mapping</code> and <code class="highlighter-rouge">filtering</code> does in detail, let’s play with it.
+As a reminder, they both return <code class="highlighter-rouge">(accum, input) -&gt; (accum)</code> so we can feed it to <code class="highlighter-rouge">reduce</code>.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="nf">assert</span><span class="p">(</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="n">append</span><span class="p">)([],</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+<span class="nf">assert</span><span class="p">(</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="n">append</span><span class="p">)([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+<span class="nf">assert</span><span class="p">(</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="n">add</span><span class="p">)(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">)</span>
+
+<span class="nf">assert</span><span class="p">(</span> <span class="nf">filtering</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)(</span><span class="n">append</span><span class="p">)([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+<span class="nf">assert</span><span class="p">(</span> <span class="nf">filtering</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)(</span><span class="n">append</span><span class="p">)([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+</code></pre>
+</div>
+
+<h1 id="the-big-moment">The Big Moment.</h1>
+
+<p>Wait a sec… Did I just say <code class="highlighter-rouge">mapping</code> and <code class="highlighter-rouge">filtering</code> returns a <code class="highlighter-rouge">(accum, input) -&gt; (accum)</code>?
+Didn’t I say that functions with that type signiture are called <code class="highlighter-rouge">reducing functions</code>?</p>
+
+<p>So, <code class="highlighter-rouge">mapping</code> / <code class="highlighter-rouge">filterting</code> are the same things as <code class="highlighter-rouge">append</code> and <code class="highlighter-rouge">add</code>.
+This is the moment we have been waiting for. Get excited…</p>
+
+<p>Let’s put a <code class="highlighter-rouge">filtering</code> where the reducing closure used to be.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">//mapping(f: inr)(Any reducing functions here)</span>
+<span class="k">let</span> <span class="nv">incrAndFilterEvens</span><span class="p">:</span> <span class="p">([</span><span class="kt">Int</span><span class="p">],</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt">Int</span><span class="p">])</span> <span class="o">=</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)(</span><span class="nf">filtering</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)(</span><span class="n">append</span><span class="p">))</span>
+<span class="k">let</span> <span class="nv">transducerRes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">([],</span> <span class="n">incrAndFilterEvens</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">oldRes</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="nf">map</span><span class="p">(</span><span class="n">incr</span><span class="p">)</span><span class="o">.</span><span class="nf">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">)</span>
+<span class="n">transducerRes</span> <span class="o">==</span> <span class="n">oldRes</span>
+<span class="o">&gt;&gt;</span> <span class="kc">true</span>
+</code></pre>
+</div>
+
+<p>As you see above, <code class="highlighter-rouge">incrAndFilterEvens</code> is also a reducing type.
+This means we can keep on composing functions until we drop.</p>
+
+<h1 id="getting-fancy-">Getting fancy 💃</h1>
+<p>This is cool but a bit messy. So let’s make the process of combining functions a little more “pretty” by making it <em>functional</em>.</p>
+
+<p>Here are some function composition operators.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// (f --&gt; g)(x) = f(g(x))</span>
+<span class="k">infix</span> <span class="k">operator</span> <span class="o">--&gt;</span> <span class="p">:</span> <span class="kt">AdditionPrecedence</span>
+<span class="kd">func</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="kt">A</span><span class="p">,</span> <span class="kt">B</span><span class="o">&gt;</span> <span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="p">(</span><span class="kt">A</span><span class="p">),</span> <span class="nv">f</span><span class="p">:</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">B</span><span class="p">))</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">B</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// (f --&gt; g)(x) = f(g(x))</span>
+<span class="kd">func</span> <span class="o">--&gt;</span> <span class="o">&lt;</span><span class="kt">A</span><span class="p">,</span> <span class="kt">B</span><span class="p">,</span> <span class="kt">C</span><span class="o">&gt;</span> <span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">B</span><span class="p">),</span> <span class="nv">g</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">B</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">C</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="kt">A</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">C</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="nf">g</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">transduceFTW</span> <span class="o">=</span> <span class="p">(</span><span class="n">append</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="nf">mapping</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">incr</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="nf">filtering</span><span class="p">(</span><span class="nv">f</span><span class="p">:</span> <span class="n">isEven</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="o">...</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="nf">reduce</span><span class="p">([],</span> <span class="n">transduceFTW</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>And if you print every time <code class="highlighter-rouge">append</code> is called, you get the following output.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>[]
+[2]
+[2, 3]
+[2, 3, 4]
+[2, 3, 4, 5]
+[2, 3, 4, 5, 6]
+[2, 3, 4, 5, 6, 7]
+[2, 3, 4, 5, 6, 7, 8]
+[2, 3, 4, 5, 6, 7, 8, 9]
+[2, 3, 4, 5, 6, 7, 8, 9, 10]
+</code></pre>
+</div>
+
+<p>The array was created after going through the range only <code class="highlighter-rouge">n</code> times!</p>
+
+<h2>🎉🎉🎉</h2>
+<p>We managed to apply multiple transformations to an array whilst in full control of the reduction process! In addition, it looks pretty as hell. Here’s a link to the <a href="https://github.com/mkchoi212/Transducers">git repo containing the .playground file</a> if you want to play around with it.</p>
+
+<p><em>For some of you, Swift’s <code class="highlighter-rouge">lazy</code> may have come into mind while reading this post. Don’t worry as in the <a href="https://www.deadbeef.me/2017/07/transducers-pt2">next</a> post, we will look and compare transducer’s performance and see how they can be used in the real world.</em></p>
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Jun 28, 2017</small>
+          <br>
+            <a class="no-hov" href="/2017/06/first-talk">&laquo; 🔈 Swift Talk: Limiting the use of Protocols</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>Jul 18, 2017 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2017/07/transducers-pt2">Transducers in Swift II &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2017/07/transducers';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2017/07/transducers'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

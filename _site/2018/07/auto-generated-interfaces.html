@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Xcode Auto Generated Interfaces - 0xDEADBEEF</title>
+    <meta name="description" content="If you have ever called Objective-C code from Swift, you may have noticed the “Generated Interfaces” feature in Xcode. But have you noticed the details of th...">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2018/07/auto-generated-interfaces">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Xcode Auto Generated Interfaces | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Xcode Auto Generated Interfaces" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Swift Objective-C Magic" />
+<meta property="og:description" content="Swift Objective-C Magic" />
+<link rel="canonical" href="https://www.deadbeef.me/2018/07/auto-generated-interfaces" />
+<meta property="og:url" content="https://www.deadbeef.me/2018/07/auto-generated-interfaces" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-18T01:23:10-05:00" />
+<script type="application/ld+json">
+{"description":"Swift Objective-C Magic","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2018/07/auto-generated-interfaces","headline":"Xcode Auto Generated Interfaces","dateModified":"2018-07-18T01:23:10-05:00","datePublished":"2018-07-18T01:23:10-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2018/07/auto-generated-interfaces"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Xcode Auto Generated Interfaces</h1>
+        <p class="c-article__time"><time datetime="2018-07-18T01:23:10-05:00" itemprop="datePublished">Jul 18, 2018</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">swift</li>
+    
+      <li class="c-tag">objc</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p>If you have ever called Objective-C code from Swift, you may have noticed the “Generated Interfaces” feature in Xcode. But have you noticed the details of the said “generated interfaces”?</p>
+
+<p>For those of you who don’t know what I’m talking about, Xcode has a feature where you can view the automatically generated Swift interfaces of Objective-C files from the editor. This is way, you can see how your Objective-C expressions are parsed into their Swift counterparts, <strong>before compiling anything.</strong></p>
+
+<p class="center"><img src="https://www.deadbeef.me/assets/auto-gen-interface/howto.png" alt="How to bring up Generated Interfaces" /></p>
+
+<h2 id="look-closely-">Look closely 👓</h2>
+
+<p>That’s cool and all but did you notice how objc expressions were exactly parsed into their Swift counterparts? If you didn’t, let me point them out to you.</p>
+
+<h2 id="initializers">Initializers</h2>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span> <span class="nf">age</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">age</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span><span class="p">;</span>
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initFor</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">years</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>🔻 Generated Interfaces</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+<span class="nf">init</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span>
+<span class="nf">init</span><span class="p">(</span><span class="k">for</span> <span class="nv">years</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Notice that the <code class="highlighter-rouge">initWithName</code> is automatically shrunk to <code class="highlighter-rouge">init(name:)</code> to follow Swift’s naming style 😱. This allows you to name your objc functions without worrying about how they are going to look in Swift.</p>
+
+<p>Also, notice how <code class="highlighter-rouge">initFor</code> is separated into <code class="highlighter-rouge">init(for:)</code>. Cool, eh?</p>
+
+<h2 id="functions">Functions</h2>
+
+<p>Assuming the above initializers are for the <code class="highlighter-rouge">Animal</code> class, let’s make our <code class="highlighter-rouge">Animal</code> do something by adding some functions.</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">sleepFor</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">minutes</span><span class="p">;</span> 
+<span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">playAt</span><span class="p">:(</span><span class="n">Location</span><span class="p">)</span><span class="nv">location</span> <span class="nf">for</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">minutes</span><span class="p">;</span> 
+<span class="k">-</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nf">playWith</span><span class="p">:(</span><span class="n">Toy</span><span class="p">)</span><span class="nv">toy</span>                         
+</code></pre>
+</div>
+
+<p>🔻 Generated Interfaces</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">sleep</span><span class="p">(</span><span class="k">for</span> <span class="nv">minutes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+<span class="kd">func</span> <span class="nf">play</span><span class="p">(</span><span class="n">at</span> <span class="nv">location</span><span class="p">:</span> <span class="kt">Location</span><span class="p">,</span> <span class="k">for</span> <span class="nv">minutes</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+<span class="kd">func</span> <span class="nf">play</span><span class="p">(</span><span class="n">with</span> <span class="nv">toy</span><span class="p">:</span> <span class="kt">Toy</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span>
+</code></pre>
+</div>
+
+<p>Here, things seem pretty straightforward but once again, notice the details! The <code class="highlighter-rouge">sleepFor:</code>, <code class="highlighter-rouge">playAt:</code>, <code class="highlighter-rouge">playWith:</code> have been parsed as <code class="highlighter-rouge">sleep(for:)</code>, <code class="highlighter-rouge">play(at:)</code> and <code class="highlighter-rouge">play(with:)</code>.</p>
+
+<h2 id="enums">enums</h2>
+
+<p>Now that the <code class="highlighter-rouge">Animal</code>s can do something, let’s make some <code class="highlighter-rouge">Location</code>s where we can play with our <code class="highlighter-rouge">Animal</code>s.</p>
+
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">NS_ENUM</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">,</span> <span class="n">Location</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">LocationPark</span><span class="p">,</span>
+    <span class="n">LocationHome</span><span class="p">,</span>
+    <span class="n">LocationLake</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<p>Notice how I named the enum cases like how any good objc developer should; <code class="highlighter-rouge">TypeNameCaseName</code>.</p>
+
+<p>That’s cool but Swift favors simplicity and readability when it comes to naming. Thankfully, Xcode automatically takes care of that for you, again.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Location</span> <span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">park</span>
+    <span class="k">case</span> <span class="n">home</span>
+    <span class="k">case</span> <span class="n">lake</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Now look at the below Swift code that is calling objc code. Doesn’t it look like you are calling native Swift code?</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="k">guard</span> <span class="k">let</span> <span class="nv">🦄</span> <span class="o">=</span> <span class="kt">Animal</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"Shadowfax"</span><span class="p">,</span> <span class="nv">age</span><span class="p">:</span> <span class="mi">9000</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nf">fatalError</span><span class="p">(</span><span class="s">"neighhhhh"</span><span class="p">)</span>
+<span class="p">}</span>
+        
+<span class="n">🦄</span><span class="o">.</span><span class="nf">play</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">boomerang</span><span class="p">)</span>
+<span class="n">🦄</span><span class="o">.</span><span class="nf">play</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="o">.</span><span class="n">park</span><span class="p">,</span> <span class="nv">for</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h2 id="wrapping-up">Wrapping Up</h2>
+
+<p>Well, I hope you found that to be some what interesting. In the next post, I will maybe look into how this is done behind the scenes 😎</p>
+
+<blockquote>
+  <p>Here’s a <a href="https://www.dropbox.com/sh/vjth76ug53mq5fa/AABn5ukKNuVszOXAEugy7mh_a?dl=0">sample Xcode project</a> for you to play around with.</p>
+</blockquote>
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Jun 22, 2018</small>
+          <br>
+            <a class="no-hov" href="/2018/06/oss">&laquo; Open-source self-diagnostics</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>Aug 4, 2018 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2018/08/gsoc">Google Summer of Code Final Report Part 1 &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2018/07/auto-generated-interfaces';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2018/07/auto-generated-interfaces'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

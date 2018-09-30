@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Swift Sucess Enums - 0xDEADBEEF</title>
+    <meta name="description" content="TL;DR Enums may or may not be an optimal way to handle errors in Swift but are suitable to create types tailored to your needs.">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="https://www.deadbeef.me/2016/02/success-enums">
+    <link rel="alternate" type="application/rss+xml" title="0xDEADBEEF" href="https://www.deadbeef.me/feed.xml">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Swift Sucess Enums | 0xDEADBEEF</title>
+<meta name="generator" content="Jekyll v3.4.3" />
+<meta property="og:title" content="Swift Sucess Enums" />
+<meta name="author" content="Mike JS. Choi" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Handle errors without optionals" />
+<meta property="og:description" content="Handle errors without optionals" />
+<link rel="canonical" href="https://www.deadbeef.me/2016/02/success-enums" />
+<meta property="og:url" content="https://www.deadbeef.me/2016/02/success-enums" />
+<meta property="og:site_name" content="0xDEADBEEF" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-02-04T19:49:23-06:00" />
+<script type="application/ld+json">
+{"description":"Handle errors without optionals","author":{"@type":"Person","name":"Mike JS. Choi"},"@type":"BlogPosting","url":"https://www.deadbeef.me/2016/02/success-enums","headline":"Swift Sucess Enums","dateModified":"2016-02-04T19:49:23-06:00","datePublished":"2016-02-04T19:49:23-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.deadbeef.me/2016/02/success-enums"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>0xDEADBEEF</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span> <a href="/about/">About</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Swift Sucess Enums</h1>
+        <p class="c-article__time"><time datetime="2016-02-04T19:49:23-06:00" itemprop="datePublished">Feb 4, 2016</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">swift</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p><strong>TL;DR</strong> Enums may or may not be an optimal way to handle errors in Swift but are suitable to create types tailored to your needs.</p>
+
+<p>Let’s talk about error handling in Swift. If you’ve been doing Swift for awhile, two things should pop into your head; optionals and try-catch blocks. They’ve served us well and will continue to do so, but let us look at an alternative method to handle errors.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>Swift’s optional types are great but has a single drawback; we don’t retain any information regarding why the type became nil. This sucks because when it comes for us to report why an operation failed to the user, we have to say something vague like “We failed because of nil”</p>
+
+<h2 id="how-about-an-enum">How about an enum?</h2>
+
+<p>In order to capture our possible error, we want our failable function to return either the result or an ErrorType. So, why not return an enum instead of returning a “Optional(Result)” ?</p>
+
+<p>With Swift’s enums ability to have associated values, we can do stuff like this to retain information about what went wrong.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="c1">// IMPLEMENTATION</span>
+<span class="kd">enum</span> <span class="kt">LookupError</span><span class="p">:</span> <span class="kt">ErrorType</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kt">InvalidName</span>
+  <span class="k">case</span> <span class="kt">NullData</span>
+<span class="p">}</span>
+
+<span class="kd">enum</span> <span class="kt">UserResult</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kt">Success</span><span class="p">(</span><span class="kt">String</span><span class="p">)</span>
+  <span class="k">case</span> <span class="kt">Error</span><span class="p">(</span><span class="kt">LookupError</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>And then use it like this</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">findUserStatus</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UserResult</span> <span class="p">{</span>
+  <span class="k">guard</span> <span class="k">let</span> <span class="nv">userStats</span> <span class="o">=</span> <span class="n">users</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">.</span><span class="kt">Error</span><span class="p">(</span><span class="kt">InvalidName</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="o">.</span><span class="kt">Success</span><span class="p">(</span><span class="n">userStats</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">switch</span> <span class="nf">findUserStatus</span><span class="p">(</span><span class="s">"Stevie Wonder"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="kt">Success</span><span class="p">(</span><span class="n">stats</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Stevie Wonder's Stats: </span><span class="se">\(</span><span class="n">stats</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+  <span class="k">case</span> <span class="kd">let</span> <span class="o">.</span><span class="kt">Error</span><span class="p">(</span><span class="n">error</span><span class="p">):</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">);
+}
+</span></code></pre>
+</div>
+
+<p>Here, we can see that Stevie’s information could not be found and has been properly reported to our user. This is much better than just doing an if let/guard on an optional and return a nil value when an error occurs.</p>
+
+<h2 id="a-generic-version">A Generic Version</h2>
+
+<p>But, this version doesn’t work if we want to return a <code class="highlighter-rouge">NSData</code>, does it? The Success case is only defined for a <code class="highlighter-rouge">String</code>.</p>
+
+<p>Let’s use Swift’s generics to make it compatible with all types.</p>
+
+<div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kd">enum</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="kt">Success</span><span class="p">(</span><span class="kt">T</span><span class="p">)</span>
+  <span class="k">case</span> <span class="kt">Error</span><span class="p">(</span><span class="kt">ErrorType</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// Example function signitures</span>
+<span class="kd">func</span> <span class="nf">findUserAddress</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">String</span><span class="o">&gt;</span>
+<span class="kd">func</span> <span class="nf">findUserAge</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Result</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p>##So?</p>
+
+<p>If you look at the implementation of the Swift’s built-in error handling mechanisms, things work very similarly to what we just did with Result enums. But there is one limitation; error handling only works on the result type of a function. Swift won’t let you pass a possibly failed argument to a function but with our Result enums, you can because it’s just another value!</p>
+
+<p>But in the end, most people probably prefer using optionals since they are built-in to the language and the syntactic sugars that come with it are convenient; like <code class="highlighter-rouge">??</code>. And so, here’s a quote I hope will help you make the decision.</p>
+
+<blockquote>
+  <p>“Program into a language, not in it” - Steve McConnell</p>
+</blockquote>
+
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    
+    
+
+    
+    
+
+    <div class="pagenav">
+		
+        <div class="wrapper" id="left">
+          <small><b>Previous</b> Feb 4, 2016</small>
+          <br>
+            <a class="no-hov" href="/2016/02/swift-objc-interop">&laquo; Swift Objective-C Interoperation</a>
+        </div>
+		
+		
+        <div class="wrapper" id="right">
+          <small>May 5, 2016 <b>Next</b></small>
+          <br>
+          <a class="no-hov" href="/2016/05/today-app">🚀 today: an information hub &raquo;</a>
+        </div>
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+		<div class="post-disqus">
+				<section id="disqus_thread"></section>
+				<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+
+var disqus_config = function () {
+  this.page.url = 'https://www.deadbeef.me/2016/02/success-enums';  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = '/2016/02/success-enums'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://deadbeef-me.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+		</div>
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Mike JS. Choi 2018</p>
+    <p><a href="https://twitter.com/bananamlkshake2">Twitter</a><span class="u-separate"></span><a href="https://github.com/mkchoi212">Github</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>
