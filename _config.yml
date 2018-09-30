@@ -6,11 +6,22 @@ description: >
 author: Mike JS. Choi
 email: mkchoi212@icloud.com
 baseurl: ""
-url: "https://www.deadbeef.me" # the base hostname & protocol for your site
+url: "https://www.deadbeef.me"
 twitter_username: bananamlkshake2
 github_username:  mkchoi212
 disqus_id: deadbeef-me
 google_analytics_id: UA-101802837-1
+
+# SEO
+gem:
+  - jekyll-seo-tag
+
+social:
+  name: Mike JS. Choi
+  links:
+    - https://github.com/mkchoi212
+    - https://twitter.com/bananamlkshake2
+    - https://www.linkedin.com/in/mikejschoi/
 
 # Build settings
 include: [_pages]
