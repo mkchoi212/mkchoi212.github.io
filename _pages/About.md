@@ -4,13 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Hi, my name is Mike JS. Choi; JS is for Jun Soo. I am a college student & developer. Thanks for visiting my site.
+Thanks a bunch for visiting my site!
+
+My name is Mike JS. Choi; JS is for Jun Soo. I am currently a Software Developer at .
 
 I build things and write about software development when I have the time.
 Check out some of my [projects](https://deadbeef.me/projects/) and my [blog posts](https://deadbeef.me)!
 
-I am also actively looking for a full-time position. [Email](mailto:mkchoi212@icloud.com) me and I will be happy to
-send you my resume :D
+If you want to talk about anything, feel free to [email](mailto:mkchoi212@icloud.com) me :D
 
 ----
 
