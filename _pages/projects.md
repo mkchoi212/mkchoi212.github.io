@@ -4,6 +4,17 @@ title: Projects
 permalink: /projects/
 ---
 
+# Startup
+
+Below are projects that I worked on as a co-founder of [Studiolanes](https://www.studiolanes.com).
+
+- [Camp](http://getcamp.xyz) - AI powered screenshot organizer; [App Store](https://apps.apple.com/gb/app/camp-a-scrapbook/id1658539800)
+- [Marauder](https://marauder.world) - Private location tracking; [App Store](https://apps.apple.com/us/app/marauder-retrace-your-steps/id6456485422)
+- [Shengji](http://shengji.world) - Online implementation of [Sheng ji](https://en.wikipedia.org/wiki/Sheng_ji); [iOS](https://apps.apple.com/us/app/shengji/id6473964274) & [Android](https://play.google.com/store/apps/details?id=com.studiolanes.tractor)
+- [Frames](https://frames.studiolanes.com) - Design feedback and collaboration tool
+
+# Personal
+
 - [VLCKit](https://github.com/videolan/vlckit) - libvlc bindings for OS X, iOS and tvOS in Objective-C (Google Summer of Code project)
 - [xcperfect](https://github.com/mkchoi212/xcperfect) - xccov formatter, written in Ruby
 - [Fix All Conflicts](https://github.com/mkchoi212/fac) - command-line interface for fixing git merge conflicts, written in Go
@@ -20,8 +31,8 @@ permalink: /projects/
 # Hacks
 - [CrowdSense](https://github.com/mkchoi212/crowd_sense)
 - [Shovel](https://github.com/muinmomin/vision)
-   - [🎉 1st place](https://twitter.com/EEP_TAMU/status/932409691350724608)
-   - [Cool school news article!](http://www.thebatt.com/science-technology/teams-apply-virtual-perspectives-to-practical-problems/article_f6429522-cdb2-11e7-800b-e367e6d55617.html)
+   - [Twitter](https://twitter.com/EEP_TAMU/status/932409691350724608)
+   - [Media](http://www.thebatt.com/science-technology/teams-apply-virtual-perspectives-to-practical-problems/article_f6429522-cdb2-11e7-800b-e367e6d55617.html)
 
 # Talks
 - [Let us go: 2017 Swift Conf @ Seoul, Korea](https://iosdevkor.github.io/let_us_go_2017_summer_review/) - Limiting the use of protocols [(blog post)](https://www.deadbeef.me/2017/06/first-talk) [(video)](https://news.realm.io/kr/news/understanding-swift-protocol/)
