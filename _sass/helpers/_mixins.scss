@@ -16,7 +16,7 @@
 
 // Font families
 @mixin ff--sans-serif($font-weight: normal) {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: $font-weight;
 }
 
