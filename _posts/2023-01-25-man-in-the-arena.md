@@ -11,6 +11,7 @@ Hello, Internet. It's been awhile since I have posted anything here - precisely 
 - Worked at 2 of my dream companies
 - Quit working from both of those companies
 - Figured out my immigration puzzle so I can finally start a company
+- Joined SPC, created a [company](https://www.studiolanes.com), and started working with my co-founder
 
 And here we are. For 1,634 days, I have seen, heard, experienced, created, and tasted a lot of interesting nuggets the world has to offer. The decision to resume writing on this blog is motivated by me wanting to share these nuggets and thoughts to you all, one small bite at a time. If you resonate or learn something new from the bite, fantastic. If you do not, I encourage you to message me on [X](https://x.com/guard_if). Let's have a nice conversation and enlighten each other.
 
