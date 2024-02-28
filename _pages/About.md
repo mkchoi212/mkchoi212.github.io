@@ -28,3 +28,4 @@ This site was made on an [Apple MBP](https://www.apple.com/) powered by [Jekyll]
 - [LinkedIn](https://www.linkedin.com/in/mikejschoi) for 🤝🏻
 - [StackOverflow](https://stackoverflow.com/users/4064189/mike-js-choi) for ⁉️
 - [Studiolanes Blog](http://blog.studiolanes.com) for 🔨
+- [O-1 Information](https://blog.studiolanes.com/posts/how-i-got-the-o1) for ⭐
