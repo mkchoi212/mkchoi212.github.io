@@ -12,6 +12,7 @@ Below are projects that I worked on as a co-founder of [Studiolanes](https://www
 - [Marauder](https://marauder.world) - Private location tracking; [App Store](https://apps.apple.com/us/app/marauder-retrace-your-steps/id6456485422)
 - [Shengji](http://shengji.world) - Online implementation of [Sheng ji](https://en.wikipedia.org/wiki/Sheng_ji); [iOS](https://apps.apple.com/us/app/shengji/id6473964274) & [Android](https://play.google.com/store/apps/details?id=com.studiolanes.tractor)
 - [Frames](https://frames.studiolanes.com) - Design feedback and collaboration tool
+- [Campana](https://getcampana.com) - Competitive research & alerting tool, powered by LLMs
 
 # Personal
 
