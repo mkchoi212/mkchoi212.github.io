@@ -23,7 +23,7 @@ social:
     - https://www.linkedin.com/in/mikejschoi/
 
 # Build settings
-include: [_pages]
+include: [_pages, ads.txt]
 markdown: kramdown
 permalink: /:year/:month/:title
 sass:
