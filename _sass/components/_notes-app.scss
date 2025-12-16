@@ -1,0 +1,1329 @@
+/* ==========================================================================
+   Notes App Layout - iPadOS 26 Style
+   ========================================================================== */
+
+// Notes app specific variables
+$notes-sidebar-width: 320px;
+$notes-border-radius: 12px;
+$notes-transition: 0.25s ease;
+$notes-blur: blur(20px);
+$notes-accent: #007AFF;
+
+// CSS Custom Properties for theming
+.notes-app {
+  // Light mode (default)
+  --notes-bg: #ffffff;
+  --notes-bg-translucent: rgba(255, 255, 255, 0.72);
+  --notes-bg-sidebar: rgba(246, 246, 246, 0.88);
+  --notes-border-color: rgba(0, 0, 0, 0.08);
+  --notes-selection-bg: rgba(0, 0, 0, 0.04);
+  --notes-selection-bg-active: rgba(0, 122, 255, 0.12);
+  --notes-text-primary: #163541;
+  --notes-text-secondary: #5C6E74;
+  --notes-text-tertiary: #869395;
+  --notes-loading-border: rgba(0, 0, 0, 0.08);
+  --notes-code-bg: #f5f5f5;
+}
+
+// Dark mode
+.notes-app--dark {
+  --notes-bg: #1c1c1e;
+  --notes-bg-translucent: rgba(28, 28, 30, 0.85);
+  --notes-bg-sidebar: rgba(44, 44, 46, 0.88);
+  --notes-border-color: rgba(255, 255, 255, 0.1);
+  --notes-selection-bg: rgba(255, 255, 255, 0.06);
+  --notes-selection-bg-active: rgba(0, 122, 255, 0.25);
+  --notes-text-primary: #f5f5f7;
+  --notes-text-secondary: #a1a1a6;
+  --notes-text-tertiary: #8e8e93;
+  --notes-loading-border: rgba(255, 255, 255, 0.1);
+  --notes-code-bg: #2c2c2e;
+}
+
+// Auto dark mode based on system preference
+@media (prefers-color-scheme: dark) {
+  .notes-app:not(.notes-app--light) {
+    --notes-bg: #1c1c1e;
+    --notes-bg-translucent: rgba(28, 28, 30, 0.85);
+    --notes-bg-sidebar: rgba(44, 44, 46, 0.88);
+    --notes-border-color: rgba(255, 255, 255, 0.1);
+    --notes-selection-bg: rgba(255, 255, 255, 0.06);
+    --notes-selection-bg-active: rgba(0, 122, 255, 0.25);
+    --notes-text-primary: #f5f5f7;
+    --notes-text-secondary: #a1a1a6;
+    --notes-text-tertiary: #8e8e93;
+    --notes-loading-border: rgba(255, 255, 255, 0.1);
+    --notes-code-bg: #2c2c2e;
+  }
+}
+
+// Main container
+.notes-app {
+  display: grid;
+  grid-template-columns: $notes-sidebar-width 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--notes-bg);
+  transition: background-color $notes-transition, grid-template-columns 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    height: 100dvh; // Dynamic viewport height for mobile browsers
+  }
+
+  // Collapsed sidebar state
+  &.sidebar-collapsed {
+    grid-template-columns: 0 1fr;
+
+    .notes-app__sidebar {
+      transform: translateX(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sidebar-collapse-handle {
+      left: 0;
+      width: 20px;
+    }
+  }
+}
+
+// Ellipsis menu button
+.notes-app__ellipsis-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 200;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--notes-text-tertiary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: var(--notes-selection-bg);
+    color: var(--notes-text-secondary);
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+// Context menu (iOS style)
+.context-menu {
+  position: absolute;
+  top: 3.5rem;
+  right: 1.25rem;
+  z-index: 300;
+  min-width: 200px;
+  padding: 0.75rem 0;
+  background: rgba(40, 40, 40, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateY(-8px);
+  transform-origin: top right;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.context-menu__section {
+  padding: 0.5rem 1rem;
+}
+
+.context-menu__label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.context-menu__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5rem 0;
+}
+
+.context-menu__theme-options {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.context-menu__theme-btn {
+  flex: 1;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+
+  &:hover .context-menu__theme-square {
+    opacity: 0.85;
+  }
+
+  &.is-selected .context-menu__theme-square {
+    box-shadow: 0 0 0 2px rgba(40, 40, 40, 0.95), 0 0 0 4px rgba(59, 130, 246, 0.6);
+  }
+}
+
+.context-menu__theme-square {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  transition: box-shadow 0.15s ease, opacity 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--light {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #f59e0b;
+  }
+
+  &--dark {
+    background: #1c1c1e;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #a5b4fc;
+  }
+}
+
+.context-menu__font-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.context-menu__font-btn {
+  width: 100%;
+  padding: 0.6rem 0.75rem 0.6rem 2.5rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.4rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.is-selected {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-size: contain;
+    }
+  }
+
+  &[data-font="system"] { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; }
+  &[data-font="georgia"] { font-family: Georgia, serif; }
+  &[data-font="charter"] { font-family: Charter, Georgia, serif; }
+  &[data-font="palatino"] { font-family: Palatino, "Palatino Linotype", serif; }
+  &[data-font="times"] { font-family: "Times New Roman", Times, serif; }
+  &[data-font="ia-writer"] { font-family: "iA Writer Duo", "iA Writer Mono", Menlo, monospace; }
+}
+
+// Sidebar collapse handle
+.sidebar-collapse-handle {
+  position: absolute;
+  left: $notes-sidebar-width - 6px;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  z-index: 200;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s ease, left 0.3s ease;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  &:hover,
+  &.is-visible {
+    opacity: 1;
+  }
+
+  &__pill {
+    width: 6px;
+    height: 50px;
+    border-radius: 3px;
+    background: rgba(128, 128, 128, 0.4);
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+
+  &:hover &__pill {
+    background: rgba(128, 128, 128, 0.6);
+    transform: scaleY(1.1);
+  }
+
+  // Dark mode adjustments
+  .notes-app--dark & {
+    &__pill {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    &:hover &__pill {
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .notes-app:not(.notes-app--light) & {
+      &__pill {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      &:hover &__pill {
+        background: rgba(255, 255, 255, 0.35);
+      }
+    }
+  }
+}
+
+// Mobile header (hidden on desktop)
+.notes-app__mobile-header {
+  display: none;
+  align-items: center;
+  padding: 1rem 1.25rem 2rem;
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  // Frosted glass blur effect
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+
+  // Blur layer
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--notes-bg-translucent);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    z-index: -1;
+  }
+
+  h1 {
+    display: none;
+  }
+}
+
+.notes-app__back-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 150;
+
+  // Liquid glass effect (backdrop-filter set by JS)
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease, background 0.15s ease;
+
+  // Center the icon
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    .notes-app--post-open & {
+      display: flex;
+    }
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.08);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    color: #fff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    margin-left: -2px; // Optical centering for chevron
+  }
+}
+
+// Dark mode toggle
+.notes-app__theme-toggle {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--notes-text-secondary);
+  border-radius: 8px;
+  transition: background-color $notes-transition, color $notes-transition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: var(--notes-selection-bg);
+    color: var(--notes-text-primary);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-moon {
+    display: block;
+  }
+
+  .icon-sun {
+    display: none;
+  }
+
+  .notes-app--dark & {
+    .icon-moon {
+      display: none;
+    }
+
+    .icon-sun {
+      display: block;
+    }
+  }
+}
+
+// Auto dark mode icons
+@media (prefers-color-scheme: dark) {
+  .notes-app:not(.notes-app--light) .notes-app__theme-toggle {
+    .icon-moon {
+      display: none;
+    }
+
+    .icon-sun {
+      display: block;
+    }
+  }
+}
+
+// Sidebar
+.notes-app__sidebar {
+  background: var(--notes-bg-sidebar);
+  backdrop-filter: $notes-blur;
+  -webkit-backdrop-filter: $notes-blur;
+  border-right: 1px solid var(--notes-border-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background-color $notes-transition, border-color $notes-transition, transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  min-width: $notes-sidebar-width;
+  white-space: nowrap;
+
+  @media screen and (max-width: 768px) {
+    border-right: none;
+    min-height: 100%;
+
+    .notes-app--post-open & {
+      display: none;
+    }
+  }
+}
+
+.notes-app__sidebar-header {
+  padding: 2rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--notes-border-color);
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--notes-text-primary);
+    letter-spacing: -0.02em;
+    transition: color $notes-transition;
+  }
+}
+
+.notes-app__header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.notes-app__header-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-app__post-count {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--notes-text-tertiary);
+  margin-top: 0.25rem;
+}
+
+// Post list
+.notes-app__post-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.40rem;
+  padding-bottom: 80px; // Space for floating tab bar
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: 90px;
+  }
+}
+
+.notes-app__section-header {
+  position: sticky;
+  top: -0.75rem;
+  z-index: 10;
+  padding: 1.25rem 1.25rem 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--notes-text-primary);
+  background: #f6f6f6;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--notes-border-color);
+
+  .notes-app--dark & {
+    background: #2c2c2e;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .notes-app:not(.notes-app--light) & {
+      background: #2c2c2e;
+    }
+  }
+}
+
+.notes-app__post-item {
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.25rem;
+  border-radius: $notes-border-radius;
+  cursor: pointer;
+  transition: background-color $notes-transition;
+
+  &:hover {
+    background: var(--notes-selection-bg);
+  }
+
+  &.is-selected {
+    background: var(--notes-selection-bg-active);
+  }
+}
+
+.notes-app__post-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--notes-text-primary);
+  margin-bottom: 0.35rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color $notes-transition;
+}
+
+.notes-app__post-date {
+  font-size: 1.2rem;
+  color: var(--notes-text-tertiary);
+  display: block;
+  margin-top: 0.25rem;
+  text-align: left;
+  transition: color $notes-transition;
+}
+
+.notes-app__post-excerpt {
+  font-size: 1.3rem;
+  color: var(--notes-text-tertiary);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color $notes-transition;
+}
+
+// Content pane
+.notes-app__content {
+  background: var(--notes-bg);
+  overflow-y: auto;
+  position: relative;
+  transition: background-color $notes-transition;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+
+    .notes-app--post-open & {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding-top: 60px;
+    }
+  }
+}
+
+.notes-app__content-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+// Welcome state (when no post selected)
+.notes-app__welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  color: var(--notes-text-secondary);
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--notes-text-primary);
+    transition: color $notes-transition;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    transition: color $notes-transition;
+  }
+}
+
+// Loading state
+.notes-app__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+
+  &::after {
+    content: '';
+    width: 28px;
+    height: 28px;
+    border: 2.5px solid var(--notes-loading-border);
+    border-top-color: $notes-accent;
+    border-radius: 50%;
+    animation: notes-spin 0.7s linear infinite;
+  }
+}
+
+@keyframes notes-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Error state
+.notes-app__error {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--notes-text-secondary);
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  a {
+    color: $notes-accent;
+  }
+}
+
+// Article styling within notes app - Notion + Apple Notes inspired
+.notes-app__content {
+  .c-article {
+    color: var(--notes-text-primary);
+    transition: color $notes-transition;
+  }
+
+  .c-article__header {
+    display: block !important;
+    margin-bottom: 2.5rem;
+  }
+
+  .c-article__title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    color: var(--notes-text-primary);
+    transition: color $notes-transition;
+  }
+
+  .c-article__time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--notes-text-tertiary);
+    text-align: center;
+    margin-top: -1.8rem;
+    margin-bottom: 3.5rem;
+    transition: color $notes-transition;
+  }
+
+  .c-article__main {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.65;
+    color: var(--notes-text-primary);
+    transition: color $notes-transition;
+
+    // Paragraphs
+    p {
+      margin-bottom: 1.25em;
+    }
+
+    // Headers - Notion style hierarchy
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--notes-text-primary);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      line-height: 1.3;
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.8rem; }
+    h4 { font-size: 1.6rem; font-weight: 600; }
+    h5 { font-size: 1.5rem; font-weight: 600; }
+    h6 { font-size: 1.4rem; font-weight: 600; color: var(--notes-text-secondary); }
+
+    // Links - subtle, Notion style
+    a {
+      color: var(--notes-text-secondary);
+      text-decoration: underline;
+      text-decoration-color: var(--notes-border-color);
+      text-underline-offset: 2px;
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+      &:hover {
+        color: var(--notes-text-primary);
+        text-decoration-color: $notes-accent;
+      }
+    }
+
+    // Inline code - Apple Notes simplicity
+    code {
+      font-family: "SF Mono", Monaco, Consolas, monospace;
+      font-size: 0.9em;
+      padding: 0.15em 0.4em;
+      background: var(--notes-code-bg);
+      border-radius: 4px;
+      transition: background-color $notes-transition;
+    }
+
+    // Code blocks
+    .highlight {
+      background: var(--notes-code-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 1.5em 0;
+      transition: background-color $notes-transition;
+    }
+
+    pre {
+      background: var(--notes-code-bg);
+      border-radius: 8px;
+      padding: 1.25em 1.5em;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin: 0;
+      transition: background-color $notes-transition;
+
+      code {
+        padding: 0;
+        background: none;
+        font-size: 1.4rem;
+        line-height: 1.5;
+      }
+    }
+
+    pre:not(.highlight pre) {
+      margin: 1.5em 0;
+    }
+
+    // Blockquotes - minimal left border
+    blockquote {
+      margin: 1.5em 0;
+      padding: 0 0 0 1.25em;
+      border-left: 2px solid var(--notes-border-color);
+      color: var(--notes-text-secondary);
+      font-style: italic;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Horizontal rules - very subtle
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--notes-border-color);
+      margin: 2.5em 0;
+    }
+
+    // Lists - clean spacing
+    ul, ol {
+      margin: 1em 0;
+      padding-left: 1.5em;
+
+      li {
+        margin-bottom: 0.4em;
+        line-height: 1.6;
+
+        &::marker {
+          color: var(--notes-text-tertiary);
+        }
+      }
+
+      // Nested lists
+      ul, ol {
+        margin: 0.4em 0;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+
+      ul {
+        list-style-type: circle;
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+    // Images
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1.5em 0;
+    }
+
+    // Column layout - Notion style side-by-side
+    .column-list {
+      display: flex;
+      gap: 2rem;
+      margin: 3em 0;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 2em 0;
+      }
+    }
+
+    .column {
+      flex: 1;
+      min-width: 0;
+
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+
+      img {
+        margin: 0.5em 0;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      h3 {
+        margin-top: 0;
+      }
+    }
+
+    // Tables - clean Notion style
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      font-size: 1.5rem;
+
+      th, td {
+        padding: 0.75em 1em;
+        text-align: left;
+        border-bottom: 1px solid var(--notes-border-color);
+      }
+
+      th {
+        font-weight: 600;
+        color: var(--notes-text-secondary);
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+    }
+
+    // Strong and emphasis
+    strong {
+      font-weight: 600;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    // Post navigation
+    .post-nav {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--notes-border-color);
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    .post-nav__link {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--notes-border-color);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background-color 0.15s ease;
+
+      &:hover {
+        border-color: var(--notes-text-tertiary);
+        background: var(--notes-selection-bg);
+      }
+
+      &--prev {
+        align-items: flex-start;
+      }
+
+      &--next {
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      &--empty {
+        border: none;
+        pointer-events: none;
+      }
+    }
+
+    .post-nav__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--notes-text-tertiary);
+    }
+
+    .post-nav__chevron {
+      width: 16px;
+      height: 16px;
+    }
+
+    .post-nav__date {
+      font-size: 1.3rem;
+    }
+
+    .post-nav__title {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--notes-text-primary);
+      line-height: 1.4;
+    }
+  }
+
+}
+
+// Hide page nav in notes view (using sidebar navigation instead)
+.notes-app__content .pagenav {
+  display: none;
+}
+
+// Full width container override
+.u-container--full {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Override container when notes-app is present
+.u-container:has(.notes-app) {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+
+body:has(.notes-app) {
+  overflow: hidden;
+}
+
+// Body class for notes app page
+.notes-app-page {
+  overflow: hidden;
+  height: 100vh;
+
+  .u-container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+}
+
+/* ==========================================================================
+   Segmented Tab Bar - macOS Activity Monitor Style
+   ========================================================================== */
+
+.segmented-tabbar {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  pointer-events: none;
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.segmented-tabbar__container {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: 100px;
+  pointer-events: auto;
+
+  // Light mode (default)
+  background: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  // Dark mode
+  .notes-app--dark & {
+    background: #3a3a3c;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .notes-app:not(.notes-app--light) & {
+      background: #3a3a3c;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.segmented-tabbar__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 100px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.15s ease;
+
+  // Text styling
+  font-size: 1.3rem;
+  font-weight: 400;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+
+  // Light mode (default)
+  color: rgba(0, 0, 0, 0.5);
+
+  // Remove default link styles
+  &::after {
+    display: none !important;
+  }
+
+  // Hover state - light mode
+  &:hover:not(.is-active) {
+    color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  // Active/selected state - light mode
+  &.is-active {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  // Dark mode
+  .notes-app--dark & {
+    color: rgba(255, 255, 255, 0.65);
+
+    &:hover:not(.is-active) {
+      color: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    &.is-active {
+      background: #636366;
+      color: #ffffff;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 1px 2px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .notes-app:not(.notes-app--light) & {
+      color: rgba(255, 255, 255, 0.65);
+
+      &:hover:not(.is-active) {
+        color: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      &.is-active {
+        background: #636366;
+        color: #ffffff;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 1px 2px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  // Tap feedback
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* ==========================================================================
+   Projects App - Content Pane Styles
+   ========================================================================== */
+
+.projects-app__category-item {
+  text-transform: capitalize;
+}
+
+.projects-app__content-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--notes-text-primary);
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
+}
+
+.projects-app__content-desc {
+  font-size: 1.5rem;
+  color: var(--notes-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.projects-app__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-app__row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  margin: 0 -0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.1s ease;
+
+  &:hover {
+    background: var(--notes-selection-bg);
+  }
+
+  &::after {
+    display: none !important;
+  }
+}
+
+.projects-app__row-emoji {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  width: 24px;
+  text-align: center;
+}
+
+.projects-app__row-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--notes-text-primary);
+  white-space: nowrap;
+  transition: color $notes-transition;
+}
+
+.projects-app__row-desc {
+  font-size: 1.4rem;
+  color: var(--notes-text-tertiary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color $notes-transition;
+}
+
+.projects-app__row-external {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-left: auto;
+  color: var(--notes-text-tertiary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+
+  .projects-app__row:hover & {
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Font Classes for Article Content
+   ========================================================================== */
+
+.notes-app.font-system .c-article__main {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+}
+
+.notes-app.font-georgia .c-article__main {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.notes-app.font-charter .c-article__main {
+  font-family: Charter, "Bitstream Charter", Georgia, serif;
+}
+
+.notes-app.font-palatino .c-article__main {
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", serif;
+}
+
+.notes-app.font-times .c-article__main {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.notes-app.font-ia-writer .c-article__main {
+  font-family: "iA Writer Duo", "iA Writer Mono", Menlo, Monaco, monospace;
+}
+
+/* ==========================================================================
+   Sepia Theme
+   ========================================================================== */
+
+.notes-app--sepia {
+  --notes-bg: #f5f0e6;
+  --notes-bg-translucent: rgba(245, 240, 230, 0.85);
+  --notes-bg-sidebar: rgba(235, 228, 215, 0.88);
+  --notes-border-color: rgba(139, 119, 90, 0.15);
+  --notes-selection-bg: rgba(139, 119, 90, 0.08);
+  --notes-selection-bg-active: rgba(139, 119, 90, 0.15);
+  --notes-text-primary: #3d3426;
+  --notes-text-secondary: #6b5d4d;
+  --notes-text-tertiary: #8b7760;
+  --notes-loading-border: rgba(139, 119, 90, 0.15);
+  --notes-code-bg: #ebe4d6;
+}

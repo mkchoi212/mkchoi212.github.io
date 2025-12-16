@@ -1,10 +1,11 @@
 ---
-layout: content
+layout: about-app
 title: About
 permalink: /about/
+body_class: notes-app-page
 ---
 
-My name is Mike JS. Choi; JS is for Jun Soo. I am the co-founder of [Studiolanes](https://www.studiolanes.com).
+My name is Mike JS. Choi; JS is for Jun Soo. I am the co-founder of [Koah](https://koahlabs.com).
 
 I build things and write about software development when I have the time.
 Check out some of my [projects](https://deadbeef.me/projects/) and my [blog posts](https://deadbeef.me).

@@ -1,0 +1,92 @@
+- category: work
+  description: Things I've built with my team
+  projects:
+    - name: Koah
+      emoji: "\U0001F333"
+      description: Commerce infrastructure for AI
+      url: https://koahlabs.com
+    - name: Camp
+      emoji: "\U0001F3D5"
+      description: AI powered screenshot organizer
+      url: http://getcamp.xyz
+    - name: Marauder
+      emoji: "\U0001F4CD"
+      description: Private location tracking
+      url: https://marauder.world
+    - name: Shengji
+      emoji: "\U0001F0CF"
+      description: Online implementation of Sheng ji
+      url: http://shengji.world
+    - name: Frames
+      emoji: "\U0001F5BC"
+      description: Design feedback and collaboration tool
+      url: https://frames.studiolanes.com
+    - name: Campana
+      emoji: "\U0001F514"
+      description: Competitive research & alerting tool, powered by LLMs
+      url: https://getcampana.com
+    - name: Campana Blog
+      emoji: "\U0001F4DD"
+      description: Lessons learned while building Campana
+      url: https://blog.getcampana.com
+
+- category: builds
+  projects:
+    - name: VLCKit
+      emoji: "\U0001F3AC"
+      description: libvlc bindings for OS X, iOS and tvOS in Objective-C (GSoC)
+      url: https://github.com/videolan/vlckit
+    - name: xcperfect
+      emoji: "\U0001F48E"
+      description: xccov formatter, written in Ruby
+      url: https://github.com/mkchoi212/xcperfect
+    - name: Fix All Conflicts
+      emoji: "\U0001F91D"
+      description: CLI for fixing git merge conflicts, written in Go
+      url: https://github.com/mkchoi212/fac
+    - name: CircularCrownSelector
+      emoji: "\u231A"
+      description: Apple watchOS selection UI
+      url: https://github.com/mkchoi212/CircularCrownSelector
+    - name: LBaC-Swift
+      emoji: "\U0001F4DA"
+      description: Let's Build a Compiler translated to Swift Playgrounds
+      url: https://github.com/mkchoi212/LBAC-Swift
+    - name: bitbuf
+      emoji: "\U0001F9EE"
+      description: C API for creation and analysis of binary data
+      url: https://github.com/mkchoi212/bitbuf
+    - name: Paper
+      emoji: "\U0001F4C4"
+      description: Jekyll theme used in my personal blog
+      url: https://github.com/mkchoi212/paper-jekyll-theme
+    - name: This blog
+      emoji: "\U0001F310"
+      description: Jekyll based blog deployed on Github Pages
+      url: https://github.com/mkchoi212/mkchoi212.github.io
+    - name: Maroon
+      emoji: "\U0001F3C8"
+      description: iOS app for Texas A&M University students
+      url: https://github.com/mkchoi212/Maroon
+    - name: today
+      emoji: "\u2600\uFE0F"
+      description: iOS app designed to simplify your morning
+      url: https://github.com/mkchoi212/today
+    - name: Habitats
+      emoji: "\U0001F3E0"
+      description: iOS app for Habitats for Humanity shack bidding
+      url: https://github.com/mkchoi212/Habitats
+    - name: Word Sneak
+      emoji: "\U0001F3B4"
+      description: iOS card game based on Late Night with Jimmy Fallon
+      url: https://github.com/mkchoi212/Wordsneak
+
+- category: talks
+  projects:
+    - name: Forerunner AGM 2025
+      emoji: "\u26A1"
+      url: https://f.io/1EpPLyAu
+    - name: "Let us go: 2017 Swift Conf @ Seoul"
+      emoji: "\U0001F3A4"
+      description: Limiting the use of protocols
+      url: https://iosdevkor.github.io/let_us_go_2017_summer_review/

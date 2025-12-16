@@ -85,44 +85,11 @@ a {
     color: $c-accent__blue;
     background-color: transparent;
     text-decoration: none;
-
-    position: relative;
-    display: inline-block;
-    padding: 0px 1px;
-    transition: color ease 0.3s;
     word-break: break-word;
-    
-    /* Hover animation effect for all buttons */
-    &::after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-      height: 0%;
-      left: 0;
-      bottom: 0;
-      background-color: $c-accent__blue;
-      transition: all ease 0.3s;
-    }
-
-    &:hover {
-      color: white;
-      &::after {
-        height: 100%;
-      }
-    }
-
 }
 
-/* Override hover animation with no-hov class */
-a.no-hov {
-	&:after {
-		content: none
-	}
-	
-	&:hover {
-		color: $c-accent__darkblue
-	}
+a.no-hov:hover {
+	color: $c-accent__darkblue;
 }
 
 a.nav {

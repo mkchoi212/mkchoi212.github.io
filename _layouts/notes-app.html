@@ -3,6 +3,12 @@ layout: default
 body_class: notes-app-page
 ---
 <div class="notes-app" id="notes-app">
+  <!-- Mobile back button (post detail view) - Liquid Glass -->
+  <button class="notes-app__back-btn liquid-glass-btn" id="back-btn" aria-label="Back to list">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
   <!-- Sidebar collapse handle -->
   <div class="sidebar-collapse-handle" id="sidebar-collapse-handle" aria-label="Toggle sidebar">
     <div class="sidebar-collapse-handle__pill"></div>
@@ -60,13 +66,6 @@ body_class: notes-app-page
     </div>
   </div>
 
-  <!-- Mobile back button (post detail view) - Liquid Glass -->
-  <button class="notes-app__back-btn liquid-glass-btn" id="back-btn" aria-label="Back to list">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
-
   <!-- Sidebar: Post List -->
   <aside class="notes-app__sidebar">
     <header class="notes-app__sidebar-header">
@@ -93,7 +92,7 @@ body_class: notes-app-page
             <div class="notes-app__section-header">{{ section_key }}</div>
             {% assign previous_section = section_key %}
           {% endif %}
-        <article class="notes-app__post-item{% if post.url == page.url %} is-selected{% endif %}"
+        <article class="notes-app__post-item"
                  data-url="{{ post.url | prepend: site.baseurl }}"
                  data-post-id="{{ post.id | slugify }}"
                  role="button"
@@ -130,44 +129,10 @@ body_class: notes-app-page
   <!-- Content Pane -->
   <main class="notes-app__content" id="content-pane">
     <div class="notes-app__content-inner" id="post-content">
-      <article class="c-article">
-        <header class="c-article__header">
-          <p class="c-article__time">Written on <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
-          <h1 class="c-article__title">{{ page.title }}</h1>
-        </header>
-        <div class="c-article__main">
-          {{ content }}
-
-          <!-- Post Navigation -->
-          <nav class="post-nav">
-            {% if page.previous.url %}
-            <a href="{{ page.previous.url | prepend: site.baseurl }}" class="post-nav__link post-nav__link--prev">
-              <span class="post-nav__meta">
-                <svg class="post-nav__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-                <span class="post-nav__date">{{ page.previous.date | date: "%b %Y" }}</span>
-              </span>
-              <span class="post-nav__title">{{ page.previous.title }}</span>
-            </a>
-            {% else %}
-            <div class="post-nav__link post-nav__link--empty"></div>
-            {% endif %}
-
-            {% if page.next.url %}
-            <a href="{{ page.next.url | prepend: site.baseurl }}" class="post-nav__link post-nav__link--next">
-              <span class="post-nav__meta">
-                <span class="post-nav__date">{{ page.next.date | date: "%b %Y" }}</span>
-                <svg class="post-nav__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </span>
-              <span class="post-nav__title">{{ page.next.title }}</span>
-            </a>
-            {% endif %}
-          </nav>
-        </div>
-      </article>
+      <div class="notes-app__welcome">
+        <h2>Welcome</h2>
+        <p>Select a post from the sidebar to read.</p>
+      </div>
     </div>
   </main>
 </div>

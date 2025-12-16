@@ -1,0 +1,203 @@
+---
+layout: default
+body_class: notes-app-page
+---
+{% assign total_projects = 0 %}
+{% for cat in site.data.projects %}
+  {% assign total_projects = total_projects | plus: cat.projects.size %}
+{% endfor %}
+
+<div class="notes-app" id="notes-app">
+  <!-- Mobile back button (detail view) - Liquid Glass -->
+  <button class="notes-app__back-btn liquid-glass-btn" id="back-btn" aria-label="Back to list">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <!-- Sidebar collapse handle -->
+  <div class="sidebar-collapse-handle" id="sidebar-collapse-handle" aria-label="Toggle sidebar">
+    <div class="sidebar-collapse-handle__pill"></div>
+  </div>
+
+  <!-- Ellipsis menu button -->
+  <button class="notes-app__ellipsis-btn" id="ellipsis-btn" aria-label="Open menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="5" r="2"></circle>
+      <circle cx="12" cy="12" r="2"></circle>
+      <circle cx="12" cy="19" r="2"></circle>
+    </svg>
+  </button>
+
+  <!-- Context menu -->
+  <div class="context-menu" id="context-menu">
+    <div class="context-menu__section">
+      <span class="context-menu__label">Theme</span>
+      <div class="context-menu__theme-options">
+        <button class="context-menu__theme-btn" data-theme="light" aria-label="Light theme">
+          <span class="context-menu__theme-square context-menu__theme-square--light">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+        <button class="context-menu__theme-btn" data-theme="dark" aria-label="Dark theme">
+          <span class="context-menu__theme-square context-menu__theme-square--dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="context-menu__divider"></div>
+    <div class="context-menu__section">
+      <span class="context-menu__label">Font</span>
+      <div class="context-menu__font-options">
+        <button class="context-menu__font-btn" data-font="system">San Francisco</button>
+        <button class="context-menu__font-btn" data-font="georgia">Georgia</button>
+        <button class="context-menu__font-btn" data-font="charter">Charter</button>
+        <button class="context-menu__font-btn" data-font="palatino">Palatino</button>
+        <button class="context-menu__font-btn" data-font="times">Times New Roman</button>
+        <button class="context-menu__font-btn" data-font="ia-writer">iA Writer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sidebar: Category List -->
+  <aside class="notes-app__sidebar">
+    <header class="notes-app__sidebar-header">
+      <div class="notes-app__header-row">
+        <div class="notes-app__header-title">
+          <h1>Projects</h1>
+          <span class="notes-app__post-count">{{ total_projects }} projects</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="notes-app__post-list" id="category-list">
+      {% for cat in site.data.projects %}
+        <article class="notes-app__post-item projects-app__category-item"
+                 data-category="{{ cat.category }}"
+                 role="button"
+                 tabindex="0"
+                 aria-label="View {{ cat.category }} projects">
+          <h3 class="notes-app__post-title">{{ cat.category }}</h3>
+          <span class="notes-app__post-date">{{ cat.projects.size }} projects</span>
+        </article>
+      {% endfor %}
+    </div>
+
+    <!-- Segmented Tab Bar - macOS Style -->
+    <nav class="segmented-tabbar" id="segmented-tabbar">
+      <div class="segmented-tabbar__container">
+        <a href="{{ "/" | prepend: site.baseurl }}" class="segmented-tabbar__item" data-tab="home" aria-label="Home">
+          Home
+        </a>
+        <a href="{{ "/projects/" | prepend: site.baseurl }}" class="segmented-tabbar__item is-active" data-tab="projects" aria-label="Projects">
+          Projects
+        </a>
+        <a href="{{ "/about/" | prepend: site.baseurl }}" class="segmented-tabbar__item" data-tab="about" aria-label="About">
+          About
+        </a>
+        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="segmented-tabbar__item" data-tab="rss" aria-label="RSS Feed">
+          RSS
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Content Pane -->
+  <main class="notes-app__content" id="content-pane">
+    <div class="notes-app__content-inner" id="project-content">
+      <div class="notes-app__welcome">
+        <h2>Projects</h2>
+        <p>Select a category from the sidebar.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Project data for JavaScript -->
+<script id="projects-data" type="application/json">
+{{ site.data.projects | jsonify }}
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const projectsData = JSON.parse(document.getElementById('projects-data').textContent);
+  const categoryItems = document.querySelectorAll('.projects-app__category-item');
+  const contentPane = document.getElementById('project-content');
+  const notesApp = document.getElementById('notes-app');
+  const backBtn = document.getElementById('back-btn');
+  const isMobile = () => window.innerWidth <= 768;
+
+  function showCategory(categoryName, openOnMobile = true) {
+    const category = projectsData.find(c => c.category === categoryName);
+
+    // Update selected state
+    categoryItems.forEach(i => {
+      i.classList.toggle('is-selected', i.dataset.category === categoryName);
+    });
+
+    // Show content pane on mobile
+    if (openOnMobile && isMobile()) {
+      notesApp.classList.add('notes-app--post-open');
+    }
+
+    // Render projects in content pane as Notion-style rows
+    if (category) {
+      let html = `<div class="projects-app__content">
+        <h1 class="projects-app__content-title">${category.category}</h1>
+        ${category.description ? `<p class="projects-app__content-desc">${category.description}</p>` : ''}
+        <div class="projects-app__list">`;
+
+      category.projects.forEach(project => {
+        html += `<a href="${project.url}" class="projects-app__row" target="_blank" rel="noopener noreferrer">
+          <span class="projects-app__row-emoji">${project.emoji || '📁'}</span>
+          <span class="projects-app__row-name">${project.name}</span>
+          ${project.description ? `<span class="projects-app__row-desc">${project.description}</span>` : ''}
+          <svg class="projects-app__row-external" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>`;
+      });
+
+      html += '</div></div>';
+      contentPane.innerHTML = html;
+    }
+  }
+
+  function closeDetailView() {
+    notesApp.classList.remove('notes-app--post-open');
+    if (isMobile()) {
+      categoryItems.forEach(i => i.classList.remove('is-selected'));
+    }
+  }
+
+  categoryItems.forEach(item => {
+    item.addEventListener('click', function() {
+      showCategory(this.dataset.category);
+    });
+  });
+
+  // Back button
+  if (backBtn) {
+    backBtn.addEventListener('click', closeDetailView);
+  }
+
+  // Auto-select "work" on page load (but don't open on mobile)
+  if (!isMobile()) {
+    showCategory('work', false);
+  }
+});
+</script>

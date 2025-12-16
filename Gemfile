@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 
 gem "jekyll"
+gem "csv"
+gem "logger"
+gem "base64"
 gem "html-proofer"
 gem "rb-fsevent", "0.9.8"
 gem "kramdown-parser-gfm"

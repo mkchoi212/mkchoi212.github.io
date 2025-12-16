@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:appleinsider.com)",
+      "WebFetch(domain:www.apple.com)",
+      "Bash(bundle install:*)",
+      "Bash(jekyll serve:*)",
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(cat:*)",
+      "WebSearch",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}
