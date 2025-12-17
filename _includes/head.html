@@ -2,9 +2,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1c1c1e" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" id="theme-color-meta" content="#1c1c1e">
     <meta name="color-scheme" content="light dark">
+    <script>
+    (function() {
+      var saved = localStorage.getItem('notes-app-theme');
+      var theme = saved === 'light' ? 'light' : (saved === 'dark' ? 'dark' :
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+      var color = theme === 'light' ? '#ffffff' : '#1c1c1e';
+      document.getElementById('theme-color-meta').setAttribute('content', color);
+    })();
+    </script>
 
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">

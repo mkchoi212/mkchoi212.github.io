@@ -123,10 +123,10 @@
   // Update mobile status bar color (theme-color meta tag)
   function updateThemeColor(theme) {
     var color = theme === 'light' ? '#ffffff' : '#1c1c1e';
-    var metaTags = document.querySelectorAll('meta[name="theme-color"]');
-    metaTags.forEach(function(meta) {
-      meta.setAttribute('content', color);
-    });
+    var metaTag = document.getElementById('theme-color-meta');
+    if (metaTag) {
+      metaTag.setAttribute('content', color);
+    }
   }
 
   // Update theme button selection state
