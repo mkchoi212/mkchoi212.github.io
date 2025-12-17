@@ -73,17 +73,32 @@
     localStorage.setItem(SIDEBAR_KEY, state.sidebarCollapsed);
   }
 
-  // Initialize theme from localStorage
+  // Initialize theme from localStorage or system preference
   function initTheme() {
     var savedTheme = localStorage.getItem(THEME_KEY);
-    // Migrate old themes to new light/dark system
-    if (savedTheme === 'sepia' || savedTheme === 'light') {
-      savedTheme = 'light';
+
+    if (savedTheme) {
+      // Migrate old themes to new light/dark system
+      if (savedTheme === 'sepia' || savedTheme === 'light') {
+        savedTheme = 'light';
+      } else {
+        savedTheme = 'dark';
+      }
     } else {
-      savedTheme = 'dark';
+      // No saved theme - respect system preference
+      savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
+
     setTheme(savedTheme);
     updateThemeButtons();
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      // Only auto-switch if user hasn't explicitly set a preference
+      if (!localStorage.getItem(THEME_KEY)) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
   }
 
   // Set theme
@@ -102,6 +117,16 @@
 
     localStorage.setItem(THEME_KEY, theme);
     updateThemeButtons();
+    updateThemeColor(theme);
+  }
+
+  // Update mobile status bar color (theme-color meta tag)
+  function updateThemeColor(theme) {
+    var color = theme === 'light' ? '#ffffff' : '#1c1c1e';
+    var metaTags = document.querySelectorAll('meta[name="theme-color"]');
+    metaTags.forEach(function(meta) {
+      meta.setAttribute('content', color);
+    });
   }
 
   // Update theme button selection state
