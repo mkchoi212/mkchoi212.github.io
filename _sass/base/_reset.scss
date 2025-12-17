@@ -17,11 +17,30 @@ html {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     font-size: 62.5%; // Make it easy to calculate rems to px
+    background-color: #ffffff;
 }
 
 body {
     @include ff--sans-serif(400);
     -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+    transition: background-color 0.25s ease;
+}
+
+// System dark mode support for status bar and safe areas
+@media (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #1c1c1e;
+    }
+}
+
+// Manual theme override classes (set via JavaScript)
+body.theme-light {
+    background-color: #ffffff !important;
+}
+
+body.theme-dark {
+    background-color: #1c1c1e !important;
 }
 
 article,

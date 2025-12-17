@@ -118,6 +118,13 @@
     localStorage.setItem(THEME_KEY, theme);
     updateThemeButtons();
     updateThemeColor(theme);
+    updateBodyTheme(theme);
+  }
+
+  // Update body class for status bar and safe area colors on mobile
+  function updateBodyTheme(theme) {
+    document.body.classList.remove('theme-light', 'theme-dark');
+    document.body.classList.add('theme-' + theme);
   }
 
   // Update mobile status bar color (theme-color meta tag)
