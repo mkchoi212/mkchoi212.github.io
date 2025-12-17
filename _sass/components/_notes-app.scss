@@ -506,6 +506,10 @@ $notes-accent: #007AFF;
   padding: 2rem 1.5rem 1.5rem;
   border-bottom: 1px solid var(--notes-border-color);
 
+  @media screen and (max-width: 768px) {
+    border-bottom: none;
+  }
+
   h1 {
     font-size: 1.4rem;
     font-weight: 700;
