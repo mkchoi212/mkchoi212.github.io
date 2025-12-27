@@ -7,13 +7,28 @@
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <script>
+        (function(){
+            var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var saved = localStorage.getItem('notes-app-theme');
+            if (saved === 'dark' || (dark && saved !== 'light')) {
+                document.documentElement.style.background = '#1c1c1e';
+                document.documentElement.classList.add('dark-mode');
+            } else {
+                document.documentElement.style.background = '#ffffff';
+            }
+        })();
+    </script>
     <style>
-        html, body, .notes-app, .notes-app__sidebar, .notes-app__content, .notes-app__section-header { background: #ffffff; }
-        @media (prefers-color-scheme: dark) {
-            html, body, .notes-app, .notes-app__sidebar, .notes-app__content, .notes-app__section-header { background: #1c1c1e; }
-            .notes-app__post-title, .notes-app__section-header { color: #f5f5f7; }
-            .notes-app__post-date { color: #8e8e93; }
-        }
+        body { background: #ffffff; }
+        html.dark-mode, html.dark-mode body { background: #1c1c1e; }
+        html.dark-mode .notes-app, html.dark-mode .notes-app__sidebar,
+        html.dark-mode .notes-app__menu, html.dark-mode .notes-app__content,
+        html.dark-mode .notes-app__section-header { background: #1c1c1e; }
+        html.dark-mode .notes-app__menu-item, html.dark-mode .notes-app__post-title,
+        html.dark-mode .notes-app__section-header { color: #f5f5f7; }
+        html.dark-mode .notes-app__menu-count, html.dark-mode .notes-app__menu-chevron,
+        html.dark-mode .notes-app__post-date { color: #8e8e93; }
     </style>
 
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>

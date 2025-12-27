@@ -2,13 +2,7 @@
 layout: default
 body_class: notes-app-page
 ---
-<div class="notes-app" id="notes-app">
-  <!-- Mobile back button (detail view) - Liquid Glass -->
-  <button class="notes-app__back-btn liquid-glass-btn" id="back-btn" aria-label="Back to list">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
+<div class="notes-app notes-app--no-menu notes-app--mobile-content" id="notes-app">
   <!-- Sidebar collapse handle -->
   <div class="sidebar-collapse-handle" id="sidebar-collapse-handle" aria-label="Toggle sidebar">
     <div class="sidebar-collapse-handle__pill"></div>
@@ -118,7 +112,6 @@ body_class: notes-app-page
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const notesApp = document.getElementById('notes-app');
-  const backBtn = document.getElementById('back-btn');
   const aboutItem = document.querySelector('.notes-app__post-item');
   const isMobile = () => window.innerWidth <= 768;
 
@@ -128,13 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
       if (isMobile()) {
         notesApp.classList.add('notes-app--post-open');
       }
-    });
-  }
-
-  // Back button closes detail view
-  if (backBtn) {
-    backBtn.addEventListener('click', function() {
-      notesApp.classList.remove('notes-app--post-open');
     });
   }
 });

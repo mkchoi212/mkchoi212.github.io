@@ -5,6 +5,7 @@
   const state = {
     currentPostUrl: null,
     isPostOpen: false,
+    isPostsOpen: false, // Mobile: posts list view is open
     cache: new Map(),
     theme: 'dark', // 'light' or 'dark'
     font: 'system',
@@ -18,11 +19,11 @@
     postList: null,
     contentPane: null,
     contentInner: null,
-    backBtn: null,
     postItems: null,
     ellipsisBtn: null,
     contextMenu: null,
-    collapseHandle: null
+    collapseHandle: null,
+    menuPostsBtn: null
   };
 
   // Constants
@@ -38,11 +39,11 @@
     elements.postList = document.getElementById('post-list');
     elements.contentPane = document.getElementById('content-pane');
     elements.contentInner = document.getElementById('post-content');
-    elements.backBtn = document.getElementById('back-btn');
     elements.postItems = document.querySelectorAll('.notes-app__post-item');
     elements.ellipsisBtn = document.getElementById('ellipsis-btn');
     elements.contextMenu = document.getElementById('context-menu');
     elements.collapseHandle = document.getElementById('sidebar-collapse-handle');
+    elements.menuPostsBtn = document.getElementById('menu-posts');
 
     initTheme();
     initFont();
@@ -186,9 +187,9 @@
       });
     });
 
-    // Back button (mobile)
-    if (elements.backBtn) {
-      elements.backBtn.addEventListener('click', closePost);
+    // Menu "Posts" button (mobile)
+    if (elements.menuPostsBtn) {
+      elements.menuPostsBtn.addEventListener('click', openPostsList);
     }
 
     // Ellipsis button / context menu
@@ -252,12 +253,14 @@
     }
 
     if (matchingItem) {
+      // Direct link to a post - load it
       loadPost(matchingItem.dataset.url, matchingItem, false);
     } else if (window.innerWidth > 768 && elements.postItems.length > 0) {
-      // Load first post on desktop
+      // Desktop: Load first post
       var firstItem = elements.postItems[0];
       loadPost(firstItem.dataset.url, firstItem, false);
     }
+    // Mobile: On home page, show menu (do nothing - CSS handles this)
   }
 
   // Load post content
@@ -278,8 +281,12 @@
     // Show loading state
     elements.contentInner.innerHTML = '<div class="notes-app__loading"></div>';
 
-    // Mobile: show content pane
+    // Mobile: show content pane (and mark posts as open for back navigation)
     elements.app.classList.add('notes-app--post-open');
+    if (window.innerWidth <= 768) {
+      elements.app.classList.add('notes-app--posts-open');
+      state.isPostsOpen = true;
+    }
     state.isPostOpen = true;
     state.currentPostUrl = url;
 
@@ -331,13 +338,31 @@
     }
   }
 
+  // Open posts list from menu (mobile)
+  function openPostsList() {
+    elements.app.classList.add('notes-app--posts-open');
+    state.isPostsOpen = true;
+    history.pushState({ view: 'posts' }, '', '/');
+  }
+
+  // Close posts list, return to menu (mobile)
+  function closePostsList() {
+    elements.app.classList.remove('notes-app--posts-open');
+    state.isPostsOpen = false;
+
+    // Clear selection
+    elements.postItems.forEach(function(el) {
+      el.classList.remove('is-selected');
+    });
+
+    history.pushState({ view: 'menu' }, '', '/');
+  }
+
   // Close post (mobile)
   function closePost() {
     elements.app.classList.remove('notes-app--post-open');
     state.isPostOpen = false;
-
-    // Update URL to home
-    history.pushState({ postUrl: null }, '', '/');
+    state.currentPostUrl = null;
 
     // Clear selection on mobile
     if (window.innerWidth <= 768) {
@@ -345,11 +370,19 @@
         el.classList.remove('is-selected');
       });
     }
+
+    // On mobile, return to posts list (not menu)
+    if (window.innerWidth <= 768) {
+      history.pushState({ view: 'posts' }, '', '/');
+    } else {
+      history.pushState({ postUrl: null }, '', '/');
+    }
   }
 
   // Handle browser back/forward
   function handlePopState(event) {
     if (event.state && event.state.postUrl) {
+      // Navigate to a specific post
       var matchingItem = null;
       for (var i = 0; i < elements.postItems.length; i++) {
         if (elements.postItems[i].dataset.url === event.state.postUrl) {
@@ -360,21 +393,45 @@
       if (matchingItem) {
         loadPost(event.state.postUrl, matchingItem, false);
       }
-    } else {
-      // Going back to list
+    } else if (event.state && event.state.view === 'posts') {
+      // Navigate to posts list (from menu or from post)
       elements.app.classList.remove('notes-app--post-open');
+      elements.app.classList.add('notes-app--posts-open');
+      state.isPostOpen = false;
+      state.isPostsOpen = true;
+      state.currentPostUrl = null;
+      elements.postItems.forEach(function(el) {
+        el.classList.remove('is-selected');
+      });
+    } else if (event.state && event.state.view === 'menu') {
+      // Navigate back to menu
+      elements.app.classList.remove('notes-app--post-open');
+      elements.app.classList.remove('notes-app--posts-open');
+      state.isPostOpen = false;
+      state.isPostsOpen = false;
+      state.currentPostUrl = null;
+      elements.postItems.forEach(function(el) {
+        el.classList.remove('is-selected');
+      });
+    } else {
+      // Going back to list/menu (fallback)
+      elements.app.classList.remove('notes-app--post-open');
+      elements.app.classList.remove('notes-app--posts-open');
       elements.postItems.forEach(function(el) {
         el.classList.remove('is-selected');
       });
       state.isPostOpen = false;
+      state.isPostsOpen = false;
       state.currentPostUrl = null;
 
-      // Show welcome message
-      elements.contentInner.innerHTML =
-        '<div class="notes-app__welcome">' +
-        '<h2>Welcome</h2>' +
-        '<p>Select a post from the sidebar to read.</p>' +
-        '</div>';
+      // Show welcome message on desktop
+      if (window.innerWidth > 768) {
+        elements.contentInner.innerHTML =
+          '<div class="notes-app__welcome">' +
+          '<h2>Welcome</h2>' +
+          '<p>Select a post from the sidebar to read.</p>' +
+          '</div>';
+      }
     }
   }
 
@@ -413,8 +470,13 @@
           closeMenu();
           return;
         }
-        if (state.isPostOpen && window.innerWidth <= 768) {
-          closePost();
+        // Mobile: two-level back navigation via browser back
+        if (window.innerWidth <= 768) {
+          if (state.isPostOpen) {
+            closePost();
+          } else if (state.isPostsOpen) {
+            closePostsList();
+          }
         }
         return;
       case '[':

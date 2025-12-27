@@ -3,12 +3,6 @@ layout: default
 body_class: notes-app-page
 ---
 <div class="notes-app" id="notes-app">
-  <!-- Mobile back button (post detail view) - Liquid Glass -->
-  <button class="notes-app__back-btn liquid-glass-btn" id="back-btn" aria-label="Back to list">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6"></polyline>
-    </svg>
-  </button>
   <!-- Sidebar collapse handle -->
   <div class="sidebar-collapse-handle" id="sidebar-collapse-handle" aria-label="Toggle sidebar">
     <div class="sidebar-collapse-handle__pill"></div>
@@ -68,6 +62,37 @@ body_class: notes-app-page
 
   <!-- Sidebar: Post List -->
   <aside class="notes-app__sidebar">
+    <!-- Mobile Menu (shown first on mobile) -->
+    <div class="notes-app__menu" id="menu-view">
+      <nav class="notes-app__menu-list">
+        <button class="notes-app__menu-item" id="menu-posts" type="button">
+          <span class="notes-app__menu-label">Posts</span>
+          <span class="notes-app__menu-count">{{ site.posts | size }}</span>
+          <svg class="notes-app__menu-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+        <a href="{{ "/projects/" | prepend: site.baseurl }}" class="notes-app__menu-item">
+          <span class="notes-app__menu-label">Projects</span>
+          <svg class="notes-app__menu-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+        <a href="{{ "/about/" | prepend: site.baseurl }}" class="notes-app__menu-item">
+          <span class="notes-app__menu-label">About</span>
+          <svg class="notes-app__menu-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+        <a href="{{ "/feed.xml" | prepend: site.baseurl }}" class="notes-app__menu-item">
+          <span class="notes-app__menu-label">RSS</span>
+          <svg class="notes-app__menu-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </a>
+      </nav>
+    </div>
+
     <header class="notes-app__sidebar-header">
       <div class="notes-app__header-row">
         <div class="notes-app__header-title">

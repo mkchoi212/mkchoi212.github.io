@@ -372,55 +372,6 @@ $notes-accent: #007AFF;
   }
 }
 
-.notes-app__back-btn {
-  display: none;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 150;
-
-  // Liquid glass effect (backdrop-filter set by JS)
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow:
-    inset 0 1px 1px rgba(255, 255, 255, 0.5),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.15),
-    0 4px 12px rgba(0, 0, 0, 0.2),
-    0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.15s ease, background 0.15s ease;
-
-  // Center the icon
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (max-width: 768px) {
-    .notes-app--post-open & {
-      display: flex;
-    }
-  }
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.08);
-  }
-
-  &:active {
-    transform: scale(0.95);
-    background: rgba(255, 255, 255, 0.25);
-  }
-
-  svg {
-    width: 22px;
-    height: 22px;
-    color: #fff;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
-    margin-left: -2px; // Optical centering for chevron
-  }
-}
 
 // Dark mode toggle
 .notes-app__theme-toggle {
@@ -495,11 +446,77 @@ $notes-accent: #007AFF;
   @media screen and (max-width: 768px) {
     border-right: none;
     min-height: 100%;
+    min-width: 100%;
 
-    .notes-app--post-open & {
+    .notes-app--post-open &,
+    .notes-app--mobile-content & {
       display: none;
     }
   }
+}
+
+// Mobile Menu View
+.notes-app__menu {
+  display: none;
+  background: var(--notes-bg);
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    // Hide menu when viewing posts list, post detail, or on pages without menu
+    .notes-app--posts-open &,
+    .notes-app--post-open &,
+    .notes-app--no-menu & {
+      display: none;
+    }
+  }
+}
+
+.notes-app__menu-list {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.notes-app__menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: var(--notes-text-primary);
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background: var(--notes-selection-bg);
+  }
+
+  &:active {
+    background: var(--notes-selection-bg-active);
+  }
+}
+
+.notes-app__menu-label {
+  flex: 1;
+}
+
+.notes-app__menu-count {
+  font-size: 1.5rem;
+  color: var(--notes-text-tertiary);
+  margin-right: 0.5rem;
+}
+
+.notes-app__menu-chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--notes-text-tertiary);
 }
 
 .notes-app__sidebar-header {
@@ -513,6 +530,16 @@ $notes-accent: #007AFF;
     color: var(--notes-text-primary);
     letter-spacing: -0.02em;
     transition: color $notes-transition;
+  }
+
+  // Hide on mobile by default, show when posts view is open or no-menu
+  @media screen and (max-width: 768px) {
+    display: none;
+
+    .notes-app--posts-open &,
+    .notes-app--no-menu & {
+      display: block;
+    }
   }
 }
 
@@ -541,7 +568,13 @@ $notes-accent: #007AFF;
   padding-bottom: 80px; // Space for floating tab bar
 
   @media screen and (max-width: 768px) {
-    padding-bottom: 90px;
+    display: none;
+    padding-bottom: 20px; // No tab bar on mobile
+
+    .notes-app--posts-open &,
+    .notes-app--no-menu & {
+      display: block;
+    }
   }
 }
 
@@ -627,7 +660,8 @@ $notes-accent: #007AFF;
   @media screen and (max-width: 768px) {
     display: none;
 
-    .notes-app--post-open & {
+    .notes-app--post-open &,
+    .notes-app--mobile-content & {
       display: block;
       position: fixed;
       top: 0;
@@ -635,7 +669,6 @@ $notes-accent: #007AFF;
       right: 0;
       bottom: 0;
       z-index: 50;
-      padding-top: 60px;
     }
   }
 }
@@ -1112,10 +1145,7 @@ html:has(.notes-app--light) {
   pointer-events: none;
 
   @media screen and (max-width: 768px) {
-    position: fixed;
-    bottom: 0.75rem;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none; // Hide on mobile - use menu view instead
   }
 }
 
