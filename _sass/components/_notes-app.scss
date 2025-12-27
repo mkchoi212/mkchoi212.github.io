@@ -29,7 +29,7 @@ $notes-accent: #007AFF;
 .notes-app--dark {
   --notes-bg: #1c1c1e;
   --notes-bg-translucent: rgba(28, 28, 30, 0.85);
-  --notes-bg-sidebar: rgba(44, 44, 46, 0.88);
+  --notes-bg-sidebar: #1c1c1e;
   --notes-border-color: rgba(255, 255, 255, 0.1);
   --notes-selection-bg: rgba(255, 255, 255, 0.06);
   --notes-selection-bg-active: rgba(0, 122, 255, 0.25);
@@ -45,7 +45,7 @@ $notes-accent: #007AFF;
   .notes-app:not(.notes-app--light) {
     --notes-bg: #1c1c1e;
     --notes-bg-translucent: rgba(28, 28, 30, 0.85);
-    --notes-bg-sidebar: rgba(44, 44, 46, 0.88);
+    --notes-bg-sidebar: #1c1c1e;
     --notes-border-color: rgba(255, 255, 255, 0.1);
     --notes-selection-bg: rgba(255, 255, 255, 0.06);
     --notes-selection-bg-active: rgba(0, 122, 255, 0.25);
@@ -538,7 +538,6 @@ $notes-accent: #007AFF;
 .notes-app__post-list {
   flex: 1;
   overflow-y: auto;
-  padding: 0.40rem;
   padding-bottom: 80px; // Space for floating tab bar
 
   @media screen and (max-width: 768px) {
@@ -554,17 +553,17 @@ $notes-accent: #007AFF;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--notes-text-primary);
-  background: #f6f6f6;
+  background: #ffffff;
   letter-spacing: 0.01em;
   border-bottom: 1px solid var(--notes-border-color);
 
   .notes-app--dark & {
-    background: #2c2c2e;
+    background: #1c1c1e;
   }
 
   @media (prefers-color-scheme: dark) {
     .notes-app:not(.notes-app--light) & {
-      background: #2c2c2e;
+      background: #1c1c1e;
     }
   }
 }
@@ -1061,6 +1060,19 @@ body:has(.notes-app) {
 .notes-app-page {
   overflow: hidden;
   height: 100vh;
+  background: #ffffff;
+
+  @media (prefers-color-scheme: dark) {
+    background: #1c1c1e;
+  }
+
+  &:has(.notes-app--dark) {
+    background: #1c1c1e;
+  }
+
+  &:has(.notes-app--light) {
+    background: #ffffff;
+  }
 
   .u-container {
     max-width: none;
@@ -1068,6 +1080,23 @@ body:has(.notes-app) {
     margin: 0;
     height: 100%;
   }
+}
+
+// Ensure html/body background matches for safe areas
+html:has(.notes-app) {
+  background: #ffffff;
+
+  @media (prefers-color-scheme: dark) {
+    background: #1c1c1e;
+  }
+}
+
+html:has(.notes-app--dark) {
+  background: #1c1c1e;
+}
+
+html:has(.notes-app--light) {
+  background: #ffffff;
 }
 
 /* ==========================================================================
@@ -1104,13 +1133,13 @@ body:has(.notes-app) {
 
   // Dark mode
   .notes-app--dark & {
-    background: #3a3a3c;
+    background: rgba(60, 60, 60, 0.8);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   }
 
   @media (prefers-color-scheme: dark) {
     .notes-app:not(.notes-app--light) & {
-      background: #3a3a3c;
+      background: rgba(60, 60, 60, 0.8);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
   }
