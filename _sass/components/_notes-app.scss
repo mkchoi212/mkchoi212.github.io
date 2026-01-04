@@ -13,8 +13,8 @@ $notes-accent: #007AFF;
 .notes-app {
   // Light mode (default)
   --notes-bg: #ffffff;
-  --notes-bg-translucent: rgba(255, 255, 255, 0.72);
-  --notes-bg-sidebar: rgba(246, 246, 246, 0.88);
+  --notes-bg-translucent: rgba(255, 255, 255, 0.88);
+  --notes-bg-sidebar: #ffffff;
   --notes-border-color: rgba(0, 0, 0, 0.08);
   --notes-selection-bg: rgba(0, 0, 0, 0.04);
   --notes-selection-bg-active: rgba(0, 122, 255, 0.12);
@@ -63,6 +63,8 @@ $notes-accent: #007AFF;
   grid-template-columns: $notes-sidebar-width 1fr;
   grid-template-rows: 1fr;
   height: 100vh;
+  height: 100dvh;
+  height: calc(100dvh - env(safe-area-inset-bottom, 0px));
   overflow: hidden;
   background: var(--notes-bg);
   transition: background-color $notes-transition, grid-template-columns 0.3s ease;
@@ -586,18 +588,12 @@ $notes-accent: #007AFF;
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--notes-text-primary);
-  background: #ffffff;
+  background: var(--notes-bg);
   letter-spacing: 0.01em;
   border-bottom: 1px solid var(--notes-border-color);
 
-  .notes-app--dark & {
-    background: #1c1c1e;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .notes-app:not(.notes-app--light) & {
-      background: #1c1c1e;
-    }
+  @media screen and (max-width: 768px) {
+    padding-right: calc(1.25rem + 8px);
   }
 }
 
@@ -1117,6 +1113,8 @@ body:has(.notes-app) {
 
 // Ensure html/body background matches for safe areas
 html:has(.notes-app) {
+  overflow: hidden;
+  height: 100%;
   background: #ffffff;
 
   @media (prefers-color-scheme: dark) {
@@ -1138,7 +1136,7 @@ html:has(.notes-app--light) {
 
 .segmented-tabbar {
   position: absolute;
-  bottom: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
